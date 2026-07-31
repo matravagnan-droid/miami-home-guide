@@ -14,7 +14,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(8,46,48,0.88) 0%, rgba(14,71,73,0.78) 55%, var(--sand) 55%), url(/images/hero-skyline.jpg)" }}>
         <div className="hero-fan" />
         <div className="eyebrow">Buying in Miami-Dade</div>
         <h1>Know the block before you make the offer.</h1>
@@ -92,11 +92,21 @@ export default function Home() {
           <p>Every area of Miami-Dade has its own personality and its own price per square foot.</p>
         </div>
         <div className="hoods">
-          <div className="hood-card"><h4>Brickell</h4><span>High-rise, walkable, young professionals</span></div>
-          <div className="hood-card"><h4>Coral Gables</h4><span>Tree-lined, historic, family-oriented</span></div>
-          <div className="hood-card"><h4>Wynwood</h4><span>Art, lofts, nightlife</span></div>
-          <div className="hood-card"><h4>Coconut Grove</h4><span>Bayfront, laid-back, established</span></div>
-          <div className="hood-card"><h4>Doral</h4><span>New construction, family suburbs</span></div>
+          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/brickell.jpg)" }}>
+            <h4>Brickell</h4><span>High-rise, walkable, young professionals</span>
+          </div>
+          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/coral-gables.jpg)" }}>
+            <h4>Coral Gables</h4><span>Tree-lined, historic, family-oriented</span>
+          </div>
+          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/wynwood.jpg)" }}>
+            <h4>Wynwood</h4><span>Art, lofts, nightlife</span>
+          </div>
+          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/coconut-grove.jpg)" }}>
+            <h4>Coconut Grove</h4><span>Bayfront, laid-back, established</span>
+          </div>
+          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/doral.jpg)" }}>
+            <h4>Doral</h4><span>New construction, family suburbs</span>
+          </div>
         </div>
       </section>
 

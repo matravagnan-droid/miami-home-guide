@@ -52,7 +52,10 @@ a { color: inherit; text-decoration: none; }
 .hero {
   position: relative;
   padding: 8vh 6vw 10vh;
-  background: linear-gradient(180deg, var(--bay-deep) 0%, var(--bay) 55%, var(--sand) 55%);
+  background-color: var(--bay-deep);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   color: var(--sand);
   overflow: hidden;
 }
@@ -276,11 +279,18 @@ a { color: inherit; text-decoration: none; }
 
 .hood-card {
   min-width: 220px;
+  min-height: 260px;
   border-radius: 16px;
   padding: 26px 22px;
-  background: var(--bay-deep);
+  background-color: var(--bay-deep);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--sand);
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .hood-card h4 {
