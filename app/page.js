@@ -1,3 +1,5 @@
+import MortgageCalculator from "./components/MortgageCalculator";
+
 export default function Home() {
   return (
     <>
@@ -6,6 +8,7 @@ export default function Home() {
         <div className="nav-logo">Miami Home Guide</div>
         <div className="nav-links">
           <a href="#tools">Tools</a>
+          <a href="#mortgage-calculator">Mortgage Calculator</a>
           <a href="#neighborhoods">Neighborhoods</a>
           <a href="#blog">Blog</a>
         </div>
@@ -63,7 +66,24 @@ export default function Home() {
             </p>
             <a className="link" href="#">Browse homes &rarr;</a>
           </div>
+          <div className="tool-card">
+            <span className="tool-tag">Monthly payment</span>
+            <h3>Mortgage calculator</h3>
+            <p>
+              Estimate your monthly payment with taxes, insurance, and HOA
+              included, tuned for Miami-Dade rates.
+            </p>
+            <a className="link" href="#mortgage-calculator">Calculate my payment &rarr;</a>
+          </div>
         </div>
+      </section>
+
+      <section className="section" id="mortgage-calculator" style={{ paddingTop: 0 }}>
+        <div className="section-head">
+          <h2>Mortgage calculator</h2>
+          <p>Adjust the numbers to see what a home would actually cost you each month.</p>
+        </div>
+        <MortgageCalculator />
       </section>
 
       <section className="section" id="neighborhoods" style={{ paddingTop: 0 }}>
