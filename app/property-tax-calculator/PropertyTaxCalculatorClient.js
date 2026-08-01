@@ -5,6 +5,7 @@ import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
 import PropertyTaxCalculator from "../components/PropertyTaxCalculator";
 import { useLanguage } from "../i18n/LanguageContext";
+import { MIAMI_DADE_ZIPS, BROWARD_ZIPS } from "../lib/zipCodes";
 
 export default function PropertyTaxCalculatorClient() {
   const { t } = useLanguage();
@@ -23,6 +24,32 @@ export default function PropertyTaxCalculatorClient() {
 
       <section className="section" style={{ paddingTop: 32 }}>
         <PropertyTaxCalculator />
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="section-head">
+          <h2>{t.zipReference.h2}</h2>
+          <p>{t.zipReference.p}</p>
+        </div>
+        <div className="faq-list">
+          <details className="faq-item">
+            <summary>{t.zipReference.miamiDadeToggle}</summary>
+            <div className="zip-grid">
+              {MIAMI_DADE_ZIPS.map(([zip, name]) => (
+                <span key={zip}><strong>{zip}</strong> — {name}</span>
+              ))}
+            </div>
+          </details>
+          <details className="faq-item">
+            <summary>{t.zipReference.browardToggle}</summary>
+            <div className="zip-grid">
+              {BROWARD_ZIPS.map(([zip, name]) => (
+                <span key={zip}><strong>{zip}</strong> — {name}</span>
+              ))}
+            </div>
+          </details>
+        </div>
+        <p className="calc-note">{t.zipReference.disclaimer}</p>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>

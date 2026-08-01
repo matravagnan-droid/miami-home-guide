@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import InfoTip from "./InfoTip";
 
 const moneyFor = (locale) => (n) =>
   n.toLocaleString(locale, {
@@ -124,7 +125,7 @@ export default function PropertyTaxCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>{t.propertyTax.assessedValue}</span>
+          <span>{t.propertyTax.assessedValue}<InfoTip text={t.propertyTax.assessedValueTip} /></span>
           <input
             type="number"
             min="0"
@@ -135,7 +136,7 @@ export default function PropertyTaxCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>{t.propertyTax.nonAdValorem}</span>
+          <span>{t.propertyTax.nonAdValorem}<InfoTip text={t.propertyTax.nonAdValoremTip} /></span>
           <input
             type="number"
             min="0"
