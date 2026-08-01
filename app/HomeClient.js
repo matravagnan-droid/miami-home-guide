@@ -45,28 +45,28 @@ export default function HomeClient({ articles }) {
         </div>
         <div className="tools-grid">
           <div className="tool-card">
-            <span className="tool-tag">{t.tools.valueTag}</span>
-            <h3>{t.tools.valueTitle}</h3>
-            <p>{t.tools.valueBody}</p>
-            <a className="link" href="/first-time-buyer-guide">{t.tools.valueLink}</a>
-          </div>
-          <div className="tool-card">
-            <span className="tool-tag">{t.tools.taxTag}</span>
-            <h3>{t.tools.taxTitle}</h3>
-            <p>{t.tools.taxBody}</p>
-            <a className="link" href="/property-tax-calculator">{t.tools.taxLink}</a>
-          </div>
-          <div className="tool-card">
             <span className="tool-tag">{t.tools.mlsTag}</span>
             <h3>{t.tools.mlsTitle}</h3>
             <p>{t.tools.mlsBody}</p>
             <a className="link" href="#">{t.tools.mlsLink}</a>
           </div>
           <div className="tool-card">
+            <span className="tool-tag">{t.tools.valueTag}</span>
+            <h3>{t.tools.valueTitle}</h3>
+            <p>{t.tools.valueBody}</p>
+            <a className="link" href="/first-time-buyer-guide">{t.tools.valueLink}</a>
+          </div>
+          <div className="tool-card">
             <span className="tool-tag">{t.tools.mortgageTag}</span>
             <h3>{t.tools.mortgageTitle}</h3>
             <p>{t.tools.mortgageBody}</p>
             <a className="link" href="/mortgage-calculator">{t.tools.mortgageLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.tools.taxTag}</span>
+            <h3>{t.tools.taxTitle}</h3>
+            <p>{t.tools.taxBody}</p>
+            <a className="link" href="/property-tax-calculator">{t.tools.taxLink}</a>
           </div>
         </div>
       </section>
