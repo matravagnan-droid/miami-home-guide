@@ -4,6 +4,7 @@ import { useState } from "react";
 import SiteNav from "./components/SiteNav";
 import ArticleCard from "./components/ArticleCard";
 import { useLanguage } from "./i18n/LanguageContext";
+import { getAllNeighborhoods } from "./lib/neighborhoods";
 
 const BADGE_KEYS = {
   realEstate: "badgeRealEstate",
@@ -14,7 +15,7 @@ const BADGE_KEYS = {
 };
 
 export default function HomeClient({ articles }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState("realEstate");
 
   const tabs = [
@@ -114,21 +115,16 @@ export default function HomeClient({ articles }) {
           <p>{t.neighborhoods.p}</p>
         </div>
         <div className="hoods">
-          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/brickell.jpg)" }}>
-            <h4>Brickell</h4><span>{t.neighborhoods.brickell}</span>
-          </div>
-          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/coral-gables.jpg)" }}>
-            <h4>Coral Gables</h4><span>{t.neighborhoods.coralGables}</span>
-          </div>
-          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/wynwood.jpg)" }}>
-            <h4>Wynwood</h4><span>{t.neighborhoods.wynwood}</span>
-          </div>
-          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/coconut-grove.jpg)" }}>
-            <h4>Coconut Grove</h4><span>{t.neighborhoods.coconutGrove}</span>
-          </div>
-          <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/doral.jpg)" }}>
-            <h4>Doral</h4><span>{t.neighborhoods.doral}</span>
-          </div>
+          {getAllNeighborhoods().map((n) => (
+            <a
+              key={n.slug}
+              className="hood-card"
+              href={`/neighborhoods/${n.slug}`}
+              style={{ backgroundImage: `linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(${n.image})` }}
+            >
+              <h4>{n.name}</h4><span>{n.tagline[lang]}</span>
+            </a>
+          ))}
         </div>
       </section>
 
