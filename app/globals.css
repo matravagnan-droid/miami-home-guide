@@ -74,6 +74,23 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-50%) rotate(45deg);
 }
 
+.book-call-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #b3261e;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.book-call-btn:hover {
+  background: #941e18;
+}
+
 .lang-toggle {
   display: flex;
   align-items: center;
@@ -735,4 +752,34 @@ footer a {
   line-height: 1.65;
   color: #4a5a56;
   margin: 0;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+  background: white;
+  border: 1px solid rgba(16,63,69,0.1);
+  border-top: 3px solid var(--sunset);
+  border-radius: 4px;
+  padding: 32px;
+}
+
+.lead-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 480px) {
+  .lead-form-row { grid-template-columns: 1fr; }
+}
+
+.lead-form-submit {
+  border: none;
+  cursor: pointer;
+  font-family: var(--body);
+  justify-content: center;
+  margin-top: 4px;
 }

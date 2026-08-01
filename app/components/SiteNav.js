@@ -18,6 +18,7 @@ export default function SiteNav() {
           <a href="/#neighborhoods">{t.nav.neighborhoods}</a>
           <a href="/#blog">{t.nav.blog}</a>
         </div>
+        <a className="book-call-btn" href="/book-a-call">{t.nav.bookCall}</a>
         <LanguageToggle />
       </div>
     </nav>
