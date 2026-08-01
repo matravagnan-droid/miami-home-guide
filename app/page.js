@@ -1,4 +1,5 @@
 import MortgageCalculator from "./components/MortgageCalculator";
+import PropertyTaxCalculator from "./components/PropertyTaxCalculator";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <div className="nav-links">
           <a href="#tools">Tools</a>
           <a href="#mortgage-calculator">Mortgage Calculator</a>
+          <a href="#property-tax-calculator">Property Tax Calculator</a>
           <a href="#neighborhoods">Neighborhoods</a>
           <a href="#blog">Blog</a>
         </div>
@@ -52,10 +54,10 @@ export default function Home() {
             <span className="tool-tag">First-time buyers</span>
             <h3>Property tax calculator</h3>
             <p>
-              See what you'd actually owe each year in Miami-Dade property
-              tax, homestead exemption included.
+              See what you'd actually owe each year in Miami-Dade or Broward
+              property tax, homestead exemption included.
             </p>
-            <a className="link" href="#">Estimate my taxes &rarr;</a>
+            <a className="link" href="#property-tax-calculator">Estimate my taxes &rarr;</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">Live listings</span>
@@ -84,6 +86,14 @@ export default function Home() {
           <p>Adjust the numbers to see what a home would actually cost you each month.</p>
         </div>
         <MortgageCalculator />
+      </section>
+
+      <section className="section" id="property-tax-calculator" style={{ paddingTop: 0 }}>
+        <div className="section-head">
+          <h2>Property tax calculator</h2>
+          <p>Estimate your annual property tax bill in Miami-Dade or Broward County, homestead exemption included.</p>
+        </div>
+        <PropertyTaxCalculator />
       </section>
 
       <section className="section" id="neighborhoods" style={{ paddingTop: 0 }}>
