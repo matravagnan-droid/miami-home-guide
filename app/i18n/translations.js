@@ -206,10 +206,11 @@ const translations = {
       p: "Official FEMA flood hazard zones for Miami-Dade and Broward.",
     },
     flood: {
-      legendHigh: "High-risk coastal (VE/AE)",
-      legendModerate: "Moderate risk",
-      legendMinimal: "Minimal risk (Zone X)",
-      disclaimer: "This is FEMA's live National Flood Hazard Layer, the same data used to determine flood insurance requirements. Zoom in on a specific property before relying on it — for an official determination for one address, use FEMA's",
+      legendHigh: "1% annual chance flood hazard (100-year floodplain)",
+      legendModerate: "0.2% annual chance flood hazard (500-year floodplain)",
+      legendFloodway: "Regulatory floodway (highest risk)",
+      zoomNote: "Zoom or search in on a specific area — FEMA only renders flood zone color at close range, so it's normal to see nothing at a wide, zoomed-out view. Unshaded areas are minimal-risk Zone X.",
+      disclaimer: "This is FEMA's live National Flood Hazard Layer, the same data used to determine flood insurance requirements. For an official determination for one address, use FEMA's",
       disclaimerLink: "Flood Map Service Center",
     },
     hurricaneSection: {
@@ -485,10 +486,11 @@ const translations = {
       p: "Zonas oficiales de riesgo de inundación de FEMA para Miami-Dade y Broward.",
     },
     flood: {
-      legendHigh: "Alto riesgo costero (VE/AE)",
-      legendModerate: "Riesgo moderado",
-      legendMinimal: "Riesgo mínimo (Zona X)",
-      disclaimer: "Esta es la Capa Nacional de Riesgo de Inundación en vivo de FEMA, los mismos datos usados para determinar los requisitos de seguro contra inundaciones. Acérquese a una propiedad específica antes de confiar en esto — para una determinación oficial de una dirección, use el",
+      legendHigh: "1% de probabilidad anual de inundación (llanura de inundación de 100 años)",
+      legendModerate: "0.2% de probabilidad anual de inundación (llanura de inundación de 500 años)",
+      legendFloodway: "Vía de inundación regulatoria (mayor riesgo)",
+      zoomNote: "Acérquese o busque un área específica — FEMA solo muestra el color de la zona de inundación a corta distancia, así que es normal no ver nada en una vista alejada. Las áreas sin color son de riesgo mínimo (Zona X).",
+      disclaimer: "Esta es la Capa Nacional de Riesgo de Inundación en vivo de FEMA, los mismos datos usados para determinar los requisitos de seguro contra inundaciones. Para una determinación oficial de una dirección, use el",
       disclaimerLink: "Centro de Servicio de Mapas de Inundación de FEMA",
     },
     hurricaneSection: {

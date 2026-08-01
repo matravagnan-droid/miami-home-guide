@@ -6,6 +6,14 @@ import { useLanguage } from "../../i18n/LanguageContext";
 
 const FEMA_NFHL_URL = "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer";
 
+// FEMA's flood hazard layer has its own minimum scale and simply doesn't
+// draw anything below it — that scale works out to almost exactly Leaflet
+// zoom 14. Default to that zoom (centered on South Beach, a flood-prone,
+// recognizable spot) so the map shows real color on first load instead of
+// an empty basemap.
+const DEFAULT_CENTER = [25.7907, -80.13];
+const DEFAULT_ZOOM = 14;
+
 export default function FloodMap() {
   const containerRef = useRef(null);
   const mapRef = useRef(null);
@@ -19,7 +27,10 @@ export default function FloodMap() {
       await import("esri-leaflet");
       if (cancelled || !containerRef.current || mapRef.current) return;
 
-      const map = L.map(containerRef.current, { scrollWheelZoom: false }).setView([26.0, -80.2], 10);
+      const map = L.map(containerRef.current, { scrollWheelZoom: false }).setView(
+        DEFAULT_CENTER,
+        DEFAULT_ZOOM
+      );
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap contributors",
         maxZoom: 18,
@@ -31,7 +42,7 @@ export default function FloodMap() {
         .dynamicMapLayer({
           url: FEMA_NFHL_URL,
           layers: [28],
-          opacity: 0.55,
+          opacity: 0.75,
           f: "image",
         })
         .addTo(map);
@@ -52,12 +63,12 @@ export default function FloodMap() {
     <div className="map-wrap">
       <div ref={containerRef} className="map-canvas" />
       <div className="map-legend">
-        <span className="map-legend-item"><span className="map-dot" style={{ background: "#3a7bd5" }} />{t.flood.legendHigh}</span>
-        <span className="map-legend-item"><span className="map-dot" style={{ background: "#8ec9e0" }} />{t.flood.legendModerate}</span>
-        <span className="map-legend-item"><span className="map-dot" style={{ background: "#e9e4d8", border: "1px solid #999" }} />{t.flood.legendMinimal}</span>
+        <span className="map-legend-item"><span className="map-dot" style={{ background: "rgb(0,230,255)" }} />{t.flood.legendHigh}</span>
+        <span className="map-legend-item"><span className="map-dot" style={{ background: "rgb(255,128,0)" }} />{t.flood.legendModerate}</span>
+        <span className="map-legend-item"><span className="map-dot" style={{ background: "rgb(255,0,0)" }} />{t.flood.legendFloodway}</span>
       </div>
       <p className="map-note">
-        {t.flood.disclaimer}{" "}
+        {t.flood.zoomNote} {t.flood.disclaimer}{" "}
         <a href="https://msc.fema.gov/portal/search" target="_blank" rel="noopener noreferrer">
           {t.flood.disclaimerLink}
         </a>
