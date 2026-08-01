@@ -1,152 +1,145 @@
+"use client";
+
 import MortgageCalculator from "./components/MortgageCalculator";
 import PropertyTaxCalculator from "./components/PropertyTaxCalculator";
+import LanguageToggle from "./components/LanguageToggle";
+import { useLanguage } from "./i18n/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <>
       <div className="horizon" />
       <nav className="nav">
         <div className="nav-logo">Miami Home Guide</div>
-        <div className="nav-links">
-          <a href="#tools">Tools</a>
-          <a href="#mortgage-calculator">Mortgage Calculator</a>
-          <a href="#property-tax-calculator">Property Tax Calculator</a>
-          <a href="#neighborhoods">Neighborhoods</a>
-          <a href="#blog">Blog</a>
+        <div className="nav-right">
+          <div className="nav-links">
+            <a href="#tools">{t.nav.tools}</a>
+            <a href="#mortgage-calculator">{t.nav.mortgageCalculator}</a>
+            <a href="#property-tax-calculator">{t.nav.propertyTaxCalculator}</a>
+            <a href="#neighborhoods">{t.nav.neighborhoods}</a>
+            <a href="#blog">{t.nav.blog}</a>
+          </div>
+          <LanguageToggle />
         </div>
       </nav>
 
       <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(8,46,48,0.88) 0%, rgba(14,71,73,0.78) 55%, var(--sand) 55%), url(/images/hero-skyline.jpg)" }}>
         <div className="hero-fan" />
-        <div className="eyebrow">Buying in Miami-Dade</div>
-        <h1>Know the block before you make the offer.</h1>
-        <p>
-          Real neighborhood guides, an instant home value estimate, and a
-          first-time buyer tax calculator — built by a local licensed agent,
-          not a national franchise.
-        </p>
+        <div className="eyebrow">{t.hero.eyebrow}</div>
+        <h1>{t.hero.h1}</h1>
+        <p>{t.hero.p}</p>
         <div className="btn-row">
           <a className="btn btn-primary" href="#tools">
-            Get my home value
+            {t.hero.btnPrimary}
           </a>
           <a className="btn btn-ghost" href="#blog">
-            Read the blog
+            {t.hero.btnGhost}
           </a>
         </div>
       </section>
 
       <section className="section" id="tools">
         <div className="section-head">
-          <h2>Two tools, before you talk to anyone</h2>
-          <p>Answer a few questions and get a real number back — no obligation, no call required.</p>
+          <h2>{t.tools.h2}</h2>
+          <p>{t.tools.p}</p>
         </div>
         <div className="tools-grid">
           <div className="tool-card">
-            <span className="tool-tag">Free estimate</span>
-            <h3>What's my home worth?</h3>
-            <p>
-              Enter your address and get an instant value range based on
-              recent sales nearby, backed by live MLS data.
-            </p>
-            <a className="link" href="#">Check my value &rarr;</a>
+            <span className="tool-tag">{t.tools.valueTag}</span>
+            <h3>{t.tools.valueTitle}</h3>
+            <p>{t.tools.valueBody}</p>
+            <a className="link" href="#">{t.tools.valueLink}</a>
           </div>
           <div className="tool-card">
-            <span className="tool-tag">First-time buyers</span>
-            <h3>Property tax calculator</h3>
-            <p>
-              See what you'd actually owe each year in Miami-Dade or Broward
-              property tax, homestead exemption included.
-            </p>
-            <a className="link" href="#property-tax-calculator">Estimate my taxes &rarr;</a>
+            <span className="tool-tag">{t.tools.taxTag}</span>
+            <h3>{t.tools.taxTitle}</h3>
+            <p>{t.tools.taxBody}</p>
+            <a className="link" href="#property-tax-calculator">{t.tools.taxLink}</a>
           </div>
           <div className="tool-card">
-            <span className="tool-tag">Live listings</span>
-            <h3>Search the MLS</h3>
-            <p>
-              Browse active listings across Miami neighborhoods, updated
-              straight from the MLS feed.
-            </p>
-            <a className="link" href="#">Browse homes &rarr;</a>
+            <span className="tool-tag">{t.tools.mlsTag}</span>
+            <h3>{t.tools.mlsTitle}</h3>
+            <p>{t.tools.mlsBody}</p>
+            <a className="link" href="#">{t.tools.mlsLink}</a>
           </div>
           <div className="tool-card">
-            <span className="tool-tag">Monthly payment</span>
-            <h3>Mortgage calculator</h3>
-            <p>
-              Estimate your monthly payment with taxes, insurance, and HOA
-              included, tuned for Miami-Dade rates.
-            </p>
-            <a className="link" href="#mortgage-calculator">Calculate my payment &rarr;</a>
+            <span className="tool-tag">{t.tools.mortgageTag}</span>
+            <h3>{t.tools.mortgageTitle}</h3>
+            <p>{t.tools.mortgageBody}</p>
+            <a className="link" href="#mortgage-calculator">{t.tools.mortgageLink}</a>
           </div>
         </div>
       </section>
 
       <section className="section" id="mortgage-calculator" style={{ paddingTop: 0 }}>
         <div className="section-head">
-          <h2>Mortgage calculator</h2>
-          <p>Adjust the numbers to see what a home would actually cost you each month.</p>
+          <h2>{t.mortgageSection.h2}</h2>
+          <p>{t.mortgageSection.p}</p>
         </div>
         <MortgageCalculator />
       </section>
 
       <section className="section" id="property-tax-calculator" style={{ paddingTop: 0 }}>
         <div className="section-head">
-          <h2>Property tax calculator</h2>
-          <p>Estimate your annual property tax bill in Miami-Dade or Broward County, homestead exemption included.</p>
+          <h2>{t.propertyTaxSection.h2}</h2>
+          <p>{t.propertyTaxSection.p}</p>
         </div>
         <PropertyTaxCalculator />
       </section>
 
       <section className="section" id="neighborhoods" style={{ paddingTop: 0 }}>
         <div className="section-head">
-          <h2>Pick a neighborhood</h2>
-          <p>Every area of Miami-Dade has its own personality and its own price per square foot.</p>
+          <h2>{t.neighborhoods.h2}</h2>
+          <p>{t.neighborhoods.p}</p>
         </div>
         <div className="hoods">
           <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/brickell.jpg)" }}>
-            <h4>Brickell</h4><span>High-rise, walkable, young professionals</span>
+            <h4>Brickell</h4><span>{t.neighborhoods.brickell}</span>
           </div>
           <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/coral-gables.jpg)" }}>
-            <h4>Coral Gables</h4><span>Tree-lined, historic, family-oriented</span>
+            <h4>Coral Gables</h4><span>{t.neighborhoods.coralGables}</span>
           </div>
           <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/wynwood.jpg)" }}>
-            <h4>Wynwood</h4><span>Art, lofts, nightlife</span>
+            <h4>Wynwood</h4><span>{t.neighborhoods.wynwood}</span>
           </div>
           <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/coconut-grove.jpg)" }}>
-            <h4>Coconut Grove</h4><span>Bayfront, laid-back, established</span>
+            <h4>Coconut Grove</h4><span>{t.neighborhoods.coconutGrove}</span>
           </div>
           <div className="hood-card" style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(/images/doral.jpg)" }}>
-            <h4>Doral</h4><span>New construction, family suburbs</span>
+            <h4>Doral</h4><span>{t.neighborhoods.doral}</span>
           </div>
         </div>
       </section>
 
       <section className="section" id="blog" style={{ paddingTop: 0 }}>
         <div className="section-head">
-          <h2>From the blog</h2>
-          <p>Straight answers about buying and selling in Miami, written in plain English.</p>
+          <h2>{t.blog.h2}</h2>
+          <p>{t.blog.p}</p>
         </div>
         <div className="tools-grid">
           <div className="tool-card">
-            <span className="tool-tag">Guide</span>
-            <h3>Brickell vs. Coral Gables for first-time buyers</h3>
-            <p>Two very different Miami lifestyles — here's how the numbers and the vibe compare.</p>
+            <span className="tool-tag">{t.blog.guideTag}</span>
+            <h3>{t.blog.guideTitle}</h3>
+            <p>{t.blog.guideBody}</p>
           </div>
           <div className="tool-card">
-            <span className="tool-tag">Money</span>
-            <h3>What homestead exemption actually saves you</h3>
-            <p>A plain-English breakdown of Florida's homestead exemption and who qualifies.</p>
+            <span className="tool-tag">{t.blog.moneyTag}</span>
+            <h3>{t.blog.moneyTitle}</h3>
+            <p>{t.blog.moneyBody}</p>
           </div>
           <div className="tool-card">
-            <span className="tool-tag">Process</span>
-            <h3>What to expect at closing in Florida</h3>
-            <p>Every step from accepted offer to keys in hand, in the order it actually happens.</p>
+            <span className="tool-tag">{t.blog.processTag}</span>
+            <h3>{t.blog.processTitle}</h3>
+            <p>{t.blog.processBody}</p>
           </div>
         </div>
       </section>
 
       <footer>
         <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
-        <span>Licensed Real Estate Agent, State of Florida</span>
+        <span>{t.footer.licensed}</span>
       </footer>
     </>
   );

@@ -1,9 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const money = (n) =>
-  n.toLocaleString("en-US", {
+const moneyFor = (locale) => (n) =>
+  n.toLocaleString(locale, {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
@@ -12,45 +13,47 @@ const money = (n) =>
 // 2025 adopted/final total millage rates, split into school vs. non-school
 // portions, sourced from the Miami-Dade and Broward County Property
 // Appraiser offices. School millage is uniform county-wide; only the
-// non-school portion changes by municipality.
+// non-school portion changes by municipality. Display labels live in
+// i18n/translations.js so they can be translated.
 const COUNTIES = {
   "miami-dade": {
-    label: "Miami-Dade County",
     schoolMillage: 6.6330, // 5.4990 operating + 1.0000 voted + 0.1340 debt
     cities: [
-      { id: "miami", label: "Miami (incl. Brickell, Wynwood, Coconut Grove)", totalMillage: 19.9878 },
-      { id: "miami-beach", label: "Miami Beach", totalMillage: 18.7601 },
-      { id: "coral-gables", label: "Coral Gables", totalMillage: 18.1852 },
-      { id: "doral", label: "Doral", totalMillage: 17.2203 },
-      { id: "hialeah", label: "Hialeah", totalMillage: 18.6468 },
-      { id: "aventura", label: "Aventura", totalMillage: 16.7488 },
-      { id: "homestead", label: "Homestead", totalMillage: 20.9465 },
-      { id: "key-biscayne", label: "Key Biscayne", totalMillage: 15.5108 },
-      { id: "pinecrest", label: "Pinecrest", totalMillage: 17.5257 },
-      { id: "unincorporated-md", label: "Unincorporated Miami-Dade", totalMillage: 16.9317 },
+      { id: "miami", totalMillage: 19.9878 },
+      { id: "miami-beach", totalMillage: 18.7601 },
+      { id: "coral-gables", totalMillage: 18.1852 },
+      { id: "doral", totalMillage: 17.2203 },
+      { id: "hialeah", totalMillage: 18.6468 },
+      { id: "aventura", totalMillage: 16.7488 },
+      { id: "homestead", totalMillage: 20.9465 },
+      { id: "key-biscayne", totalMillage: 15.5108 },
+      { id: "pinecrest", totalMillage: 17.5257 },
+      { id: "unincorporated-md", totalMillage: 16.9317 },
     ],
   },
   broward: {
-    label: "Broward County",
     schoolMillage: 6.4845, // 6.3200 school board + 0.1645 debt
     cities: [
-      { id: "fort-lauderdale", label: "Fort Lauderdale", totalMillage: 18.4464 },
-      { id: "hollywood", label: "Hollywood", totalMillage: 21.4778 },
-      { id: "pembroke-pines", label: "Pembroke Pines", totalMillage: 18.8931 },
-      { id: "coral-springs", label: "Coral Springs", totalMillage: 20.2856 },
-      { id: "plantation", label: "Plantation", totalMillage: 20.0675 },
-      { id: "miramar", label: "Miramar", totalMillage: 20.0551 },
-      { id: "davie", label: "Davie", totalMillage: 19.3147 },
-      { id: "sunrise", label: "Sunrise", totalMillage: 20.4527 },
-      { id: "pompano-beach", label: "Pompano Beach", totalMillage: 20.2573 },
-      { id: "hallandale-beach", label: "Hallandale Beach", totalMillage: 20.6717 },
-      { id: "weston", label: "Weston", totalMillage: 16.8636 },
-      { id: "unincorporated-br", label: "Unincorporated Broward", totalMillage: 18.4716 },
+      { id: "fort-lauderdale", totalMillage: 18.4464 },
+      { id: "hollywood", totalMillage: 21.4778 },
+      { id: "pembroke-pines", totalMillage: 18.8931 },
+      { id: "coral-springs", totalMillage: 20.2856 },
+      { id: "plantation", totalMillage: 20.0675 },
+      { id: "miramar", totalMillage: 20.0551 },
+      { id: "davie", totalMillage: 19.3147 },
+      { id: "sunrise", totalMillage: 20.4527 },
+      { id: "pompano-beach", totalMillage: 20.2573 },
+      { id: "hallandale-beach", totalMillage: 20.6717 },
+      { id: "weston", totalMillage: 16.8636 },
+      { id: "unincorporated-br", totalMillage: 18.4716 },
     ],
   },
 };
 
 export default function PropertyTaxCalculator() {
+  const { t, lang } = useLanguage();
+  const money = moneyFor(lang === "es" ? "es-US" : "en-US");
+
   const [countyId, setCountyId] = useState("miami-dade");
   const [cityId, setCityId] = useState(COUNTIES["miami-dade"].cities[0].id);
   const [assessedValue, setAssessedValue] = useState(500000);
@@ -59,6 +62,7 @@ export default function PropertyTaxCalculator() {
 
   const county = COUNTIES[countyId];
   const city = county.cities.find((c) => c.id === cityId) || county.cities[0];
+  const cityLabel = t.cityLabels[countyId][city.id];
 
   function handleCountyChange(nextCountyId) {
     setCountyId(nextCountyId);
@@ -102,25 +106,25 @@ export default function PropertyTaxCalculator() {
     <div className="calc-card">
       <div className="calc-inputs">
         <label className="calc-field">
-          <span>County</span>
+          <span>{t.propertyTax.county}</span>
           <select value={countyId} onChange={(e) => handleCountyChange(e.target.value)}>
-            {Object.entries(COUNTIES).map(([id, c]) => (
-              <option key={id} value={id}>{c.label}</option>
+            {Object.keys(COUNTIES).map((id) => (
+              <option key={id} value={id}>{t.countyLabels[id]}</option>
             ))}
           </select>
         </label>
 
         <label className="calc-field">
-          <span>City / area</span>
+          <span>{t.propertyTax.cityArea}</span>
           <select value={cityId} onChange={(e) => setCityId(e.target.value)}>
             {county.cities.map((c) => (
-              <option key={c.id} value={c.id}>{c.label}</option>
+              <option key={c.id} value={c.id}>{t.cityLabels[countyId][c.id]}</option>
             ))}
           </select>
         </label>
 
         <label className="calc-field">
-          <span>Assessed value</span>
+          <span>{t.propertyTax.assessedValue}</span>
           <input
             type="number"
             min="0"
@@ -131,7 +135,7 @@ export default function PropertyTaxCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>Non-ad valorem fees ($/yr)</span>
+          <span>{t.propertyTax.nonAdValorem}</span>
           <input
             type="number"
             min="0"
@@ -142,75 +146,64 @@ export default function PropertyTaxCalculator() {
         </label>
 
         <label className="calc-field calc-checkbox">
-          <span>Homestead exemption</span>
+          <span>{t.propertyTax.homesteadExemption}</span>
           <span className="calc-toggle">
             <input
               type="checkbox"
               checked={homestead}
               onChange={(e) => setHomestead(e.target.checked)}
             />
-            <span>Apply (primary residence)</span>
+            <span>{t.propertyTax.applyHomestead}</span>
           </span>
         </label>
       </div>
 
       <div className="calc-results">
         <div className="calc-total">
-          <span>Estimated annual property tax</span>
+          <span>{t.propertyTax.estimatedAnnual}</span>
           <strong>{money(results.totalTax)}</strong>
         </div>
         <ul className="calc-breakdown">
           <li>
-            <span>{city.label} — total millage</span>
+            <span>{cityLabel} — {t.propertyTax.totalMillageSuffix}</span>
             <span>{city.totalMillage.toFixed(4)} mills</span>
           </li>
           <li>
-            <span>School board tax</span>
+            <span>{t.propertyTax.schoolBoardTax}</span>
             <span>{money(results.schoolTax)}</span>
           </li>
           <li>
-            <span>County, city &amp; other tax</span>
+            <span>{t.propertyTax.countyCityOther}</span>
             <span>{money(results.nonSchoolTax)}</span>
           </li>
           <li>
-            <span>Non-ad valorem fees</span>
+            <span>{t.propertyTax.nonAdValoremLabel}</span>
             <span>{money(Number(nonAdValorem) || 0)}</span>
           </li>
           {homestead && (
             <li>
-              <span>Homestead exemption applied</span>
-              <span>-{money(results.totalExemption)} taxable value</span>
+              <span>{t.propertyTax.homesteadApplied}</span>
+              <span>-{money(results.totalExemption)} {t.propertyTax.taxableValue}</span>
             </li>
           )}
         </ul>
         <p className="calc-note">
-          Effective rate: {results.effectiveRate.toFixed(2)}% of assessed value.
-          Based on 2025 adopted/final millage rates published by the{" "}
-          {countyId === "miami-dade"
-            ? "Miami-Dade County Property Appraiser"
-            : "Broward County Property Appraiser"}.
+          {t.propertyTax.effectiveRateLabel} {results.effectiveRate.toFixed(2)}%{" "}
+          {t.propertyTax.ofAssessedValue} {t.propertyTax.basedOn}{" "}
+          {countyId === "miami-dade" ? t.propertyTax.mdOffice : t.propertyTax.brOffice}.
         </p>
       </div>
 
       <p className="calc-disclaimer">
-        This is an estimate only, not a tax bill. It's built from each county's
-        published 2025 millage rates and the standard $50,000 Florida homestead
-        exemption, but it can't fully account for everything that shows up on a
-        real bill: Florida's Save Our Homes 3% annual assessment cap for
-        existing homesteaded owners, additional exemptions (senior, veteran,
-        disability, agricultural), special taxing districts, CDD/HOA-related
-        assessments, or mid-year millage changes. It's most accurate for a
-        property you're about to buy, where assessed value resets close to the
-        purchase price. For an exact number, check the parcel directly on the{" "}
+        {t.propertyTax.disclaimerPart1}{" "}
         <a href="https://www.miamidade.gov/pa/" target="_blank" rel="noopener noreferrer">
-          Miami-Dade
+          {t.propertyTax.disclaimerMD}
         </a>{" "}
-        or{" "}
+        {t.propertyTax.disclaimerOr}{" "}
         <a href="https://web.bcpa.net/bcpaclient/" target="_blank" rel="noopener noreferrer">
-          Broward
+          {t.propertyTax.disclaimerBR}
         </a>{" "}
-        County Property Appraiser site, or ask your agent or the county tax
-        collector.
+        {t.propertyTax.disclaimerPart2}
       </p>
     </div>
   );

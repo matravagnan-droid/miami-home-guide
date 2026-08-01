@@ -1,15 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const money = (n) =>
-  n.toLocaleString("en-US", {
+const moneyFor = (locale) => (n) =>
+  n.toLocaleString(locale, {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
   });
 
 export default function MortgageCalculator() {
+  const { t, lang } = useLanguage();
+  const money = moneyFor(lang === "es" ? "es-US" : "en-US");
   const [homePrice, setHomePrice] = useState(500000);
   const [downPaymentPct, setDownPaymentPct] = useState(20);
   const [rate, setRate] = useState(6.75);
@@ -60,7 +63,7 @@ export default function MortgageCalculator() {
     <div className="calc-card">
       <div className="calc-inputs">
         <label className="calc-field">
-          <span>Home price</span>
+          <span>{t.mortgage.homePrice}</span>
           <input
             type="number"
             min="0"
@@ -71,7 +74,7 @@ export default function MortgageCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>Down payment (%)</span>
+          <span>{t.mortgage.downPayment}</span>
           <input
             type="number"
             min="0"
@@ -83,7 +86,7 @@ export default function MortgageCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>Interest rate (%)</span>
+          <span>{t.mortgage.interestRate}</span>
           <input
             type="number"
             min="0"
@@ -94,19 +97,19 @@ export default function MortgageCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>Loan term</span>
+          <span>{t.mortgage.loanTerm}</span>
           <select
             value={termYears}
             onChange={(e) => setTermYears(Number(e.target.value))}
           >
-            <option value={30}>30 years</option>
-            <option value={20}>20 years</option>
-            <option value={15}>15 years</option>
+            <option value={30}>{t.mortgage.term30}</option>
+            <option value={20}>{t.mortgage.term20}</option>
+            <option value={15}>{t.mortgage.term15}</option>
           </select>
         </label>
 
         <label className="calc-field">
-          <span>Property tax rate (%/yr)</span>
+          <span>{t.mortgage.propertyTaxRate}</span>
           <input
             type="number"
             min="0"
@@ -117,7 +120,7 @@ export default function MortgageCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>Home insurance ($/mo)</span>
+          <span>{t.mortgage.homeInsurance}</span>
           <input
             type="number"
             min="0"
@@ -128,7 +131,7 @@ export default function MortgageCalculator() {
         </label>
 
         <label className="calc-field">
-          <span>HOA ($/mo)</span>
+          <span>{t.mortgage.hoa}</span>
           <input
             type="number"
             min="0"
@@ -141,37 +144,37 @@ export default function MortgageCalculator() {
 
       <div className="calc-results">
         <div className="calc-total">
-          <span>Estimated monthly payment</span>
+          <span>{t.mortgage.estimatedMonthly}</span>
           <strong>{money(results.totalMonthly)}</strong>
         </div>
         <ul className="calc-breakdown">
           <li>
-            <span>Principal &amp; interest</span>
+            <span>{t.mortgage.principalInterest}</span>
             <span>{money(results.principalAndInterest)}</span>
           </li>
           <li>
-            <span>Property tax</span>
+            <span>{t.mortgage.propertyTax}</span>
             <span>{money(results.monthlyTax)}</span>
           </li>
           <li>
-            <span>Home insurance</span>
+            <span>{t.mortgage.homeInsuranceResult}</span>
             <span>{money(results.monthlyInsurance)}</span>
           </li>
           <li>
-            <span>HOA</span>
+            <span>{t.mortgage.hoaResult}</span>
             <span>{money(results.monthlyHoa)}</span>
           </li>
           {results.pmi > 0 && (
             <li>
-              <span>PMI (down payment under 20%)</span>
+              <span>{t.mortgage.pmi}</span>
               <span>{money(results.pmi)}</span>
             </li>
           )}
         </ul>
         <p className="calc-note">
-          Down payment: {money(results.downAmount)} &middot; Loan amount:{" "}
-          {money(results.principal)}. Estimate only &mdash; actual rate,
-          taxes, and insurance vary by lender and property.
+          {t.mortgage.downPaymentLabel}: {money(results.downAmount)} &middot;{" "}
+          {t.mortgage.loanAmountLabel}: {money(results.principal)}.{" "}
+          {t.mortgage.estimateDisclaimer}
         </p>
       </div>
     </div>
