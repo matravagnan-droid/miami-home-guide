@@ -1,30 +1,11 @@
-"use client";
+import FloodPageClient from "./FloodPageClient";
 
-import SiteNav from "../../components/SiteNav";
-import FloodMap from "../../components/maps/FloodMap";
-import { useLanguage } from "../../i18n/LanguageContext";
+export const metadata = {
+  title: "Miami Flood Zone Map | FEMA Flood Risk by Neighborhood",
+  description:
+    "See official FEMA flood hazard zones for Miami-Dade and Broward County neighborhoods before you buy, live-loaded from FEMA's National Flood Hazard Layer.",
+};
 
-export default function FloodPage() {
-  const { t } = useLanguage();
-
-  return (
-    <>
-      <div className="horizon" />
-      <SiteNav />
-
-      <section className="hero hero-compact">
-        <h1>{t.floodSection.h2}</h1>
-        <p>{t.floodSection.p}</p>
-      </section>
-
-      <section className="section">
-        <FloodMap />
-      </section>
-
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
-        <a href="/moving-to-miami">{t.moving.backToHub}</a>
-      </footer>
-    </>
-  );
+export default function Page() {
+  return <FloodPageClient />;
 }

@@ -2,8 +2,11 @@ import './globals.css';
 import { LanguageProvider } from './i18n/LanguageContext';
 
 export const metadata = {
-  title: 'Miami Home Guide',
-  description: 'Your neighborhood guide to buying a home in Miami.',
+  title: {
+    default: 'Miami Home Guide | Miami-Dade & Broward Real Estate',
+    template: '%s',
+  },
+  description: 'Neighborhood guides, mortgage and property tax calculators, and relocation resources for Miami-Dade and Broward County, from a local licensed Miami real estate agent.',
 };
 
 export default function RootLayout({ children }) {

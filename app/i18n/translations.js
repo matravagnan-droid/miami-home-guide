@@ -11,7 +11,7 @@ const translations = {
     hero: {
       eyebrow: "Buying in Miami-Dade",
       h1: "Know the block before you make the offer.",
-      p: "Real neighborhood guides, an instant home value estimate, and a first-time buyer tax calculator — built by a local licensed agent, not a national franchise.",
+      p: "Real neighborhood guides for Miami-Dade and Broward County, mortgage and property tax calculators, and an instant home value estimate — built by a local licensed Miami real estate agent, not a national franchise.",
       btnPrimary: "Get my home value",
       btnGhost: "Read the blog",
     },
@@ -60,6 +60,23 @@ const translations = {
       loanAmountLabel: "Loan amount",
       estimateDisclaimer: "Estimate only — actual rate, taxes, and insurance vary by lender and property.",
     },
+    mortgageFaqSection: {
+      h2: "Frequently asked questions",
+      items: [
+        {
+          q: "How much do I need for a down payment on a home in Miami?",
+          a: "Conventional loans often allow as little as 3-5% down, though putting down less than 20% typically requires private mortgage insurance (PMI). FHA loans allow as little as 3.5% down. Use the calculator above to see how different down payment percentages affect your monthly payment.",
+        },
+        {
+          q: "What's included in a typical Miami mortgage payment?",
+          a: "Beyond principal and interest, most Miami-area mortgage payments (paid through an escrow account) include property taxes, homeowners insurance, and, for condos or planned communities, HOA dues. Florida homeowners insurance tends to run higher than the national average due to hurricane and flood risk.",
+        },
+        {
+          q: "What credit score do I need to buy a home in Florida?",
+          a: "Conventional loans typically require a minimum credit score around 620, while FHA loans can go as low as 580 with a 3.5% down payment. Higher credit scores generally qualify for lower interest rates.",
+        },
+      ],
+    },
     propertyTaxSection: {
       h2: "Property tax calculator",
       p: "Estimate your annual property tax bill in Miami-Dade or Broward County, homestead exemption included.",
@@ -88,6 +105,27 @@ const translations = {
       disclaimerOr: "or",
       disclaimerBR: "Broward",
       disclaimerPart2: "County Property Appraiser site, or ask your agent or the county tax collector.",
+    },
+    propertyTaxFaqSection: {
+      h2: "Frequently asked questions",
+      items: [
+        {
+          q: "How is Miami-Dade property tax calculated?",
+          a: "Miami-Dade property tax is calculated by multiplying your property's taxable assessed value by the combined millage rate of your city, the county, the school board, and any special districts, then dividing by 1,000. The Florida homestead exemption reduces taxable value by up to $50,000 for primary residences.",
+        },
+        {
+          q: "What is the Florida homestead exemption?",
+          a: "Florida's homestead exemption removes the first $25,000 of a primary residence's assessed value from all property taxes, and a second $25,000, applied to the portion of value between $50,000 and $75,000, from all taxes except school district levies.",
+        },
+        {
+          q: "Are property taxes higher in Miami-Dade or Broward County?",
+          a: "It depends on the specific city. In 2025, Miami-Dade's combined millage rates ranged from about 15.5 mills in Key Biscayne to over 20 mills in Homestead, while Broward ranged from about 16.8 mills in Weston to over 22 mills in parts of Hollywood. Compare specific cities using the calculator above.",
+        },
+        {
+          q: "What is Florida's Save Our Homes cap?",
+          a: "Save Our Homes limits annual increases in a homesteaded property's assessed value to 3% per year, or the rate of inflation if lower, even if market value rises faster. It only applies after the first year of homestead exemption, so it does not affect this calculator's estimate for a home you're about to buy.",
+        },
+      ],
     },
     countyLabels: {
       "miami-dade": "Miami-Dade County",
@@ -251,7 +289,7 @@ const translations = {
     hero: {
       eyebrow: "Comprando en Miami-Dade",
       h1: "Conozca la cuadra antes de hacer la oferta.",
-      p: "Guías reales de vecindarios, una estimación instantánea del valor de su casa y una calculadora de impuestos para compradores primerizos — creado por un agente local con licencia, no una franquicia nacional.",
+      p: "Guías reales de vecindarios en Miami-Dade y el condado de Broward, calculadoras de hipoteca e impuestos sobre la propiedad, y una estimación instantánea del valor de su casa — creado por un agente de bienes raíces local con licencia en Miami, no una franquicia nacional.",
       btnPrimary: "Ver el valor de mi casa",
       btnGhost: "Leer el blog",
     },
@@ -300,6 +338,23 @@ const translations = {
       loanAmountLabel: "Monto del préstamo",
       estimateDisclaimer: "Solo es un estimado — la tasa real, los impuestos y el seguro varían según el prestamista y la propiedad.",
     },
+    mortgageFaqSection: {
+      h2: "Preguntas frecuentes",
+      items: [
+        {
+          q: "¿Cuánto necesito de pago inicial para comprar una casa en Miami?",
+          a: "Los préstamos convencionales a menudo permiten un pago inicial de tan solo 3-5%, aunque poner menos del 20% generalmente requiere seguro hipotecario privado (PMI). Los préstamos FHA permiten un pago inicial de tan solo 3.5%. Use la calculadora de arriba para ver cómo distintos porcentajes de pago inicial afectan su pago mensual.",
+        },
+        {
+          q: "¿Qué incluye un pago hipotecario típico en Miami?",
+          a: "Además del capital e interés, la mayoría de los pagos hipotecarios en el área de Miami (pagados a través de una cuenta de depósito en garantía) incluyen impuestos sobre la propiedad, seguro de vivienda y, para condominios o comunidades planificadas, cuotas de HOA. El seguro de vivienda en Florida tiende a ser más alto que el promedio nacional debido al riesgo de huracanes e inundaciones.",
+        },
+        {
+          q: "¿Qué puntaje de crédito necesito para comprar una casa en Florida?",
+          a: "Los préstamos convencionales generalmente requieren un puntaje de crédito mínimo de alrededor de 620, mientras que los préstamos FHA pueden ser tan bajos como 580 con un pago inicial del 3.5%. Puntajes de crédito más altos generalmente califican para tasas de interés más bajas.",
+        },
+      ],
+    },
     propertyTaxSection: {
       h2: "Calculadora de impuestos sobre la propiedad",
       p: "Estime su factura anual de impuestos sobre la propiedad en el condado de Miami-Dade o Broward, con la exención de vivienda familiar incluida.",
@@ -328,6 +383,27 @@ const translations = {
       disclaimerOr: "o",
       disclaimerBR: "Broward",
       disclaimerPart2: ", o pregúntele a su agente o a la oficina de impuestos del condado.",
+    },
+    propertyTaxFaqSection: {
+      h2: "Preguntas frecuentes",
+      items: [
+        {
+          q: "¿Cómo se calcula el impuesto sobre la propiedad en Miami-Dade?",
+          a: "El impuesto sobre la propiedad en Miami-Dade se calcula multiplicando el valor catastral gravable de su propiedad por la tasa de gravamen combinada de su ciudad, el condado, la junta escolar y cualquier distrito especial, y luego dividiendo entre 1,000. La exención de vivienda familiar de Florida reduce el valor gravable hasta en $50,000 para residencias principales.",
+        },
+        {
+          q: "¿Qué es la exención de vivienda familiar de Florida?",
+          a: "La exención de vivienda familiar de Florida elimina los primeros $25,000 del valor catastral de una residencia principal de todos los impuestos sobre la propiedad, y otros $25,000 adicionales, aplicados a la parte del valor entre $50,000 y $75,000, de todos los impuestos excepto los de la junta escolar.",
+        },
+        {
+          q: "¿Son más altos los impuestos sobre la propiedad en Miami-Dade o en el condado de Broward?",
+          a: "Depende de la ciudad específica. En 2025, las tasas combinadas de Miami-Dade oscilaron entre aproximadamente 15.5 mills en Key Biscayne y más de 20 mills en Homestead, mientras que en Broward oscilaron entre aproximadamente 16.8 mills en Weston y más de 22 mills en partes de Hollywood. Compare ciudades específicas usando la calculadora de arriba.",
+        },
+        {
+          q: "¿Qué es el límite de Save Our Homes en Florida?",
+          a: "Save Our Homes limita el aumento anual del valor catastral de una propiedad con exención de vivienda familiar al 3% por año, o la tasa de inflación si es menor, incluso si el valor de mercado sube más rápido. Solo aplica después del primer año de exención de vivienda familiar, por lo que no afecta la estimación de esta calculadora para una casa que está por comprar.",
+        },
+      ],
     },
     countyLabels: {
       "miami-dade": "Condado de Miami-Dade",

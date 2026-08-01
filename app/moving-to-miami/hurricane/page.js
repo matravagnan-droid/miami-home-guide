@@ -1,30 +1,11 @@
-"use client";
+import HurricanePageClient from "./HurricanePageClient";
 
-import SiteNav from "../../components/SiteNav";
-import HurricaneMap from "../../components/maps/HurricaneMap";
-import { useLanguage } from "../../i18n/LanguageContext";
+export const metadata = {
+  title: "Miami Hurricane Evacuation Zone Map | Miami-Dade & Broward",
+  description:
+    "Look up official hurricane evacuation zones for Miami-Dade and Broward County neighborhoods, pulled live from each county's emergency management GIS data.",
+};
 
-export default function HurricanePage() {
-  const { t } = useLanguage();
-
-  return (
-    <>
-      <div className="horizon" />
-      <SiteNav />
-
-      <section className="hero hero-compact">
-        <h1>{t.hurricaneSection.h2}</h1>
-        <p>{t.hurricaneSection.p}</p>
-      </section>
-
-      <section className="section">
-        <HurricaneMap />
-      </section>
-
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
-        <a href="/moving-to-miami">{t.moving.backToHub}</a>
-      </footer>
-    </>
-  );
+export default function Page() {
+  return <HurricanePageClient />;
 }
