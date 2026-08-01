@@ -2,6 +2,7 @@
 
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
+import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
 import { STEP_ICONS } from "./StepIcons";
 
@@ -17,13 +18,14 @@ export default function BuyerGuideClient() {
       <SiteNav />
 
       <section className="hero hero-compact">
-        <a href="/" className="back-home-btn">{t.moving.backLink}</a>
         <div className="eyebrow">{t.buyerGuide.eyebrow}</div>
         <h1>{t.buyerGuide.h1}</h1>
         <p>{t.buyerGuide.p}</p>
       </section>
 
-      <section className="section">
+      <BackLink href="/">{t.moving.backLink}</BackLink>
+
+      <section className="section" style={{ paddingTop: 32 }}>
         <div className="wheel-wrap">
           <div className="wheel">
             <div className="wheel-center">{STEP_ICONS[3]}</div>

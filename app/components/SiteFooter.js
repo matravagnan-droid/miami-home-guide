@@ -6,11 +6,13 @@ export default function SiteFooter({ children }) {
         {children}
       </div>
       <div className="eho-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M6 12l6-5 6 5" />
-          <path d="M7.5 10.8V18h9v-7.2" />
-          <path d="M10.3 18v-3.5h3.4V18" />
+        <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+          <path d="M50 6 L93 43 L79 43 L50 21 L21 43 L7 43 Z" />
+          <rect x="19" y="43" width="9" height="37" />
+          <rect x="72" y="43" width="9" height="37" />
+          <rect x="37" y="47" width="26" height="14" />
+          <rect x="37" y="65" width="26" height="14" />
+          <rect x="7" y="82" width="86" height="7" />
         </svg>
         <span>Equal Housing Opportunity</span>
       </div>

@@ -2,6 +2,7 @@
 
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
+import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function MovingToMiamiClient() {
@@ -18,7 +19,9 @@ export default function MovingToMiamiClient() {
         <p>{t.moving.p}</p>
       </section>
 
-      <section className="section">
+      <BackLink href="/">{t.moving.backLink}</BackLink>
+
+      <section className="section" style={{ paddingTop: 32 }}>
         <div className="tools-grid">
           <div className="tool-card">
             <span className="tool-tag">{t.movingTeaser.schoolsTag}</span>

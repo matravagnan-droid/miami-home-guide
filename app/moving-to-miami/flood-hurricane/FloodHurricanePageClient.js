@@ -2,6 +2,7 @@
 
 import SiteNav from "../../components/SiteNav";
 import SiteFooter from "../../components/SiteFooter";
+import BackLink from "../../components/BackLink";
 import FloodMap from "../../components/maps/FloodMap";
 import HurricaneMap from "../../components/maps/HurricaneMap";
 import { useLanguage } from "../../i18n/LanguageContext";
@@ -19,7 +20,9 @@ export default function FloodHurricanePageClient() {
         <p>{t.riskSection.p}</p>
       </section>
 
-      <section className="section">
+      <BackLink href="/moving-to-miami">{t.moving.backToHub}</BackLink>
+
+      <section className="section" style={{ paddingTop: 32 }}>
         <div className="section-head">
           <h2>{t.floodSection.h2}</h2>
           <p>{t.floodSection.p}</p>

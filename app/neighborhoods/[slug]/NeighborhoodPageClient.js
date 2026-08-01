@@ -2,6 +2,7 @@
 
 import SiteNav from "../../components/SiteNav";
 import SiteFooter from "../../components/SiteFooter";
+import BackLink from "../../components/BackLink";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const moneyFor = (locale) => (n) =>
@@ -50,7 +51,9 @@ export default function NeighborhoodPageClient({ neighborhood }) {
         <p>{neighborhood.tagline[lang]}</p>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <BackLink href="/#neighborhoods">{t.neighborhoodPage.backLink}</BackLink>
+
+      <section className="section" style={{ paddingTop: 32 }}>
         <div className="section-head">
           <h2>{t.neighborhoodPage.historyLabel}</h2>
           <p>{neighborhood.history[lang]}</p>

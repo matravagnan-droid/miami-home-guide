@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
+import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function BookACallClient() {
@@ -24,7 +25,9 @@ export default function BookACallClient() {
         <p>{t.bookCallPage.p}</p>
       </section>
 
-      <section className="section">
+      <BackLink href="/">{t.moving.backLink}</BackLink>
+
+      <section className="section" style={{ paddingTop: 32 }}>
         <form
           className="lead-form"
           action="https://formsubmit.co/mat.ravagnan@gmail.com"

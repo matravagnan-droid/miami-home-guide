@@ -20,7 +20,7 @@ const translations = {
       submit: "Send my info",
       thankYouH1: "Got it — thank you.",
       thankYouP: "I'll reach out shortly to set up a time to talk.",
-      thankYouBack: "← Back to Miami Home Guide",
+      thankYouBack: "← Back to Home",
     },
     hero: {
       eyebrow: "Buying in Miami-Dade",
@@ -226,7 +226,7 @@ const translations = {
       eyebrow: "Relocating to Miami",
       h1: "New to Miami? Start here.",
       p: "Before you fall in love with a neighborhood, get the practical picture: schools, flood risk, hurricane exposure, safety, and how walkable it really is.",
-      backLink: "← Back to Miami Home Guide",
+      backLink: "← Back to Home",
       backToHub: "← Back to New to Miami",
     },
     schoolsSection: {
@@ -348,7 +348,7 @@ const translations = {
       submit: "Enviar mi información",
       thankYouH1: "Recibido — gracias.",
       thankYouP: "Me pondré en contacto en breve para coordinar un horario para hablar.",
-      thankYouBack: "← Volver a Miami Home Guide",
+      thankYouBack: "← Volver al Inicio",
     },
     hero: {
       eyebrow: "Comprando en Miami-Dade",
@@ -554,7 +554,7 @@ const translations = {
       eyebrow: "Mudándose a Miami",
       h1: "¿Nuevo en Miami? Empiece aquí.",
       p: "Antes de enamorarse de un vecindario, obtenga el panorama práctico: escuelas, riesgo de inundación, exposición a huracanes, seguridad y qué tan transitable es realmente.",
-      backLink: "← Volver a Miami Home Guide",
+      backLink: "← Volver al Inicio",
       backToHub: "← Volver a Nuevo en Miami",
     },
     schoolsSection: {

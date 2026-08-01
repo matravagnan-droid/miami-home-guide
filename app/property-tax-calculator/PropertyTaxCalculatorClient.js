@@ -2,6 +2,7 @@
 
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
+import BackLink from "../components/BackLink";
 import PropertyTaxCalculator from "../components/PropertyTaxCalculator";
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -18,7 +19,9 @@ export default function PropertyTaxCalculatorClient() {
         <p>{t.propertyTaxSection.p}</p>
       </section>
 
-      <section className="section">
+      <BackLink href="/">{t.moving.backLink}</BackLink>
+
+      <section className="section" style={{ paddingTop: 32 }}>
         <PropertyTaxCalculator />
       </section>
 
