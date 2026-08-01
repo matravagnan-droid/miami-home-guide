@@ -12,8 +12,6 @@ const translations = {
       eyebrow: "Buying in Miami-Dade",
       h1: "Know the block before you make the offer.",
       p: "Real neighborhood guides for Miami-Dade and Broward County, mortgage and property tax calculators, and an instant home value estimate — built by a local licensed Miami real estate agent, not a national franchise.",
-      btnPrimary: "Get my home value",
-      btnGhost: "Read the blog",
     },
     tools: {
       h2: "Your Miami Home Guide",
@@ -297,8 +295,6 @@ const translations = {
       eyebrow: "Comprando en Miami-Dade",
       h1: "Conozca la cuadra antes de hacer la oferta.",
       p: "Guías reales de vecindarios en Miami-Dade y el condado de Broward, calculadoras de hipoteca e impuestos sobre la propiedad, y una estimación instantánea del valor de su casa — creado por un agente de bienes raíces local con licencia en Miami, no una franquicia nacional.",
-      btnPrimary: "Ver el valor de mi casa",
-      btnGhost: "Leer el blog",
     },
     tools: {
       h2: "Su Miami Home Guide",

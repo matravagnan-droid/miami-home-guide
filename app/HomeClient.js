@@ -36,11 +36,6 @@ export default function HomeClient({ articles }) {
         <div className="eyebrow">{t.hero.eyebrow}</div>
         <h1>{t.hero.h1}</h1>
         <p>{t.hero.p}</p>
-        <div className="btn-row">
-          <a className="btn btn-ghost" href="#blog">
-            {t.hero.btnGhost}
-          </a>
-        </div>
       </section>
 
       <section className="section" id="tools" style={{ paddingTop: 48 }}>
