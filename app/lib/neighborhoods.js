@@ -185,6 +185,20 @@ const neighborhoods = [
       condo: { value: 300000, note: { en: "A mix of older beachfront buildings and newer towers near Gulfstream Park.", es: "Una mezcla de edificios más antiguos frente a la playa y torres más nuevas cerca de Gulfstream Park." } },
     },
   },
+  {
+    slug: "kendall-pinecrest",
+    name: "Kendall / Pinecrest",
+    image: "/images/kendall-pinecrest.jpg",
+    tagline: { en: "Suburban, tree-lined, top schools", es: "Suburbano, arbolado, mejores escuelas" },
+    history: {
+      en: "Kendall, named for a 19th-century land manager for the Florida East Coast Railway, grew after WWII into a sprawling unincorporated suburb of shopping strips and family subdivisions. Pinecrest broke off to incorporate as its own village in 1996 specifically to preserve its oak-canopied streets and large lots, and is now home to some of Miami-Dade's top-rated public schools.",
+      es: "Kendall, nombrado en honor a un administrador de tierras del siglo XIX del Florida East Coast Railway, creció después de la Segunda Guerra Mundial hasta convertirse en un extenso suburbio no incorporado de centros comerciales y urbanizaciones familiares. Pinecrest se separó para incorporarse como su propio pueblo en 1996 específicamente para preservar sus calles con dosel de robles y sus grandes lotes, y ahora alberga algunas de las escuelas públicas mejor calificadas de Miami-Dade.",
+    },
+    pricing: {
+      singleFamily: { value: 500000, note: { en: "Kendall runs closer to this citywide figure; incorporated Pinecrest next door is far pricier, often averaging $2.5M+.", es: "Kendall se acerca más a esta cifra general; el vecino Pinecrest, incorporado, es mucho más caro, con un promedio de $2.5M o más." } },
+      condo: { value: 320000, note: { en: "Condo and townhome stock is concentrated in Kendall — Pinecrest has almost none and strongly favors single-family zoning.", es: "El inventario de condominios y casas adosadas se concentra en Kendall — Pinecrest tiene casi ninguno y favorece fuertemente la zonificación unifamiliar." } },
+    },
+  },
 ];
 
 export function getAllNeighborhoods() {
