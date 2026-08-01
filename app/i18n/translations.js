@@ -16,7 +16,7 @@ const translations = {
       btnGhost: "Read the blog",
     },
     tools: {
-      h2: "Real numbers, before you talk to anyone",
+      h2: "Your Miami Home Guide",
       p: "Answer a few questions and get a real number back — no obligation, no call required.",
       valueTag: "Free estimate",
       valueTitle: "What's my home worth?",
@@ -301,7 +301,7 @@ const translations = {
       btnGhost: "Leer el blog",
     },
     tools: {
-      h2: "Números reales, antes de hablar con nadie",
+      h2: "Su Miami Home Guide",
       p: "Responda algunas preguntas y obtenga un número real — sin compromiso, sin necesidad de llamada.",
       valueTag: "Estimación gratis",
       valueTitle: "¿Cuánto vale mi casa?",
