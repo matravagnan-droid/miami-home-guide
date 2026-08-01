@@ -1,10 +1,6 @@
 "use client";
 
 import SiteNav from "../components/SiteNav";
-import SchoolsMap from "../components/maps/SchoolsMap";
-import FloodMap from "../components/maps/FloodMap";
-import HurricaneMap from "../components/maps/HurricaneMap";
-import ResourceLinks from "../components/ResourceLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function MovingToMiami() {
@@ -21,57 +17,39 @@ export default function MovingToMiami() {
         <p>{t.moving.p}</p>
       </section>
 
-      <section className="section" id="schools">
-        <div className="section-head">
-          <h2>{t.schoolsSection.h2}</h2>
-          <p>{t.schoolsSection.p}</p>
+      <section className="section">
+        <div className="tools-grid">
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.schoolsTag}</span>
+            <h3>{t.movingTeaser.schoolsTitle}</h3>
+            <p>{t.movingTeaser.schoolsBody}</p>
+            <a className="link" href="/moving-to-miami/schools">{t.movingTeaser.schoolsLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.floodTag}</span>
+            <h3>{t.movingTeaser.floodTitle}</h3>
+            <p>{t.movingTeaser.floodBody}</p>
+            <a className="link" href="/moving-to-miami/flood">{t.movingTeaser.floodLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.hurricaneTag}</span>
+            <h3>{t.movingTeaser.hurricaneTitle}</h3>
+            <p>{t.movingTeaser.hurricaneBody}</p>
+            <a className="link" href="/moving-to-miami/hurricane">{t.movingTeaser.hurricaneLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.crimeTag}</span>
+            <h3>{t.movingTeaser.crimeTitle}</h3>
+            <p>{t.movingTeaser.crimeBody}</p>
+            <a className="link" href="/moving-to-miami/crime">{t.movingTeaser.crimeLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.walkTag}</span>
+            <h3>{t.movingTeaser.walkTitle}</h3>
+            <p>{t.movingTeaser.walkBody}</p>
+            <a className="link" href="/moving-to-miami/walkability">{t.movingTeaser.walkLink}</a>
+          </div>
         </div>
-        <SchoolsMap />
-      </section>
-
-      <section className="section" id="flood" style={{ paddingTop: 0 }}>
-        <div className="section-head">
-          <h2>{t.floodSection.h2}</h2>
-          <p>{t.floodSection.p}</p>
-        </div>
-        <FloodMap />
-      </section>
-
-      <section className="section" id="hurricane" style={{ paddingTop: 0 }}>
-        <div className="section-head">
-          <h2>{t.hurricaneSection.h2}</h2>
-          <p>{t.hurricaneSection.p}</p>
-        </div>
-        <HurricaneMap />
-      </section>
-
-      <section className="section" id="crime" style={{ paddingTop: 0 }}>
-        <div className="section-head">
-          <h2>{t.crimeSection.h2}</h2>
-          <p>{t.crimeSection.p}</p>
-        </div>
-        <ResourceLinks
-          intro={t.crime.intro}
-          note={t.crime.note}
-          links={[
-            { href: "https://www.miamidade.gov/global/service.page?Mduid_service=ser1510669357918648", label: t.crime.linkMD },
-            { href: "https://www.sheriff.org/community/", label: t.crime.linkBR },
-          ]}
-        />
-      </section>
-
-      <section className="section" id="walkability" style={{ paddingTop: 0 }}>
-        <div className="section-head">
-          <h2>{t.walkSection.h2}</h2>
-          <p>{t.walkSection.p}</p>
-        </div>
-        <ResourceLinks
-          intro={t.walk.intro}
-          note={t.walk.note}
-          links={[
-            { href: "https://www.walkscore.com/", label: t.walk.linkLabel },
-          ]}
-        />
       </section>
 
       <footer>

@@ -150,6 +150,7 @@ const translations = {
       h1: "New to Miami? Start here.",
       p: "Before you fall in love with a neighborhood, get the practical picture: schools, flood risk, hurricane exposure, safety, and how walkable it really is.",
       backLink: "← Back to Miami Home Guide",
+      backToHub: "← Back to New to Miami",
     },
     schoolsSection: {
       h2: "Schools",
@@ -389,6 +390,7 @@ const translations = {
       h1: "¿Nuevo en Miami? Empiece aquí.",
       p: "Antes de enamorarse de un vecindario, obtenga el panorama práctico: escuelas, riesgo de inundación, exposición a huracanes, seguridad y qué tan transitable es realmente.",
       backLink: "← Volver a Miami Home Guide",
+      backToHub: "← Volver a Nuevo en Miami",
     },
     schoolsSection: {
       h2: "Escuelas",

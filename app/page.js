@@ -1,7 +1,5 @@
 "use client";
 
-import MortgageCalculator from "./components/MortgageCalculator";
-import PropertyTaxCalculator from "./components/PropertyTaxCalculator";
 import SiteNav from "./components/SiteNav";
 import { useLanguage } from "./i18n/LanguageContext";
 
@@ -44,7 +42,7 @@ export default function Home() {
             <span className="tool-tag">{t.tools.taxTag}</span>
             <h3>{t.tools.taxTitle}</h3>
             <p>{t.tools.taxBody}</p>
-            <a className="link" href="#property-tax-calculator">{t.tools.taxLink}</a>
+            <a className="link" href="/property-tax-calculator">{t.tools.taxLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.tools.mlsTag}</span>
@@ -56,25 +54,9 @@ export default function Home() {
             <span className="tool-tag">{t.tools.mortgageTag}</span>
             <h3>{t.tools.mortgageTitle}</h3>
             <p>{t.tools.mortgageBody}</p>
-            <a className="link" href="#mortgage-calculator">{t.tools.mortgageLink}</a>
+            <a className="link" href="/mortgage-calculator">{t.tools.mortgageLink}</a>
           </div>
         </div>
-      </section>
-
-      <section className="section" id="mortgage-calculator" style={{ paddingTop: 0 }}>
-        <div className="section-head">
-          <h2>{t.mortgageSection.h2}</h2>
-          <p>{t.mortgageSection.p}</p>
-        </div>
-        <MortgageCalculator />
-      </section>
-
-      <section className="section" id="property-tax-calculator" style={{ paddingTop: 0 }}>
-        <div className="section-head">
-          <h2>{t.propertyTaxSection.h2}</h2>
-          <p>{t.propertyTaxSection.p}</p>
-        </div>
-        <PropertyTaxCalculator />
       </section>
 
       <section className="section" id="moving-to-miami" style={{ paddingTop: 0 }}>
@@ -87,31 +69,31 @@ export default function Home() {
             <span className="tool-tag">{t.movingTeaser.schoolsTag}</span>
             <h3>{t.movingTeaser.schoolsTitle}</h3>
             <p>{t.movingTeaser.schoolsBody}</p>
-            <a className="link" href="/moving-to-miami#schools">{t.movingTeaser.schoolsLink}</a>
+            <a className="link" href="/moving-to-miami/schools">{t.movingTeaser.schoolsLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.movingTeaser.floodTag}</span>
             <h3>{t.movingTeaser.floodTitle}</h3>
             <p>{t.movingTeaser.floodBody}</p>
-            <a className="link" href="/moving-to-miami#flood">{t.movingTeaser.floodLink}</a>
+            <a className="link" href="/moving-to-miami/flood">{t.movingTeaser.floodLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.movingTeaser.hurricaneTag}</span>
             <h3>{t.movingTeaser.hurricaneTitle}</h3>
             <p>{t.movingTeaser.hurricaneBody}</p>
-            <a className="link" href="/moving-to-miami#hurricane">{t.movingTeaser.hurricaneLink}</a>
+            <a className="link" href="/moving-to-miami/hurricane">{t.movingTeaser.hurricaneLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.movingTeaser.crimeTag}</span>
             <h3>{t.movingTeaser.crimeTitle}</h3>
             <p>{t.movingTeaser.crimeBody}</p>
-            <a className="link" href="/moving-to-miami#crime">{t.movingTeaser.crimeLink}</a>
+            <a className="link" href="/moving-to-miami/crime">{t.movingTeaser.crimeLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.movingTeaser.walkTag}</span>
             <h3>{t.movingTeaser.walkTitle}</h3>
             <p>{t.movingTeaser.walkBody}</p>
-            <a className="link" href="/moving-to-miami#walkability">{t.movingTeaser.walkLink}</a>
+            <a className="link" href="/moving-to-miami/walkability">{t.movingTeaser.walkLink}</a>
           </div>
         </div>
       </section>
