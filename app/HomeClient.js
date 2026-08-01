@@ -48,7 +48,7 @@ export default function HomeClient({ articles }) {
             <span className="tool-tag">{t.tools.valueTag}</span>
             <h3>{t.tools.valueTitle}</h3>
             <p>{t.tools.valueBody}</p>
-            <a className="link" href="#">{t.tools.valueLink}</a>
+            <a className="link" href="/first-time-buyer-guide">{t.tools.valueLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.tools.taxTag}</span>

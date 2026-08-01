@@ -686,3 +686,53 @@ footer a {
   color: var(--bay);
   letter-spacing: 0.02em;
 }
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 72ch;
+}
+
+.step-item {
+  display: flex;
+  gap: 26px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(16,63,69,0.12);
+}
+
+.step-item:first-child {
+  padding-top: 0;
+}
+
+.step-item:last-child {
+  border-bottom: none;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: var(--bay-deep);
+  color: var(--sunset);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  border-radius: 3px;
+}
+
+.step-content h3 {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.step-content p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4a5a56;
+  margin: 0;
+}

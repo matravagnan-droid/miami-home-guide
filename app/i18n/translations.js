@@ -16,10 +16,10 @@ const translations = {
     tools: {
       h2: "Your Miami Home Guide",
       p: "Answer a few questions and get a real number back — no obligation, no call required.",
-      valueTag: "Free estimate",
-      valueTitle: "What's my home worth?",
-      valueBody: "Enter your address and get an instant value range based on recent sales nearby, backed by live MLS data.",
-      valueLink: "Check my value →",
+      valueTag: "Step by step",
+      valueTitle: "First-time homebuyer guide",
+      valueBody: "Everything from saving for a down payment to getting your keys, laid out in six clear steps.",
+      valueLink: "Read the guide →",
       taxTag: "First-time buyers",
       taxTitle: "Property tax calculator",
       taxBody: "See what you'd actually owe each year in Miami-Dade or Broward property tax, homestead exemption included.",
@@ -32,6 +32,37 @@ const translations = {
       mortgageTitle: "Mortgage calculator",
       mortgageBody: "Estimate your monthly payment with taxes, insurance, and HOA included, tuned for Miami-Dade rates.",
       mortgageLink: "Calculate my payment →",
+    },
+    buyerGuide: {
+      eyebrow: "First-time buyers",
+      h1: "Your first home, step by step",
+      p: "Six stages between deciding to buy and getting your keys — here's what actually happens at each one.",
+      steps: [
+        {
+          title: "Think it through",
+          body: "Work with a licensed agent from your very first questions through closing. Before you tour a single home, get clear on what you actually want and what you can realistically afford.",
+        },
+        {
+          title: "Prepare your finances",
+          body: "Start saving for a down payment — conventional loans often go as low as 3-5% down, and FHA loans allow as little as 3.5%. Work on improving your credit score, and set aside an extra 2-5% of the purchase price for closing costs.",
+        },
+        {
+          title: "Get pre-approved",
+          body: "Gather your documents: the last 2 years of W-2s or 1099s, the last 2 years of tax returns, recent bank statements, proof of assets like a 401(k) or IRA, a list of your debts, and your rental payment history with your landlord's contact info.",
+        },
+        {
+          title: "Find your home",
+          body: "Once you're pre-approved, we'll narrow down homes that fit your budget and needs, tour them together, and when you find the one, submit an offer.",
+        },
+        {
+          title: "Under contract",
+          body: "Your inspection period begins, protecting you if the home has unforeseen damage, open permits, or repairs you didn't expect. If you're financing, your lender will also order an appraisal.",
+        },
+        {
+          title: "Closing day",
+          body: "Sign the paperwork, get your keys, and it's official — you're a homeowner.",
+        },
+      ],
     },
     mortgageSection: {
       h2: "Mortgage calculator",
@@ -299,10 +330,10 @@ const translations = {
     tools: {
       h2: "Su Miami Home Guide",
       p: "Responda algunas preguntas y obtenga un número real — sin compromiso, sin necesidad de llamada.",
-      valueTag: "Estimación gratis",
-      valueTitle: "¿Cuánto vale mi casa?",
-      valueBody: "Ingrese su dirección y obtenga un rango de valor instantáneo basado en ventas recientes cercanas, respaldado por datos en vivo del MLS.",
-      valueLink: "Ver el valor de mi casa →",
+      valueTag: "Paso a paso",
+      valueTitle: "Guía para compradores primerizos",
+      valueBody: "Todo, desde ahorrar para el pago inicial hasta recibir las llaves, explicado en seis pasos claros.",
+      valueLink: "Leer la guía →",
       taxTag: "Compradores primerizos",
       taxTitle: "Calculadora de impuestos sobre la propiedad",
       taxBody: "Vea lo que realmente pagaría cada año en impuestos de Miami-Dade o Broward, con la exención de vivienda familiar incluida.",
@@ -315,6 +346,37 @@ const translations = {
       mortgageTitle: "Calculadora de hipoteca",
       mortgageBody: "Estime su pago mensual con impuestos, seguro y HOA incluidos, ajustado a las tasas de Miami-Dade.",
       mortgageLink: "Calcular mi pago →",
+    },
+    buyerGuide: {
+      eyebrow: "Compradores primerizos",
+      h1: "Su primera casa, paso a paso",
+      p: "Seis etapas entre decidir comprar y recibir las llaves — esto es lo que realmente sucede en cada una.",
+      steps: [
+        {
+          title: "Piénselo bien",
+          body: "Trabaje con un agente con licencia desde sus primeras preguntas hasta el cierre. Antes de visitar una sola casa, tenga claro qué es lo que realmente quiere y qué puede pagar de forma realista.",
+        },
+        {
+          title: "Prepare sus finanzas",
+          body: "Comience a ahorrar para el pago inicial — los préstamos convencionales a menudo permiten tan solo 3-5% de pago inicial, y los préstamos FHA permiten hasta 3.5%. Trabaje en mejorar su puntaje de crédito y aparte un 2-5% adicional del precio de compra para los costos de cierre.",
+        },
+        {
+          title: "Obtenga la preaprobación",
+          body: "Reúna sus documentos: los últimos 2 años de W-2 o 1099, los últimos 2 años de declaraciones de impuestos, estados de cuenta bancarios recientes, comprobante de activos como un 401(k) o IRA, una lista de sus deudas, y su historial de pagos de alquiler con el contacto de su arrendador.",
+        },
+        {
+          title: "Encuentre su casa",
+          body: "Una vez preaprobado, reduciremos las opciones de casas que se ajusten a su presupuesto y necesidades, las visitaremos juntos, y cuando encuentre la indicada, presentaremos una oferta.",
+        },
+        {
+          title: "Bajo contrato",
+          body: "Comienza su período de inspección, que lo protege si la casa tiene daños no detectados, permisos abiertos o reparaciones inesperadas. Si está financiando, su prestamista también solicitará una tasación.",
+        },
+        {
+          title: "Día del cierre",
+          body: "Firme los documentos, reciba sus llaves, y es oficial — es propietario de una vivienda.",
+        },
+      ],
     },
     mortgageSection: {
       h2: "Calculadora de hipoteca",
