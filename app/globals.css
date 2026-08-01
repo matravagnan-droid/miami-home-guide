@@ -110,7 +110,7 @@ a { color: inherit; text-decoration: none; }
 
 .hero {
   position: relative;
-  padding: 8vh 6vw 5vh;
+  padding: 8vh 6vw 2vh;
   background-color: var(--bay-deep);
   background-size: cover, cover;
   background-position: center, center;
