@@ -10,9 +10,9 @@ const translations = {
       bookCall: "Book a Call",
     },
     bookCallPage: {
-      eyebrow: "Let's talk",
+      eyebrow: "Let's Connect",
       h1: "Book a call",
-      p: "Leave your info and I'll reach out to set up a time — no obligation, no pressure.",
+      p: "Leave your info and I'll reach out to set up a time for a call.",
       firstName: "First name",
       lastName: "Last name",
       phone: "Phone number",
@@ -338,9 +338,9 @@ const translations = {
       bookCall: "Agendar Llamada",
     },
     bookCallPage: {
-      eyebrow: "Hablemos",
+      eyebrow: "Conectemos",
       h1: "Agendar una llamada",
-      p: "Déjeme su información y me pondré en contacto para coordinar un horario — sin compromiso, sin presión.",
+      p: "Déjeme su información y me pondré en contacto para coordinar un horario para una llamada.",
       firstName: "Nombre",
       lastName: "Apellido",
       phone: "Número de teléfono",
