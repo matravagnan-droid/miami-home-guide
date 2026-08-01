@@ -2,7 +2,7 @@
 
 import MortgageCalculator from "./components/MortgageCalculator";
 import PropertyTaxCalculator from "./components/PropertyTaxCalculator";
-import LanguageToggle from "./components/LanguageToggle";
+import SiteNav from "./components/SiteNav";
 import { useLanguage } from "./i18n/LanguageContext";
 
 export default function Home() {
@@ -11,19 +11,7 @@ export default function Home() {
   return (
     <>
       <div className="horizon" />
-      <nav className="nav">
-        <div className="nav-logo">Miami Home Guide</div>
-        <div className="nav-right">
-          <div className="nav-links">
-            <a href="#tools">{t.nav.tools}</a>
-            <a href="#mortgage-calculator">{t.nav.mortgageCalculator}</a>
-            <a href="#property-tax-calculator">{t.nav.propertyTaxCalculator}</a>
-            <a href="#neighborhoods">{t.nav.neighborhoods}</a>
-            <a href="#blog">{t.nav.blog}</a>
-          </div>
-          <LanguageToggle />
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(8,46,48,0.88) 0%, rgba(14,71,73,0.78) 55%, var(--sand) 55%), url(/images/hero-skyline.jpg)" }}>
         <div className="hero-fan" />
@@ -87,6 +75,45 @@ export default function Home() {
           <p>{t.propertyTaxSection.p}</p>
         </div>
         <PropertyTaxCalculator />
+      </section>
+
+      <section className="section" id="moving-to-miami" style={{ paddingTop: 0 }}>
+        <div className="section-head">
+          <h2>{t.movingTeaser.h2}</h2>
+          <p>{t.movingTeaser.p}</p>
+        </div>
+        <div className="tools-grid">
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.schoolsTag}</span>
+            <h3>{t.movingTeaser.schoolsTitle}</h3>
+            <p>{t.movingTeaser.schoolsBody}</p>
+            <a className="link" href="/moving-to-miami#schools">{t.movingTeaser.schoolsLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.floodTag}</span>
+            <h3>{t.movingTeaser.floodTitle}</h3>
+            <p>{t.movingTeaser.floodBody}</p>
+            <a className="link" href="/moving-to-miami#flood">{t.movingTeaser.floodLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.hurricaneTag}</span>
+            <h3>{t.movingTeaser.hurricaneTitle}</h3>
+            <p>{t.movingTeaser.hurricaneBody}</p>
+            <a className="link" href="/moving-to-miami#hurricane">{t.movingTeaser.hurricaneLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.crimeTag}</span>
+            <h3>{t.movingTeaser.crimeTitle}</h3>
+            <p>{t.movingTeaser.crimeBody}</p>
+            <a className="link" href="/moving-to-miami#crime">{t.movingTeaser.crimeLink}</a>
+          </div>
+          <div className="tool-card">
+            <span className="tool-tag">{t.movingTeaser.walkTag}</span>
+            <h3>{t.movingTeaser.walkTitle}</h3>
+            <p>{t.movingTeaser.walkBody}</p>
+            <a className="link" href="/moving-to-miami#walkability">{t.movingTeaser.walkLink}</a>
+          </div>
+        </div>
       </section>
 
       <section className="section" id="neighborhoods" style={{ paddingTop: 0 }}>
