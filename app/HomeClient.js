@@ -20,7 +20,7 @@ export default function HomeClient({ articles }) {
       <div className="horizon" />
       <SiteNav />
 
-      <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(8,46,48,0.88) 0%, rgba(14,71,73,0.78) 55%, var(--sand) 55%), url(/images/hero-skyline.jpg)" }}>
+      <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(8,46,48,0.88) 0%, rgba(14,71,73,0.78) 82%, var(--sand) 82%), url(/images/hero-skyline.jpg)" }}>
         <div className="hero-fan" />
         <div className="eyebrow">{t.hero.eyebrow}</div>
         <h1>{t.hero.h1}</h1>
