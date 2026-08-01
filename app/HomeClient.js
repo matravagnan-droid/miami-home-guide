@@ -1,10 +1,19 @@
 "use client";
 
 import SiteNav from "./components/SiteNav";
+import ArticleCard from "./components/ArticleCard";
 import { useLanguage } from "./i18n/LanguageContext";
 
-export default function HomeClient() {
+export default function HomeClient({ articles }) {
   const { t } = useLanguage();
+
+  const categories = [
+    { key: "news", label: t.blog.newsTag, items: articles?.news || [] },
+    { key: "realEstate", label: t.blog.realEstateTag, items: articles?.realEstate || [] },
+    { key: "food", label: t.blog.foodTag, items: articles?.food || [] },
+    { key: "culture", label: t.blog.cultureTag, items: articles?.culture || [] },
+  ];
+  const allArticles = categories.flatMap((c) => c.items.map((item) => ({ ...item, label: c.label })));
 
   return (
     <>
@@ -124,23 +133,15 @@ export default function HomeClient() {
           <h2>{t.blog.h2}</h2>
           <p>{t.blog.p}</p>
         </div>
-        <div className="tools-grid">
-          <div className="tool-card">
-            <span className="tool-tag">{t.blog.guideTag}</span>
-            <h3>{t.blog.guideTitle}</h3>
-            <p>{t.blog.guideBody}</p>
+        {allArticles.length > 0 ? (
+          <div className="articles-grid">
+            {allArticles.map((article) => (
+              <ArticleCard key={article.link} article={article} categoryLabel={article.label} />
+            ))}
           </div>
-          <div className="tool-card">
-            <span className="tool-tag">{t.blog.moneyTag}</span>
-            <h3>{t.blog.moneyTitle}</h3>
-            <p>{t.blog.moneyBody}</p>
-          </div>
-          <div className="tool-card">
-            <span className="tool-tag">{t.blog.processTag}</span>
-            <h3>{t.blog.processTitle}</h3>
-            <p>{t.blog.processBody}</p>
-          </div>
-        </div>
+        ) : (
+          <p className="map-note">{t.blog.emptyState}</p>
+        )}
       </section>
 
       <footer>
