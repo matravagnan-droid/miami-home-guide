@@ -78,16 +78,10 @@ export default function HomeClient({ articles }) {
             <a className="link" href="/moving-to-miami/schools">{t.movingTeaser.schoolsLink}</a>
           </div>
           <div className="tool-card">
-            <span className="tool-tag">{t.movingTeaser.floodTag}</span>
-            <h3>{t.movingTeaser.floodTitle}</h3>
-            <p>{t.movingTeaser.floodBody}</p>
-            <a className="link" href="/moving-to-miami/flood">{t.movingTeaser.floodLink}</a>
-          </div>
-          <div className="tool-card">
-            <span className="tool-tag">{t.movingTeaser.hurricaneTag}</span>
-            <h3>{t.movingTeaser.hurricaneTitle}</h3>
-            <p>{t.movingTeaser.hurricaneBody}</p>
-            <a className="link" href="/moving-to-miami/hurricane">{t.movingTeaser.hurricaneLink}</a>
+            <span className="tool-tag">{t.movingTeaser.riskTag}</span>
+            <h3>{t.movingTeaser.riskTitle}</h3>
+            <p>{t.movingTeaser.riskBody}</p>
+            <a className="link" href="/moving-to-miami/flood-hurricane">{t.movingTeaser.riskLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.movingTeaser.crimeTag}</span>
