@@ -12,8 +12,6 @@ export default function SiteNav() {
       <div className="nav-right">
         <div className="nav-links">
           <a href="/#tools">{t.nav.tools}</a>
-          <a href="/mortgage-calculator">{t.nav.mortgageCalculator}</a>
-          <a href="/property-tax-calculator">{t.nav.propertyTaxCalculator}</a>
           <a href="/moving-to-miami">{t.nav.movingToMiami}</a>
           <a href="/#neighborhoods">{t.nav.neighborhoods}</a>
           <a href="/#blog">{t.nav.blog}</a>
