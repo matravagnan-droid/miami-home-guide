@@ -449,6 +449,28 @@ footer a {
   text-decoration: underline;
 }
 
+.footer-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.eho-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(246,243,236,0.7);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.eho-badge svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
 .hero-compact {
   background-image: linear-gradient(180deg, var(--bay-deep) 0%, var(--bay) 100%);
   padding: 6vh 6vw 6vh;
@@ -457,6 +479,18 @@ footer a {
 .hero-compact h1 {
   font-size: clamp(32px, 4.6vw, 52px);
   max-width: 20ch;
+}
+
+.back-home-btn {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--seafoam);
+  margin-bottom: 24px;
+}
+
+.back-home-btn:hover {
+  color: var(--sunset);
 }
 
 .map-wrap {

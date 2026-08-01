@@ -53,7 +53,7 @@ const translations = {
       p: "Six stages between deciding to buy and getting your keys — here's what actually happens at each one.",
       steps: [
         {
-          title: "Think it through",
+          title: "Find a realtor",
           body: "Work with a licensed agent from your very first questions through closing. Before you tour a single home, get clear on what you actually want and what you can realistically afford.",
         },
         {
@@ -65,7 +65,7 @@ const translations = {
           body: "Gather your documents: the last 2 years of W-2s or 1099s, the last 2 years of tax returns, recent bank statements, proof of assets like a 401(k) or IRA, a list of your debts, and your rental payment history with your landlord's contact info.",
         },
         {
-          title: "Find your home",
+          title: "Tour homes",
           body: "Once you're pre-approved, we'll narrow down homes that fit your budget and needs, tour them together, and when you find the one, submit an offer.",
         },
         {
@@ -381,7 +381,7 @@ const translations = {
       p: "Seis etapas entre decidir comprar y recibir las llaves — esto es lo que realmente sucede en cada una.",
       steps: [
         {
-          title: "Piénselo bien",
+          title: "Encuentre un agente",
           body: "Trabaje con un agente con licencia desde sus primeras preguntas hasta el cierre. Antes de visitar una sola casa, tenga claro qué es lo que realmente quiere y qué puede pagar de forma realista.",
         },
         {
@@ -393,7 +393,7 @@ const translations = {
           body: "Reúna sus documentos: los últimos 2 años de W-2 o 1099, los últimos 2 años de declaraciones de impuestos, estados de cuenta bancarios recientes, comprobante de activos como un 401(k) o IRA, una lista de sus deudas, y su historial de pagos de alquiler con el contacto de su arrendador.",
         },
         {
-          title: "Encuentre su casa",
+          title: "Visite casas",
           body: "Una vez preaprobado, reduciremos las opciones de casas que se ajusten a su presupuesto y necesidades, las visitaremos juntos, y cuando encuentre la indicada, presentaremos una oferta.",
         },
         {

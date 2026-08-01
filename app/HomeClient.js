@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SiteNav from "./components/SiteNav";
+import SiteFooter from "./components/SiteFooter";
 import ArticleCard from "./components/ArticleCard";
 import { useLanguage } from "./i18n/LanguageContext";
 import { getAllNeighborhoods } from "./lib/neighborhoods";
@@ -155,10 +156,9 @@ export default function HomeClient({ articles }) {
         )}
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <span>{t.footer.licensed}</span>
-      </footer>
+      </SiteFooter>
     </>
   );
 }

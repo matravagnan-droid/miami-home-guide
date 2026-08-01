@@ -1,6 +1,7 @@
 "use client";
 
 import SiteNav from "../../components/SiteNav";
+import SiteFooter from "../../components/SiteFooter";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function ThankYouClient() {
@@ -16,10 +17,9 @@ export default function ThankYouClient() {
         <p>{t.bookCallPage.thankYouP}</p>
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <a href="/">{t.bookCallPage.thankYouBack}</a>
-      </footer>
+      </SiteFooter>
     </>
   );
 }

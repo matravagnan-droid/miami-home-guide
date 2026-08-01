@@ -1,6 +1,7 @@
 "use client";
 
 import SiteNav from "../components/SiteNav";
+import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "../i18n/LanguageContext";
 import { STEP_ICONS } from "./StepIcons";
 
@@ -16,6 +17,7 @@ export default function BuyerGuideClient() {
       <SiteNav />
 
       <section className="hero hero-compact">
+        <a href="/" className="back-home-btn">{t.moving.backLink}</a>
         <div className="eyebrow">{t.buyerGuide.eyebrow}</div>
         <h1>{t.buyerGuide.h1}</h1>
         <p>{t.buyerGuide.p}</p>
@@ -60,10 +62,9 @@ export default function BuyerGuideClient() {
         </div>
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <a href="/">{t.moving.backLink}</a>
-      </footer>
+      </SiteFooter>
     </>
   );
 }

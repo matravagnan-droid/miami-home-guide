@@ -1,6 +1,7 @@
 "use client";
 
 import SiteNav from "../../components/SiteNav";
+import SiteFooter from "../../components/SiteFooter";
 import ResourceLinks from "../../components/ResourceLinks";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -28,10 +29,9 @@ export default function CrimePageClient() {
         />
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <a href="/moving-to-miami">{t.moving.backToHub}</a>
-      </footer>
+      </SiteFooter>
     </>
   );
 }

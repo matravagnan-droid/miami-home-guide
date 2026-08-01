@@ -1,6 +1,7 @@
 "use client";
 
 import SiteNav from "../../components/SiteNav";
+import SiteFooter from "../../components/SiteFooter";
 import FloodMap from "../../components/maps/FloodMap";
 import HurricaneMap from "../../components/maps/HurricaneMap";
 import { useLanguage } from "../../i18n/LanguageContext";
@@ -34,10 +35,9 @@ export default function FloodHurricanePageClient() {
         <HurricaneMap />
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <a href="/moving-to-miami">{t.moving.backToHub}</a>
-      </footer>
+      </SiteFooter>
     </>
   );
 }

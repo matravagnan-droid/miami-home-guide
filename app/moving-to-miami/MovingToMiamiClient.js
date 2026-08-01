@@ -1,6 +1,7 @@
 "use client";
 
 import SiteNav from "../components/SiteNav";
+import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function MovingToMiamiClient() {
@@ -46,10 +47,9 @@ export default function MovingToMiamiClient() {
         </div>
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <a href="/">{t.moving.backLink}</a>
-      </footer>
+      </SiteFooter>
     </>
   );
 }

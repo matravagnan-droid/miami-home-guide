@@ -1,6 +1,7 @@
 "use client";
 
 import SiteNav from "../components/SiteNav";
+import SiteFooter from "../components/SiteFooter";
 import PropertyTaxCalculator from "../components/PropertyTaxCalculator";
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -35,10 +36,9 @@ export default function PropertyTaxCalculatorClient() {
         </div>
       </section>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+      <SiteFooter>
         <a href="/">{t.moving.backLink}</a>
-      </footer>
+      </SiteFooter>
     </>
   );
 }
