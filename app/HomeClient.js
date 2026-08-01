@@ -1,19 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import SiteNav from "./components/SiteNav";
 import ArticleCard from "./components/ArticleCard";
 import { useLanguage } from "./i18n/LanguageContext";
 
+const BADGE_KEYS = {
+  realEstate: "badgeRealEstate",
+  news: "badgeNews",
+  sports: "badgeSports",
+  restaurants: "badgeRestaurants",
+  thingsToDo: "badgeThingsToDo",
+};
+
 export default function HomeClient({ articles }) {
   const { t } = useLanguage();
+  const [activeTab, setActiveTab] = useState("realEstate");
 
-  const categories = [
-    { key: "news", label: t.blog.newsTag, items: articles?.news || [] },
-    { key: "realEstate", label: t.blog.realEstateTag, items: articles?.realEstate || [] },
-    { key: "food", label: t.blog.foodTag, items: articles?.food || [] },
-    { key: "culture", label: t.blog.cultureTag, items: articles?.culture || [] },
+  const tabs = [
+    { key: "realEstate", label: t.blog.tabRealEstate, items: articles?.realEstate || [] },
+    { key: "news", label: t.blog.tabNews, items: articles?.news || [] },
+    { key: "sportsFood", label: t.blog.tabSportsFood, items: articles?.sportsFood || [] },
+    { key: "thingsToDo", label: t.blog.tabThingsToDo, items: articles?.thingsToDo || [] },
   ];
-  const allArticles = categories.flatMap((c) => c.items.map((item) => ({ ...item, label: c.label })));
+  const activeItems = tabs.find((tab) => tab.key === activeTab)?.items || [];
 
   return (
     <>
@@ -127,10 +137,26 @@ export default function HomeClient({ articles }) {
           <h2>{t.blog.h2}</h2>
           <p>{t.blog.p}</p>
         </div>
-        {allArticles.length > 0 ? (
+        <div className="blog-tabs">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              className={`blog-tab${tab.key === activeTab ? " active" : ""}`}
+              onClick={() => setActiveTab(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        {activeItems.length > 0 ? (
           <div className="articles-grid">
-            {allArticles.map((article) => (
-              <ArticleCard key={article.link} article={article} categoryLabel={article.label} />
+            {activeItems.map((article) => (
+              <ArticleCard
+                key={article.link}
+                article={article}
+                categoryLabel={t.blog[BADGE_KEYS[article.badge]] || ""}
+              />
             ))}
           </div>
         ) : (

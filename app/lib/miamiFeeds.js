@@ -1,35 +1,54 @@
 import Parser from "rss-parser";
 
-// Refetch these feeds at most this often — keeps the blog section current
-// without hammering the source sites on every page load.
+// Refetch these feeds at most this often — keeps the tabs current without
+// hammering the source sites on every page load.
 const REVALIDATE_SECONDS = 60 * 60 * 24 * 2; // 2 days
 
+const LOCAL10_URL = "https://www.local10.com/arc/outboundfeeds/rss/?outputType=xml";
+
+// Four tabs: Real Estate, Recent News, Sports & Restaurants, Things To Do.
+// Sports & Restaurants pulls from two sources, tagged with their own badge
+// but grouped into one tab.
 const FEEDS = [
   {
-    category: "news",
-    source: "Local 10 News (WPLG)",
-    url: "https://www.local10.com/arc/outboundfeeds/rss/?outputType=xml",
-    count: 2,
-  },
-  {
-    category: "realEstate",
+    tab: "realEstate",
+    badge: "realEstate",
     source: "Miami Today",
     url: "https://www.miamitodaynews.com/feed/",
-    count: 2,
-    // Miami Today covers all local business news — narrow it to real estate.
+    count: 4,
     onlyCategory: "Real Estate",
   },
   {
-    category: "food",
+    tab: "news",
+    badge: "news",
+    source: "Local 10 News (WPLG)",
+    url: LOCAL10_URL,
+    count: 4,
+    // Local10's general feed mixes in AP wire national stories — narrow to
+    // their own South Florida local desk.
+    linkContains: "/news/local/",
+  },
+  {
+    tab: "sportsFood",
+    badge: "sports",
+    source: "Local 10 News (WPLG)",
+    url: LOCAL10_URL,
+    count: 2,
+    linkContains: "/sports/",
+  },
+  {
+    tab: "sportsFood",
+    badge: "restaurants",
     source: "Eater Miami",
     url: "https://miami.eater.com/rss/index.xml",
     count: 2,
   },
   {
-    category: "culture",
+    tab: "thingsToDo",
+    badge: "thingsToDo",
     source: "Miami New Times",
-    url: "https://www.miaminewtimes.com/news/rss",
-    count: 2,
+    url: "https://www.miaminewtimes.com/things-to-do/rss",
+    count: 4,
   },
 ];
 
@@ -67,6 +86,7 @@ async function fetchFeed(config) {
     const feed = await parser.parseString(xml);
 
     let items = feed.items || [];
+
     if (config.onlyCategory) {
       const filtered = items.filter((item) =>
         (item.categories || []).some(
@@ -76,15 +96,18 @@ async function fetchFeed(config) {
       if (filtered.length > 0) items = filtered;
     }
 
+    if (config.linkContains) {
+      items = items.filter((item) => item.link?.includes(config.linkContains));
+    }
+
     return items.slice(0, config.count).map((item) => ({
       title: item.title,
       link: item.link,
       source: config.source,
-      author: item.creator || item.author?.name || null,
+      badge: config.badge,
       pubDate: item.isoDate || item.pubDate || null,
       excerpt: truncate(item.contentSnippet, 160),
       image: extractImage(item),
-      category: config.category,
     }));
   } catch (err) {
     return [];
@@ -93,10 +116,11 @@ async function fetchFeed(config) {
 
 export async function getMiamiArticles() {
   const results = await Promise.all(FEEDS.map(fetchFeed));
-  return {
-    news: results[0],
-    realEstate: results[1],
-    food: results[2],
-    culture: results[3],
-  };
+  const byTab = { realEstate: [], news: [], sportsFood: [], thingsToDo: [] };
+
+  FEEDS.forEach((config, i) => {
+    byTab[config.tab].push(...results[i]);
+  });
+
+  return byTab;
 }
