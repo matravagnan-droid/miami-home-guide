@@ -79,6 +79,21 @@ const neighborhoods = [
     },
   },
   {
+    slug: "midtown-edgewater",
+    name: "Midtown / Edgewater",
+    image: "/images/midtown-edgewater.jpg",
+    tagline: { en: "Trendy, waterfront high-rises, walkable", es: "De moda, rascacielos junto al agua, transitable a pie" },
+    history: {
+      en: "Midtown was built in the 2000s on a former FEC railway yard as a master-planned, walkable district of shops and condos, while neighboring Edgewater — an older Biscayne Bay-front area — has filled in rapidly with new high-rise towers, becoming one of Miami's fastest-growing condo corridors.",
+      es: "Midtown se construyó en la década de 2000 sobre un antiguo patio ferroviario de FEC como un distrito planificado y transitable a pie de tiendas y condominios, mientras que la vecina Edgewater — un área más antigua frente a la Bahía de Biscayne — se ha llenado rápidamente de nuevas torres de gran altura, convirtiéndose en uno de los corredores de condominios de más rápido crecimiento de Miami.",
+    },
+    pricing: {
+      singleFamily: { value: null, note: { en: "Almost no single-family stock — this is a dense, high-rise corridor.", es: "Casi no hay propiedades unifamiliares — este es un corredor denso de gran altura." } },
+      condo: { value: 715000, note: { en: "Newer waterfront towers in Edgewater command a premium over Midtown's older stock.", es: "Las torres más nuevas frente al agua en Edgewater tienen un precio superior al inventario más antiguo de Midtown." } },
+      multifamily: { note: { en: "Essentially no small multifamily stock left — nearly all redeveloped into condo towers.", es: "Prácticamente no quedan propiedades multifamiliares pequeñas — casi todas reurbanizadas en torres de condominios." } },
+    },
+  },
+  {
     slug: "miami-beach",
     name: "Miami Beach",
     image: "/images/miami-beach.jpg",
@@ -91,6 +106,21 @@ const neighborhoods = [
       singleFamily: { value: 630000, note: { en: "Wide range — from small bungalows to waterfront mansions on the barrier island.", es: "Amplio rango — desde pequeños bungalós hasta mansiones frente al mar en la isla barrera." } },
       condo: { value: 539000, note: { en: "Includes everything from vintage Art Deco walk-ups to new luxury towers.", es: "Incluye desde edificios Art Deco vintage sin ascensor hasta nuevas torres de lujo." } },
       multifamily: { note: { en: "Small Art Deco-era apartment buildings are common and popular with investors, subject to historic preservation rules.", es: "Los edificios de apartamentos de la era Art Deco son comunes y populares entre inversionistas, sujetos a reglas de preservación histórica." } },
+    },
+  },
+  {
+    slug: "downtown",
+    name: "Downtown Miami",
+    image: "/images/downtown.jpg",
+    tagline: { en: "Urban core, business, transit hub", es: "Núcleo urbano, negocios, centro de transporte" },
+    history: {
+      en: "The site of Miami's original 1896 incorporation around the Miami River and Flagler Street, Downtown spent decades as a daytime-only business district before a 2000s condo boom filled it with residential towers, turning it into a genuine 24-hour urban core connected by Metromover and Metrorail.",
+      es: "El sitio de la incorporación original de Miami en 1896 alrededor del río Miami y Flagler Street, el Downtown pasó décadas como distrito de negocios solo diurno antes de que un auge de condominios en la década de 2000 lo llenara de torres residenciales, convirtiéndolo en un verdadero núcleo urbano de 24 horas conectado por Metromover y Metrorail.",
+    },
+    pricing: {
+      singleFamily: { value: null, note: { en: "No meaningful single-family market — Downtown is entirely high-rise.", es: "No hay un mercado unifamiliar significativo — el Downtown es completamente de rascacielos." } },
+      condo: { value: 650000, note: { en: "Ranges from older 2000s-boom towers to brand-new luxury developments.", es: "Va desde torres más antiguas del auge de los 2000 hasta desarrollos de lujo completamente nuevos." } },
+      multifamily: { note: { en: "No small multifamily stock — investment activity is entirely condo units.", es: "No hay propiedades multifamiliares pequeñas — la actividad de inversión es completamente en unidades de condominio." } },
     },
   },
   {
@@ -166,36 +196,6 @@ const neighborhoods = [
       singleFamily: { value: 383000, note: { en: "Notably more affordable than Sunny Isles Beach or Aventura just to the south.", es: "Notablemente más asequible que Sunny Isles Beach o Aventura, justo al sur." } },
       condo: { value: 300000, note: { en: "A mix of older beachfront buildings and newer towers near Gulfstream Park.", es: "Una mezcla de edificios más antiguos frente a la playa y torres más nuevas cerca de Gulfstream Park." } },
       multifamily: { note: { en: "Some small multifamily near the older town core, popular with investors for its relative affordability.", es: "Algunas propiedades multifamiliares pequeñas cerca del centro más antiguo del pueblo, populares entre inversionistas por su relativa asequibilidad." } },
-    },
-  },
-  {
-    slug: "downtown",
-    name: "Downtown Miami",
-    image: "/images/downtown.jpg",
-    tagline: { en: "Urban core, business, transit hub", es: "Núcleo urbano, negocios, centro de transporte" },
-    history: {
-      en: "The site of Miami's original 1896 incorporation around the Miami River and Flagler Street, Downtown spent decades as a daytime-only business district before a 2000s condo boom filled it with residential towers, turning it into a genuine 24-hour urban core connected by Metromover and Metrorail.",
-      es: "El sitio de la incorporación original de Miami en 1896 alrededor del río Miami y Flagler Street, el Downtown pasó décadas como distrito de negocios solo diurno antes de que un auge de condominios en la década de 2000 lo llenara de torres residenciales, convirtiéndolo en un verdadero núcleo urbano de 24 horas conectado por Metromover y Metrorail.",
-    },
-    pricing: {
-      singleFamily: { value: null, note: { en: "No meaningful single-family market — Downtown is entirely high-rise.", es: "No hay un mercado unifamiliar significativo — el Downtown es completamente de rascacielos." } },
-      condo: { value: 650000, note: { en: "Ranges from older 2000s-boom towers to brand-new luxury developments.", es: "Va desde torres más antiguas del auge de los 2000 hasta desarrollos de lujo completamente nuevos." } },
-      multifamily: { note: { en: "No small multifamily stock — investment activity is entirely condo units.", es: "No hay propiedades multifamiliares pequeñas — la actividad de inversión es completamente en unidades de condominio." } },
-    },
-  },
-  {
-    slug: "midtown-edgewater",
-    name: "Midtown / Edgewater",
-    image: "/images/midtown-edgewater.jpg",
-    tagline: { en: "Trendy, waterfront high-rises, walkable", es: "De moda, rascacielos junto al agua, transitable a pie" },
-    history: {
-      en: "Midtown was built in the 2000s on a former FEC railway yard as a master-planned, walkable district of shops and condos, while neighboring Edgewater — an older Biscayne Bay-front area — has filled in rapidly with new high-rise towers, becoming one of Miami's fastest-growing condo corridors.",
-      es: "Midtown se construyó en la década de 2000 sobre un antiguo patio ferroviario de FEC como un distrito planificado y transitable a pie de tiendas y condominios, mientras que la vecina Edgewater — un área más antigua frente a la Bahía de Biscayne — se ha llenado rápidamente de nuevas torres de gran altura, convirtiéndose en uno de los corredores de condominios de más rápido crecimiento de Miami.",
-    },
-    pricing: {
-      singleFamily: { value: null, note: { en: "Almost no single-family stock — this is a dense, high-rise corridor.", es: "Casi no hay propiedades unifamiliares — este es un corredor denso de gran altura." } },
-      condo: { value: 715000, note: { en: "Newer waterfront towers in Edgewater command a premium over Midtown's older stock.", es: "Las torres más nuevas frente al agua en Edgewater tienen un precio superior al inventario más antiguo de Midtown." } },
-      multifamily: { note: { en: "Essentially no small multifamily stock left — nearly all redeveloped into condo towers.", es: "Prácticamente no quedan propiedades multifamiliares pequeñas — casi todas reurbanizadas en torres de condominios." } },
     },
   },
 ];
