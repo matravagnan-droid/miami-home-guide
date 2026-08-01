@@ -15,7 +15,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "Almost no single-family stock — Brickell is nearly all high-rise.", es: "Casi no hay viviendas unifamiliares — Brickell es casi todo rascacielos." } },
       condo: { value: 790000, note: { en: "Entry-level 1BR units run roughly $300K–$500K.", es: "Las unidades de 1 habitación de nivel inicial rondan los $300,000–$500,000." } },
-      multifamily: { note: { en: "Virtually no small multifamily stock; investment activity here is almost entirely condo units bought for rental.", es: "Prácticamente no hay propiedades multifamiliares pequeñas; la inversión aquí es casi toda en condominios comprados para alquiler." } },
     },
   },
   {
@@ -30,7 +29,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 2400000, note: { en: "Among the highest in Miami-Dade, driven by historic estates and strict zoning.", es: "Entre los más altos de Miami-Dade, impulsado por propiedades históricas y zonificación estricta." } },
       condo: { value: 650000, note: { en: "Fewer condo towers than Brickell — most stock is mid-rise.", es: "Menos torres de condominios que Brickell — la mayoría son edificios de baja altura." } },
-      multifamily: { note: { en: "Small multifamily is rare and expensive here; zoning strongly favors single-family.", es: "Las propiedades multifamiliares pequeñas son raras y costosas aquí; la zonificación favorece fuertemente lo unifamiliar." } },
     },
   },
   {
@@ -45,7 +43,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "Very limited single-family inventory — the area is dominated by lofts and new towers.", es: "Inventario unifamiliar muy limitado — el área está dominada por lofts y torres nuevas." } },
       condo: { value: 550000, note: { en: "Loft and condo prices vary widely by building age and finish level.", es: "Los precios de lofts y condominios varían mucho según la antigüedad del edificio y el nivel de acabado." } },
-      multifamily: { note: { en: "Older 2-4 unit buildings still exist near the edges and draw strong investor interest given redevelopment potential.", es: "Todavía existen edificios más antiguos de 2 a 4 unidades cerca de los bordes y atraen fuerte interés de inversionistas por su potencial de reurbanización." } },
     },
   },
   {
@@ -60,7 +57,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 2700000, note: { en: "Among the priciest in the county, especially near the bay.", es: "Entre los más caros del condado, especialmente cerca de la bahía." } },
       condo: { value: 700000, note: { en: "Concentrated in a handful of bayfront and village-center buildings.", es: "Concentrado en un puñado de edificios frente a la bahía y en el centro del pueblo." } },
-      multifamily: { note: { en: "Some small multifamily remains in West Grove, though development pressure is pushing prices up quickly.", es: "Quedan algunas propiedades multifamiliares pequeñas en West Grove, aunque la presión del desarrollo está subiendo los precios rápidamente." } },
     },
   },
   {
@@ -75,7 +71,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 1000000, note: { en: "Mostly newer-construction homes in gated communities.", es: "Principalmente casas de construcción reciente en comunidades cerradas." } },
       condo: { value: 476000, note: { en: "Large, relatively young condo inventory compared to the rest of the county.", es: "Inventario de condominios grande y relativamente joven comparado con el resto del condado." } },
-      multifamily: { note: { en: "Limited — Doral was built out mostly as single-family and condo, not duplex/triplex stock.", es: "Limitado — Doral se construyó principalmente como unifamiliar y condominios, no como dúplex/tríplex." } },
     },
   },
   {
@@ -90,7 +85,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "Almost no single-family stock — this is a dense, high-rise corridor.", es: "Casi no hay propiedades unifamiliares — este es un corredor denso de gran altura." } },
       condo: { value: 715000, note: { en: "Newer waterfront towers in Edgewater command a premium over Midtown's older stock.", es: "Las torres más nuevas frente al agua en Edgewater tienen un precio superior al inventario más antiguo de Midtown." } },
-      multifamily: { note: { en: "Essentially no small multifamily stock left — nearly all redeveloped into condo towers.", es: "Prácticamente no quedan propiedades multifamiliares pequeñas — casi todas reurbanizadas en torres de condominios." } },
     },
   },
   {
@@ -105,7 +99,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 630000, note: { en: "Wide range — from small bungalows to waterfront mansions on the barrier island.", es: "Amplio rango — desde pequeños bungalós hasta mansiones frente al mar en la isla barrera." } },
       condo: { value: 539000, note: { en: "Includes everything from vintage Art Deco walk-ups to new luxury towers.", es: "Incluye desde edificios Art Deco vintage sin ascensor hasta nuevas torres de lujo." } },
-      multifamily: { note: { en: "Small Art Deco-era apartment buildings are common and popular with investors, subject to historic preservation rules.", es: "Los edificios de apartamentos de la era Art Deco son comunes y populares entre inversionistas, sujetos a reglas de preservación histórica." } },
     },
   },
   {
@@ -120,7 +113,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "No meaningful single-family market — Downtown is entirely high-rise.", es: "No hay un mercado unifamiliar significativo — el Downtown es completamente de rascacielos." } },
       condo: { value: 650000, note: { en: "Ranges from older 2000s-boom towers to brand-new luxury developments.", es: "Va desde torres más antiguas del auge de los 2000 hasta desarrollos de lujo completamente nuevos." } },
-      multifamily: { note: { en: "No small multifamily stock — investment activity is entirely condo units.", es: "No hay propiedades multifamiliares pequeñas — la actividad de inversión es completamente en unidades de condominio." } },
     },
   },
   {
@@ -135,7 +127,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 450000, note: { en: "One of the more affordable single-family markets in Miami-Dade.", es: "Uno de los mercados unifamiliares más asequibles de Miami-Dade." } },
       condo: { value: 350000, note: { en: "Mostly older, smaller buildings compared to coastal neighborhoods.", es: "Principalmente edificios más antiguos y pequeños comparados con los vecindarios costeros." } },
-      multifamily: { note: { en: "Duplexes and small apartment buildings are common and popular with investors for their cash flow.", es: "Los dúplex y edificios pequeños de apartamentos son comunes y populares entre inversionistas por su flujo de caja." } },
     },
   },
   {
@@ -150,7 +141,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 400000, note: { en: "One of the more affordable single-family markets in the county.", es: "Uno de los mercados unifamiliares más asequibles del condado." } },
       condo: { value: 300000, note: { en: "Smaller condo/townhome market than coastal areas.", es: "Mercado de condominios/casas adosadas más pequeño que en las áreas costeras." } },
-      multifamily: { note: { en: "Popular with investors for duplexes and small rental buildings given relatively low entry prices.", es: "Popular entre inversionistas para dúplex y edificios pequeños de alquiler dado el precio de entrada relativamente bajo." } },
     },
   },
   {
@@ -165,7 +155,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "Almost no single-family homes — this is a barrier-island condo market.", es: "Casi no hay casas unifamiliares — este es un mercado de condominios en isla barrera." } },
       condo: { value: 749000, note: { en: "Luxury oceanfront towers push the median well above nearby areas; some units trade above $1.3M.", es: "Las torres de lujo frente al mar elevan la mediana muy por encima de las áreas cercanas; algunas unidades se venden por encima de $1.3M." } },
-      multifamily: { note: { en: "Essentially no small multifamily stock — the market is entirely high-rise condo.", es: "Prácticamente no hay propiedades multifamiliares pequeñas — el mercado es completamente de condominios de gran altura." } },
     },
   },
   {
@@ -180,7 +169,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 480000, note: { en: "A small slice of the market — Aventura is overwhelmingly condo towers.", es: "Una pequeña parte del mercado — Aventura es abrumadoramente de torres de condominios." } },
       condo: { value: 550000, note: { en: "Wide range from older towers to new luxury high-rises near the mall.", es: "Amplio rango desde torres antiguas hasta nuevos rascacielos de lujo cerca del centro comercial." } },
-      multifamily: { note: { en: "Essentially no small multifamily stock — nearly all residential inventory is condo.", es: "Prácticamente no hay propiedades multifamiliares pequeñas — casi todo el inventario residencial es de condominios." } },
     },
   },
   {
@@ -195,7 +183,6 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 383000, note: { en: "Notably more affordable than Sunny Isles Beach or Aventura just to the south.", es: "Notablemente más asequible que Sunny Isles Beach o Aventura, justo al sur." } },
       condo: { value: 300000, note: { en: "A mix of older beachfront buildings and newer towers near Gulfstream Park.", es: "Una mezcla de edificios más antiguos frente a la playa y torres más nuevas cerca de Gulfstream Park." } },
-      multifamily: { note: { en: "Some small multifamily near the older town core, popular with investors for its relative affordability.", es: "Algunas propiedades multifamiliares pequeñas cerca del centro más antiguo del pueblo, populares entre inversionistas por su relativa asequibilidad." } },
     },
   },
 ];

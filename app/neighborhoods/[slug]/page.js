@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
 
   return {
     title: `${neighborhood.name} Miami Real Estate Guide | History, Photos & Prices`,
-    description: `${neighborhood.tagline.en} — history, photos, and single-family, condo, and multifamily pricing for ${neighborhood.name}, Miami-Dade.`,
+    description: `${neighborhood.tagline.en} — history, photos, and single-family and condo pricing for ${neighborhood.name}, Miami-Dade.`,
   };
 }
 

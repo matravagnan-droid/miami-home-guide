@@ -63,7 +63,6 @@ export default function NeighborhoodPageClient({ neighborhood }) {
         <div className="tools-grid">
           {priceCard("singleFamilyLabel", neighborhood.pricing.singleFamily)}
           {priceCard("condoLabel", neighborhood.pricing.condo)}
-          {priceCard("multifamilyLabel", { value: null, note: neighborhood.pricing.multifamily.note })}
         </div>
         <p className="map-note">{t.neighborhoodPage.disclaimer}</p>
       </section>
