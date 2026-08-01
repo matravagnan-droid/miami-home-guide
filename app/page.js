@@ -17,9 +17,6 @@ export default function Home() {
         <h1>{t.hero.h1}</h1>
         <p>{t.hero.p}</p>
         <div className="btn-row">
-          <a className="btn btn-primary" href="#tools">
-            {t.hero.btnPrimary}
-          </a>
           <a className="btn btn-ghost" href="#blog">
             {t.hero.btnGhost}
           </a>
