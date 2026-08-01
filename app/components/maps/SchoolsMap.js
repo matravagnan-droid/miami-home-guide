@@ -25,7 +25,7 @@ const SCHOOLS = [
   { name: "Pine Crest School", type: "private", lat: 26.1584, lng: -80.1256 },
 ];
 
-const COLORS = { magnet: "#e8703a", zoned: "#0e4749", private: "#4a90a4" };
+const COLORS = { magnet: "#a9762f", zoned: "#103f45", private: "#4a90a4" };
 
 export default function SchoolsMap() {
   const containerRef = useRef(null);
@@ -48,7 +48,7 @@ export default function SchoolsMap() {
       SCHOOLS.forEach((school) => {
         const marker = L.circleMarker([school.lat, school.lng], {
           radius: 8,
-          color: "#082e30",
+          color: "#071f24",
           weight: 1.5,
           fillColor: COLORS[school.type] || COLORS.zoned,
           fillOpacity: 0.9,

@@ -31,7 +31,7 @@ export default function HomeClient({ articles }) {
       <div className="horizon" />
       <SiteNav />
 
-      <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(8,46,48,0.88) 0%, rgba(14,71,73,0.78) 82%, var(--sand) 82%), url(/images/hero-skyline.jpg)" }}>
+      <section className="hero" style={{ backgroundImage: "linear-gradient(180deg, rgba(7,31,36,0.88) 0%, rgba(16,63,69,0.78) 82%, var(--sand) 82%), url(/images/hero-skyline.jpg)" }}>
         <div className="hero-fan" />
         <div className="eyebrow">{t.hero.eyebrow}</div>
         <h1>{t.hero.h1}</h1>
@@ -120,7 +120,7 @@ export default function HomeClient({ articles }) {
               key={n.slug}
               className="hood-card"
               href={`/neighborhoods/${n.slug}`}
-              style={{ backgroundImage: `linear-gradient(180deg, transparent 35%, rgba(8,46,48,0.92) 100%), url(${n.image})` }}
+              style={{ backgroundImage: `linear-gradient(180deg, transparent 35%, rgba(7,31,36,0.92) 100%), url(${n.image})` }}
             >
               <h4>{n.name}</h4><span>{n.tagline[lang]}</span>
             </a>

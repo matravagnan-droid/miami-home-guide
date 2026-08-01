@@ -88,7 +88,7 @@ export default function HurricaneMap() {
           style: (feature) => {
             const zone = feature.properties[source.zoneField];
             return {
-              color: "#082e30",
+              color: "#071f24",
               weight: 0.5,
               fillColor: ZONE_COLORS[zone] || "#9aa39f",
               fillOpacity: 0.55,
