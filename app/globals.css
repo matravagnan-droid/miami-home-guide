@@ -1007,12 +1007,31 @@ footer a {
   margin: 32px 0;
 }
 
-.filter-grid-2 {
-  grid-column: span 2;
+.filter-two-col {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
 
-@media (max-width: 560px) {
-  .filter-grid-2 { grid-column: 1 / -1; }
+.filter-col {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search-tour-prompt {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #4a5a56;
+}
+
+.search-tour-prompt a {
+  color: var(--bay);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .city-checkbox-box {

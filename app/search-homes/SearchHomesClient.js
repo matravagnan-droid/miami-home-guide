@@ -329,141 +329,128 @@ export default function SearchHomesClient() {
                 </label>
               </div>
             </div>
+          </div>
 
-            <DualRangeField
-              label={t.searchHomes.priceRange}
-              min={PRICE_MIN}
-              max={PRICE_MAX}
-              step={PRICE_STEP}
-              value={priceRange}
-              onChange={setPriceRange}
-              format={money}
-              nameMin="Min Price"
-              nameMax="Max Price"
-              spanClass="filter-grid-2"
-            />
+          <div className="filter-two-col">
+            <div className="filter-col">
+              <DualRangeField
+                label={t.searchHomes.priceRange}
+                min={PRICE_MIN}
+                max={PRICE_MAX}
+                step={PRICE_STEP}
+                value={priceRange}
+                onChange={setPriceRange}
+                format={money}
+                nameMin="Min Price"
+                nameMax="Max Price"
+                spanClass=""
+              />
 
-            <label className="calc-field">
-              <span>{t.searchHomes.bedroomsMin}</span>
-              <select name="Bedrooms (min)" defaultValue="Any">
-                <option value="Any">{t.searchHomes.any}</option>
-                {NUMBER_OPTIONS.map((n) => (
-                  <option key={n} value={n}>{n}</option>
-                ))}
-              </select>
-            </label>
+              <DualRangeField
+                label={t.searchHomes.sqftRange}
+                min={SQFT_MIN}
+                max={SQFT_MAX}
+                step={SQFT_STEP}
+                value={sqftRange}
+                onChange={setSqftRange}
+                format={sqft}
+                nameMin="Min Sqft"
+                nameMax="Max Sqft"
+                spanClass=""
+              />
 
-            <label className="calc-field">
-              <span>{t.searchHomes.bathroomsMin}</span>
-              <select name="Bathrooms (min)" defaultValue="Any">
-                <option value="Any">{t.searchHomes.any}</option>
-                {NUMBER_OPTIONS.map((n) => (
-                  <option key={n} value={n}>{n}</option>
-                ))}
-              </select>
-            </label>
+              <MaxRangeField
+                label={t.searchHomes.maxHoa}
+                min={HOA_MIN}
+                max={HOA_MAX}
+                step={HOA_STEP}
+                value={hoaMax}
+                onChange={setHoaMax}
+                format={hoaMoney}
+                noMaxLabel={t.searchHomes.noMax}
+                name="Max HOA Fee"
+              />
 
-            <label className="calc-field">
-              <span>{t.searchHomes.stories}</span>
-              <select name="Stories" defaultValue="Any">
-                <option value="Any">{t.searchHomes.storiesAny}</option>
-                {STORY_OPTIONS.map((n) => (
-                  <option key={n} value={n}>{n}</option>
-                ))}
-              </select>
-            </label>
-
-            <div className="calc-field">
-              <span>{t.searchHomes.pool}</span>
-              <div className="filter-checkbox-group">
-                <label className="filter-checkbox">
-                  <input type="radio" name="Pool" value="Yes" />
-                  {t.searchHomes.poolYes}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="radio" name="Pool" value="No" />
-                  {t.searchHomes.poolNo}
-                </label>
-              </div>
+              <MaxRangeField
+                label={t.searchHomes.maxTax}
+                min={TAX_MIN}
+                max={TAX_MAX}
+                step={TAX_STEP}
+                value={taxMax}
+                onChange={setTaxMax}
+                format={taxMoney}
+                noMaxLabel={t.searchHomes.noMax}
+                name="Max Annual Property Tax"
+              />
             </div>
 
-            <MaxRangeField
-              label={t.searchHomes.maxHoa}
-              min={HOA_MIN}
-              max={HOA_MAX}
-              step={HOA_STEP}
-              value={hoaMax}
-              onChange={setHoaMax}
-              format={hoaMoney}
-              noMaxLabel={t.searchHomes.noMax}
-              name="Max HOA Fee"
-            />
+            <div className="filter-col">
+              <label className="calc-field">
+                <span>{t.searchHomes.bedroomsMin}</span>
+                <select name="Bedrooms (min)" defaultValue="Any">
+                  <option value="Any">{t.searchHomes.any}</option>
+                  {NUMBER_OPTIONS.map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
+                </select>
+              </label>
 
-            <MaxRangeField
-              label={t.searchHomes.maxTax}
-              min={TAX_MIN}
-              max={TAX_MAX}
-              step={TAX_STEP}
-              value={taxMax}
-              onChange={setTaxMax}
-              format={taxMoney}
-              noMaxLabel={t.searchHomes.noMax}
-              name="Max Annual Property Tax"
-            />
+              <label className="calc-field">
+                <span>{t.searchHomes.bathroomsMin}</span>
+                <select name="Bathrooms (min)" defaultValue="Any">
+                  <option value="Any">{t.searchHomes.any}</option>
+                  {NUMBER_OPTIONS.map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
+                </select>
+              </label>
 
-            <label className="calc-field">
-              <span>{t.searchHomes.parkingMin}</span>
-              <select name="Parking Spaces (min)" defaultValue="Any">
-                <option value="Any">{t.searchHomes.any}</option>
-                {PARKING_OPTIONS.map((n) => (
-                  <option key={n} value={n}>{n}</option>
-                ))}
-              </select>
-            </label>
+              <label className="calc-field">
+                <span>{t.searchHomes.stories}</span>
+                <select name="Stories" defaultValue="Any">
+                  <option value="Any">{t.searchHomes.storiesAny}</option>
+                  {STORY_OPTIONS.map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
+                </select>
+              </label>
 
-            <DualRangeField
-              label={t.searchHomes.sqftRange}
-              min={SQFT_MIN}
-              max={SQFT_MAX}
-              step={SQFT_STEP}
-              value={sqftRange}
-              onChange={setSqftRange}
-              format={sqft}
-              nameMin="Min Sqft"
-              nameMax="Max Sqft"
-              spanClass="filter-grid-2"
-            />
+              <div className="calc-field">
+                <span>{t.searchHomes.pool}</span>
+                <div className="filter-checkbox-group">
+                  <label className="filter-checkbox">
+                    <input type="radio" name="Pool" value="Yes" />
+                    {t.searchHomes.poolYes}
+                  </label>
+                  <label className="filter-checkbox">
+                    <input type="radio" name="Pool" value="No" />
+                    {t.searchHomes.poolNo}
+                  </label>
+                </div>
+              </div>
+
+              <label className="calc-field">
+                <span>{t.searchHomes.parkingMin}</span>
+                <select name="Parking Spaces (min)" defaultValue="Any">
+                  <option value="Any">{t.searchHomes.any}</option>
+                  {PARKING_OPTIONS.map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
           </div>
 
           <div className="filter-divider" />
 
-          <h2>{t.searchHomes.contactHeading}</h2>
-
-          <div className="lead-form-row">
-            <label className="calc-field">
-              <span>{t.bookCallPage.firstName}</span>
-              <input type="text" name="First Name" required />
-            </label>
-            <label className="calc-field">
-              <span>{t.bookCallPage.lastName}</span>
-              <input type="text" name="Last Name" required />
-            </label>
-          </div>
-
-          <div className="lead-form-row" style={{ marginTop: 20 }}>
-            <label className="calc-field">
-              <span>{t.bookCallPage.phone}</span>
-              <input type="tel" name="Phone" required />
-            </label>
-            <label className="calc-field">
-              <span>{t.bookCallPage.email}</span>
-              <input type="email" name="Email" />
-            </label>
-          </div>
-
-          <button type="submit" className="book-call-btn lead-form-submit" style={{ marginTop: 24 }}>
+          <button type="submit" className="book-call-btn lead-form-submit">
             {t.searchHomes.submit}
           </button>
+
+          <p className="search-tour-prompt">
+            {t.searchHomes.tourPromptText}{" "}
+            <a href="/book-a-call">{t.searchHomes.tourPromptLink}</a>
+          </p>
         </form>
       </section>
 
