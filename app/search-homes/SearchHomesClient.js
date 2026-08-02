@@ -52,9 +52,17 @@ function PillRadioField({ label, name, options, includeAny, anyLabel }) {
   );
 }
 
+function MoneyInput({ name, min, max, step, placeholder }) {
+  return (
+    <div className="money-input">
+      <span className="money-prefix">$</span>
+      <input type="number" name={name} min={min} max={max} step={step} placeholder={placeholder} />
+    </div>
+  );
+}
+
 export default function SearchHomesClient() {
   const { t } = useLanguage();
-  const [redirectUrl, setRedirectUrl] = useState("");
   const [countyId, setCountyId] = useState("miami-dade");
   const [cityIds, setCityIds] = useState([]);
   const [drawnAreaText, setDrawnAreaText] = useState("");
@@ -63,10 +71,6 @@ export default function SearchHomesClient() {
   const mapNodeRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const drawnLayerRef = useRef(null);
-
-  useEffect(() => {
-    setRedirectUrl(`${window.location.origin}/search-homes/thank-you`);
-  }, []);
 
   function handleCountyChange(nextCountyId) {
     setCountyId(nextCountyId);
@@ -78,7 +82,6 @@ export default function SearchHomesClient() {
   }
 
   const county = COUNTIES[countyId];
-  const selectedCityLabels = cityIds.map((id) => t.cityLabels[countyId][id]).join(", ");
 
   // Load Leaflet + Leaflet.draw from a CDN (no API key needed) once, client-side only.
   useEffect(() => {
@@ -189,17 +192,7 @@ export default function SearchHomesClient() {
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
-        <form
-          className="filter-card"
-          action="https://formsubmit.co/mat.ravagnan@gmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="New home search request from Miami Home Guide" />
-          <input type="hidden" name="_template" value="table" />
-          {redirectUrl && <input type="hidden" name="_next" value={redirectUrl} />}
-          <input type="hidden" name="City/Area" value={selectedCityLabels} />
-          <input type="hidden" name="Custom Drawn Area (lat,lng)" value={drawnAreaText} />
-
+        <div className="filter-card">
           <h2>{t.searchHomes.filtersHeading}</h2>
 
           <div className="filter-grid">
@@ -282,8 +275,8 @@ export default function SearchHomesClient() {
               <div className="calc-field">
                 <span>{t.searchHomes.priceRange}</span>
                 <div className="dual-input-row">
-                  <input type="number" name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min $" />
-                  <input type="number" name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max $" />
+                  <MoneyInput name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min" />
+                  <MoneyInput name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max" />
                 </div>
               </div>
 
@@ -295,15 +288,21 @@ export default function SearchHomesClient() {
                 </div>
               </div>
 
-              <label className="calc-field">
-                <span>{t.searchHomes.maxHoa}</span>
-                <input type="number" name="Max HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="$/month" />
-              </label>
+              <div className="calc-field">
+                <span>{t.searchHomes.hoaRange}</span>
+                <div className="dual-input-row">
+                  <MoneyInput name="Min HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="Min" />
+                  <MoneyInput name="Max HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="Max" />
+                </div>
+              </div>
 
-              <label className="calc-field">
-                <span>{t.searchHomes.maxTax}</span>
-                <input type="number" name="Max Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="$/year" />
-              </label>
+              <div className="calc-field">
+                <span>{t.searchHomes.taxRange}</span>
+                <div className="dual-input-row">
+                  <MoneyInput name="Min Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="Min" />
+                  <MoneyInput name="Max Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="Max" />
+                </div>
+              </div>
 
               <div className="calc-field">
                 <span>{t.searchHomes.yearBuiltRange}</span>
@@ -367,15 +366,11 @@ export default function SearchHomesClient() {
 
           <div className="filter-divider" />
 
-          <button type="submit" className="book-call-btn lead-form-submit">
-            {t.searchHomes.submit}
-          </button>
-
           <p className="search-tour-prompt">
             {t.searchHomes.tourPromptText}{" "}
             <a href="/book-a-call">{t.searchHomes.tourPromptLink}</a>
           </p>
-        </form>
+        </div>
       </section>
 
       <SiteFooter>

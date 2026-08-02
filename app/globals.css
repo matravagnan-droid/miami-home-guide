@@ -1028,6 +1028,26 @@ footer a {
   gap: 12px;
 }
 
+.money-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.money-prefix {
+  position: absolute;
+  left: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.money-input input {
+  width: 100%;
+  padding-left: 24px;
+}
+
 .search-tour-prompt {
   margin-top: 16px;
   font-size: 14px;
