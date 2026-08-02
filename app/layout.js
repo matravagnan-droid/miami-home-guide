@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import { LanguageProvider } from './i18n/LanguageContext';
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
