@@ -530,7 +530,7 @@ footer a {
 
 .eho-badge {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 40px 6vw 0;
   background: var(--sand);
 }
