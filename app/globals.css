@@ -91,6 +91,22 @@ a { color: inherit; text-decoration: none; }
   background: #941e18;
 }
 
+.lang-picker-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.lang-picker-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bay);
+}
+
 .lang-picker {
   position: relative;
   flex-shrink: 0;
