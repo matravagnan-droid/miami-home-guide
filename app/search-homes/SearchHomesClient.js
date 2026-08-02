@@ -6,6 +6,7 @@ import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
 import { COUNTIES } from "../lib/counties";
+import { BOUNDARY_SOURCES, normalizeName, cityMatchName } from "../lib/boundaries";
 
 const NUMBER_OPTIONS = ["1", "2", "3", "4", "5+"];
 const STORY_OPTIONS = ["1", "2", "3+"];
@@ -29,27 +30,6 @@ const YEAR_MAX = 2027;
 
 const DEFAULT_CENTER = [25.9, -80.25];
 const DEFAULT_ZOOM = 10;
-
-// Official county GIS municipal-boundary layers (public ArcGIS REST services,
-// no API key). Queried once per county and cached; matched against the
-// checked cities by normalized name so we can outline them on the map.
-const BOUNDARY_SOURCES = {
-  "miami-dade": {
-    url: "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Municipalitypoly_gdb/FeatureServer/0/query?where=1%3D1&outFields=NAME&f=geojson",
-    nameField: "NAME",
-  },
-  broward: {
-    url: "https://bcgishub.broward.org/server/rest/services/GeoHubDownloads/Broward_County_Cities/MapServer/0/query?where=1%3D1&outFields=CITYNAME&f=geojson",
-    nameField: "CITYNAME",
-  },
-};
-
-const normalizeName = (s) => String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
-
-function cityMatchName(cityId) {
-  if (cityId === "unincorporated-md" || cityId === "unincorporated-br") return null;
-  return cityId.split("-").join(" ");
-}
 
 function PillRadioField({ label, name, options, includeAny, anyLabel }) {
   return (

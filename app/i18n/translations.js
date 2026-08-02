@@ -47,6 +47,7 @@ const translations = {
       mortgageTitle: "Mortgage calculator",
       mortgageBody: "Estimate your monthly payment with taxes, insurance, and HOA included, tuned for Miami-Dade rates.",
       mortgageLink: "Calculate my payment →",
+      medianPricesBtn: "See median home prices →",
     },
     buyerGuide: {
       eyebrow: "First-time buyers",
@@ -433,6 +434,14 @@ const translations = {
       tourPromptText: "Want to go tour a home in person?",
       tourPromptLink: "Send us a message",
     },
+    medianPrices: {
+      eyebrow: "Market data",
+      h1: "Median home prices by area",
+      p: "Click any city on the map to see its median single-family and condo price.",
+      mapLabel: "Miami-Dade & Broward",
+      selectPrompt: "Click an area on the map to see pricing.",
+      disclaimer: "Pricing shown is approximate, pulled from public market reports as of mid-2026, and changes constantly. Detailed pricing is currently available for a growing set of areas — more are being added over time. Always confirm with current MLS comps before making a decision.",
+    },
   },
   es: {
     nav: {
@@ -482,6 +491,7 @@ const translations = {
       mortgageTitle: "Calculadora de hipoteca",
       mortgageBody: "Estime su pago mensual con impuestos, seguro y HOA incluidos, ajustado a las tasas de Miami-Dade.",
       mortgageLink: "Calcular mi pago →",
+      medianPricesBtn: "Ver precios medianos →",
     },
     buyerGuide: {
       eyebrow: "Compradores primerizos",
@@ -867,6 +877,14 @@ const translations = {
       drawnAreaSet: "Área personalizada definida — se incluirá con su búsqueda.",
       tourPromptText: "¿Quiere ir a ver una casa en persona?",
       tourPromptLink: "Envíenos un mensaje",
+    },
+    medianPrices: {
+      eyebrow: "Datos del mercado",
+      h1: "Precios medianos por área",
+      p: "Haga clic en cualquier ciudad del mapa para ver su precio mediano de casa unifamiliar y de condominio.",
+      mapLabel: "Miami-Dade y Broward",
+      selectPrompt: "Haga clic en un área del mapa para ver los precios.",
+      disclaimer: "Los precios mostrados son aproximados, obtenidos de informes públicos del mercado a mediados de 2026, y cambian constantemente. Actualmente hay precios detallados disponibles para un número creciente de áreas — se seguirán agregando más. Siempre confirme con comparables actuales del MLS antes de tomar una decisión.",
     },
   },
 };

@@ -40,9 +40,12 @@ export default function HomeClient({ articles }) {
       </section>
 
       <section className="section" id="tools" style={{ paddingTop: 48 }}>
-        <div className="section-head">
-          <h2>{t.tools.h2}</h2>
-          <p>{t.tools.p}</p>
+        <div className="section-head-row">
+          <div className="section-head">
+            <h2>{t.tools.h2}</h2>
+            <p>{t.tools.p}</p>
+          </div>
+          <a href="/median-prices" className="median-prices-btn">{t.tools.medianPricesBtn}</a>
         </div>
         <div className="tools-grid">
           <div className="tool-card">
