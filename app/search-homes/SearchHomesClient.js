@@ -227,20 +227,6 @@ export default function SearchHomesClient() {
             </div>
 
             <div className="calc-field filter-grid-full">
-              <span>{t.searchHomes.mapLabel}</span>
-              <div className="map-search-box">
-                <div ref={mapNodeRef} className="map-search-canvas" />
-              </div>
-              <p className="map-search-note">{t.searchHomes.mapNote}</p>
-              {drawnAreaText && (
-                <div className="map-drawn-note">
-                  <span>{t.searchHomes.drawnAreaSet}</span>
-                  <button type="button" onClick={clearDrawnArea}>{t.searchHomes.clearDrawnArea}</button>
-                </div>
-              )}
-            </div>
-
-            <div className="calc-field filter-grid-full">
               <span>{t.searchHomes.propertyType}</span>
               <div className="filter-checkbox-group">
                 <label className="filter-checkbox">
@@ -363,6 +349,20 @@ export default function SearchHomesClient() {
                 anyLabel={t.searchHomes.any}
               />
             </div>
+          </div>
+
+          <div className="calc-field" style={{ marginTop: 28 }}>
+            <span>{t.searchHomes.mapLabel}</span>
+            <div className="map-search-box">
+              <div ref={mapNodeRef} className="map-search-canvas" />
+            </div>
+            <p className="map-search-note">{t.searchHomes.mapNote}</p>
+            {drawnAreaText && (
+              <div className="map-drawn-note">
+                <span>{t.searchHomes.drawnAreaSet}</span>
+                <button type="button" onClick={clearDrawnArea}>{t.searchHomes.clearDrawnArea}</button>
+              </div>
+            )}
           </div>
 
           <div className="filter-divider" />
