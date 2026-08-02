@@ -154,11 +154,19 @@ export default function MedianPricesClient() {
                 <div className="median-stat-row">
                   <div className="median-stat">
                     <span>{t.neighborhoodPage.singleFamilyLabel}</span>
-                    <strong>{singleFamilyValue ? money(singleFamilyValue) : t.neighborhoodPage.noData}</strong>
+                    <strong>
+                      {singleFamilyValue
+                        ? money(singleFamilyValue)
+                        : neighborhood ? t.neighborhoodPage.noData : t.medianPrices.noDataYet}
+                    </strong>
                   </div>
                   <div className="median-stat">
                     <span>{t.neighborhoodPage.condoLabel}</span>
-                    <strong>{condoValue ? money(condoValue) : t.neighborhoodPage.noData}</strong>
+                    <strong>
+                      {condoValue
+                        ? money(condoValue)
+                        : neighborhood ? t.neighborhoodPage.noData : t.medianPrices.noDataYet}
+                    </strong>
                   </div>
                 </div>
               </>

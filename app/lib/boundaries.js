@@ -14,7 +14,15 @@ export const BOUNDARY_SOURCES = {
 
 export const normalizeName = (s) => String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
 
+// A few city ids don't map to their county GIS dataset's NAME/CITYNAME field
+// by simple hyphen-to-space conversion — confirmed against the live data.
+const NAME_OVERRIDES = {
+  "indian-creek": "indian creek village",
+  "unincorporated-md": "unincorporated miami dade",
+  "unincorporated-br": "bmsd",
+};
+
 export function cityMatchName(cityId) {
-  if (cityId === "unincorporated-md" || cityId === "unincorporated-br") return null;
+  if (NAME_OVERRIDES[cityId]) return NAME_OVERRIDES[cityId];
   return cityId.split("-").join(" ");
 }
