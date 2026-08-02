@@ -976,6 +976,10 @@ footer a {
   grid-column: 1 / -1;
 }
 
+.county-field select {
+  max-width: 320px;
+}
+
 .filter-checkbox-group {
   display: flex;
   flex-wrap: wrap;
@@ -1098,7 +1102,7 @@ footer a {
 
 .map-search-canvas {
   width: 100%;
-  height: 200px;
+  height: 420px;
   background: var(--sand);
 }
 

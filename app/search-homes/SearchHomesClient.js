@@ -118,7 +118,7 @@ export default function SearchHomesClient() {
     if (!L) return;
 
     const map = L.map(mapNodeRef.current).setView(DEFAULT_CENTER, DEFAULT_ZOOM);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
       maxZoom: 19,
       subdomains: "abcd",
@@ -197,7 +197,7 @@ export default function SearchHomesClient() {
           <h2>{t.searchHomes.filtersHeading}</h2>
 
           <div className="filter-grid">
-            <label className="calc-field">
+            <label className="calc-field filter-grid-full county-field">
               <span>{t.searchHomes.county}</span>
               <select
                 name="County"
@@ -210,7 +210,7 @@ export default function SearchHomesClient() {
               </select>
             </label>
 
-            <div className="calc-field">
+            <div className="calc-field filter-grid-full">
               <span>{t.searchHomes.cityArea}</span>
               <div className="city-checkbox-box">
                 {county.cities.map((c) => (
@@ -226,7 +226,7 @@ export default function SearchHomesClient() {
               </div>
             </div>
 
-            <div className="calc-field">
+            <div className="calc-field filter-grid-full">
               <span>{t.searchHomes.mapLabel}</span>
               <div className="map-search-box">
                 <div ref={mapNodeRef} className="map-search-canvas" />
