@@ -3,6 +3,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import translations from "./translations";
 
+export const SUPPORTED_LANGS = ["en", "es", "fr", "ht", "pt", "it"];
+
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {
@@ -10,7 +12,7 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("mhg-lang");
-    if (saved === "en" || saved === "es") setLang(saved);
+    if (SUPPORTED_LANGS.includes(saved)) setLang(saved);
   }, []);
 
   useEffect(() => {
@@ -18,10 +20,12 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const toggleLang = () => setLang((prev) => (prev === "en" ? "es" : "en"));
+  // Falls back to English for any language whose translation content isn't
+  // filled in yet, so picking a newer language never breaks the page.
+  const t = translations[lang] || translations.en;
 
   return (
-    <LanguageContext.Provider value={{ lang, toggleLang, t: translations[lang] }}>
+    <LanguageContext.Provider value={{ lang, setLang, t }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -396,8 +396,7 @@ const translations = {
       licensed: "Licensed Real Estate Agent, State of Florida",
     },
     toggle: {
-      ariaSwitchToSpanish: "Switch to Spanish",
-      ariaSwitchToEnglish: "Switch to English",
+      ariaLabel: "Change language",
     },
     searchHomes: {
       eyebrow: "Search homes",
@@ -841,8 +840,7 @@ const translations = {
       licensed: "Agente de Bienes Raíces con Licencia, Estado de Florida",
     },
     toggle: {
-      ariaSwitchToSpanish: "Cambiar a español",
-      ariaSwitchToEnglish: "Cambiar a inglés",
+      ariaLabel: "Cambiar idioma",
     },
     searchHomes: {
       eyebrow: "Buscar propiedades",

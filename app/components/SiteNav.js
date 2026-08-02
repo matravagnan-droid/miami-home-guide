@@ -1,6 +1,6 @@
 "use client";
 
-import LanguageToggle from "./LanguageToggle";
+import LanguagePicker from "./LanguagePicker";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function SiteNav() {
@@ -17,7 +17,7 @@ export default function SiteNav() {
           <a href="/#blog">{t.nav.blog}</a>
         </div>
         <a className="book-call-btn" href="/book-a-call">{t.nav.bookCall}</a>
-        <LanguageToggle />
+        <LanguagePicker />
       </div>
     </nav>
   );
