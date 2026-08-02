@@ -49,7 +49,7 @@ export default function HomeClient({ articles }) {
             <span className="tool-tag">{t.tools.mlsTag}</span>
             <h3>{t.tools.mlsTitle}</h3>
             <p>{t.tools.mlsBody}</p>
-            <a className="link" href="#">{t.tools.mlsLink}</a>
+            <a className="link" href="/search-homes">{t.tools.mlsLink}</a>
           </div>
           <div className="tool-card">
             <span className="tool-tag">{t.tools.valueTag}</span>

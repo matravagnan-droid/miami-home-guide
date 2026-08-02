@@ -943,6 +943,70 @@ footer a {
   margin-top: 4px;
 }
 
+.filter-card {
+  background: white;
+  border: 1px solid rgba(16,63,69,0.1);
+  border-top: 3px solid var(--sunset);
+  border-radius: 4px;
+  padding: 36px;
+}
+
+.filter-card h2 {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .filter-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .filter-grid { grid-template-columns: 1fr; }
+}
+
+.filter-grid-full {
+  grid-column: 1 / -1;
+}
+
+.filter-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(16,63,69,0.18);
+  background: var(--sand);
+  cursor: pointer;
+}
+
+.filter-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--sunset);
+}
+
+.filter-divider {
+  border-top: 1px solid rgba(16,63,69,0.12);
+  margin: 32px 0;
+}
+
 .wheel-row {
   display: flex;
   gap: 40px;
