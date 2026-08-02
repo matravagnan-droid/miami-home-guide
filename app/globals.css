@@ -530,12 +530,9 @@ footer a {
 
 .eho-badge {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(246,243,236,0.7);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  flex-shrink: 0;
+  justify-content: center;
+  padding: 40px 6vw 0;
+  background: var(--sand);
 }
 
 .eho-badge svg {
