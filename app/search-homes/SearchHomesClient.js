@@ -11,11 +11,110 @@ const NUMBER_OPTIONS = ["1", "2", "3", "4", "5+"];
 const STORY_OPTIONS = ["1", "2", "3+"];
 const PARKING_OPTIONS = ["1", "2", "3", "4+"];
 
+const PRICE_MIN = 0;
+const PRICE_MAX = 5000000;
+const PRICE_STEP = 25000;
+
+const SQFT_MIN = 0;
+const SQFT_MAX = 10000;
+const SQFT_STEP = 100;
+
+const HOA_MIN = 0;
+const HOA_MAX = 2000;
+const HOA_STEP = 25;
+
+const TAX_MIN = 0;
+const TAX_MAX = 50000;
+const TAX_STEP = 500;
+
+function cityDisplayName(countyId, cityId) {
+  if (cityId === "unincorporated-md") return "Miami-Dade County, FL";
+  if (cityId === "unincorporated-br") return "Broward County, FL";
+  const words = cityId.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1));
+  return `${words.join(" ")}, FL`;
+}
+
+function DualRangeField({ label, min, max, step, value, onChange, format, nameMin, nameMax }) {
+  const [lo, hi] = value;
+  const pct = (v) => ((v - min) / (max - min)) * 100;
+
+  return (
+    <div className="calc-field filter-grid-full">
+      <span>{label}</span>
+      <div className="range-slider">
+        <div className="range-slider-track" />
+        <div
+          className="range-slider-range"
+          style={{ left: `${pct(lo)}%`, right: `${100 - pct(hi)}%` }}
+        />
+        <input
+          type="range"
+          name={nameMin}
+          min={min}
+          max={max}
+          step={step}
+          value={lo}
+          onChange={(e) => onChange([Math.min(Number(e.target.value), hi - step), hi])}
+        />
+        <input
+          type="range"
+          name={nameMax}
+          min={min}
+          max={max}
+          step={step}
+          value={hi}
+          onChange={(e) => onChange([lo, Math.max(Number(e.target.value), lo + step)])}
+        />
+      </div>
+      <div className="range-slider-values">
+        <span>{format(lo)}</span>
+        <span>{hi >= max ? `${format(hi)}+` : format(hi)}</span>
+      </div>
+    </div>
+  );
+}
+
+function MaxRangeField({ label, min, max, step, value, onChange, format, noMaxLabel, name }) {
+  const pct = ((value - min) / (max - min)) * 100;
+
+  return (
+    <div className="calc-field">
+      <span>{label}</span>
+      <div className="range-slider">
+        <div className="range-slider-track" />
+        <div className="range-slider-range" style={{ left: 0, right: `${100 - pct}%` }} />
+        <input
+          type="range"
+          name={name}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => onChange(Number(e.target.value))}
+        />
+      </div>
+      <div className="range-slider-values range-slider-values-single">
+        <span>{value >= max ? noMaxLabel : format(value)}</span>
+      </div>
+    </div>
+  );
+}
+
 export default function SearchHomesClient() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [redirectUrl, setRedirectUrl] = useState("");
   const [countyId, setCountyId] = useState("miami-dade");
   const [cityId, setCityId] = useState(COUNTIES["miami-dade"].cities[0].id);
+  const [priceRange, setPriceRange] = useState([PRICE_MIN, PRICE_MAX]);
+  const [sqftRange, setSqftRange] = useState([SQFT_MIN, SQFT_MAX]);
+  const [hoaMax, setHoaMax] = useState(HOA_MAX);
+  const [taxMax, setTaxMax] = useState(TAX_MAX);
+
+  const locale = lang === "es" ? "es-US" : "en-US";
+  const money = (n) => n.toLocaleString(locale, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  const sqft = (n) => `${n.toLocaleString(locale)} sqft`;
+  const hoaMoney = (n) => `${money(n)}/mo`;
+  const taxMoney = (n) => `${money(n)}/yr`;
 
   useEffect(() => {
     setRedirectUrl(`${window.location.origin}/search-homes/thank-you`);
@@ -27,6 +126,7 @@ export default function SearchHomesClient() {
   }
 
   const county = COUNTIES[countyId];
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(cityDisplayName(countyId, cityId))}&z=12&output=embed`;
 
   return (
     <>
@@ -42,6 +142,19 @@ export default function SearchHomesClient() {
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
+        <div className="map-search-row">
+          <div className="map-search-box">
+            <div className="map-search-label">{t.searchHomes.mapLabel}</div>
+            <iframe
+              title="Map search"
+              src={mapSrc}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="map-search-note">{t.searchHomes.mapNote}</div>
+          </div>
+        </div>
+
         <form
           className="filter-card"
           action="https://formsubmit.co/mat.ravagnan@gmail.com"
@@ -110,34 +223,55 @@ export default function SearchHomesClient() {
               </div>
             </div>
 
-            <label className="calc-field">
-              <span>{t.searchHomes.priceMin}</span>
-              <input type="number" name="Min Price" min="0" step="5000" placeholder="$" />
-            </label>
+            <DualRangeField
+              label={t.searchHomes.priceRange}
+              min={PRICE_MIN}
+              max={PRICE_MAX}
+              step={PRICE_STEP}
+              value={priceRange}
+              onChange={setPriceRange}
+              format={money}
+              nameMin="Min Price"
+              nameMax="Max Price"
+            />
 
-            <label className="calc-field">
-              <span>{t.searchHomes.priceMax}</span>
-              <input type="number" name="Max Price" min="0" step="5000" placeholder="$" />
-            </label>
-
-            <label className="calc-field">
+            <div className="calc-field">
               <span>{t.searchHomes.pool}</span>
-              <select name="Pool" defaultValue="Any">
-                <option value="Any">{t.searchHomes.poolAny}</option>
-                <option value="Must have pool">{t.searchHomes.poolYes}</option>
-                <option value="No pool">{t.searchHomes.poolNo}</option>
-              </select>
-            </label>
+              <div className="filter-checkbox-group">
+                <label className="filter-checkbox">
+                  <input type="radio" name="Pool" value="Yes" />
+                  {t.searchHomes.poolYes}
+                </label>
+                <label className="filter-checkbox">
+                  <input type="radio" name="Pool" value="No" />
+                  {t.searchHomes.poolNo}
+                </label>
+              </div>
+            </div>
 
-            <label className="calc-field">
-              <span>{t.searchHomes.maxHoa}</span>
-              <input type="number" name="Max HOA Fee" min="0" step="25" placeholder="$" />
-            </label>
+            <MaxRangeField
+              label={t.searchHomes.maxHoa}
+              min={HOA_MIN}
+              max={HOA_MAX}
+              step={HOA_STEP}
+              value={hoaMax}
+              onChange={setHoaMax}
+              format={hoaMoney}
+              noMaxLabel={t.searchHomes.noMax}
+              name="Max HOA Fee"
+            />
 
-            <label className="calc-field">
-              <span>{t.searchHomes.maxTax}</span>
-              <input type="number" name="Max Annual Property Tax" min="0" step="100" placeholder="$" />
-            </label>
+            <MaxRangeField
+              label={t.searchHomes.maxTax}
+              min={TAX_MIN}
+              max={TAX_MAX}
+              step={TAX_STEP}
+              value={taxMax}
+              onChange={setTaxMax}
+              format={taxMoney}
+              noMaxLabel={t.searchHomes.noMax}
+              name="Max Annual Property Tax"
+            />
 
             <label className="calc-field">
               <span>{t.searchHomes.bedroomsMin}</span>
@@ -169,15 +303,17 @@ export default function SearchHomesClient() {
               </select>
             </label>
 
-            <label className="calc-field">
-              <span>{t.searchHomes.sqftMin}</span>
-              <input type="number" name="Min Sqft" min="0" step="100" placeholder="sqft" />
-            </label>
-
-            <label className="calc-field">
-              <span>{t.searchHomes.sqftMax}</span>
-              <input type="number" name="Max Sqft" min="0" step="100" placeholder="sqft" />
-            </label>
+            <DualRangeField
+              label={t.searchHomes.sqftRange}
+              min={SQFT_MIN}
+              max={SQFT_MAX}
+              step={SQFT_STEP}
+              value={sqftRange}
+              onChange={setSqftRange}
+              format={sqft}
+              nameMin="Min Sqft"
+              nameMax="Max Sqft"
+            />
 
             <label className="calc-field">
               <span>{t.searchHomes.parkingMin}</span>
