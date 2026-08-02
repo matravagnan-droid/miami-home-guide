@@ -16,12 +16,12 @@ export default function MortgageCalculatorClient() {
 
       <section className="hero hero-compact">
         <h1>{t.mortgageSection.h2}</h1>
-        <p>{t.mortgageSection.p}</p>
       </section>
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
+        <p className="lead-intro">{t.mortgageSection.p}</p>
         <MortgageCalculator />
       </section>
 
