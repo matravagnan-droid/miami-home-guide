@@ -151,7 +151,9 @@ export default function PropertyTaxCalculator() {
         </ul>
         <p className="calc-note">
           {t.propertyTax.effectiveRateLabel} {results.effectiveRate.toFixed(2)}%{" "}
-          {t.propertyTax.ofAssessedValue} {t.propertyTax.basedOn}{" "}
+          {t.propertyTax.ofAssessedValue}
+          <br />
+          {t.propertyTax.basedOn}{" "}
           {countyId === "miami-dade" ? t.propertyTax.mdOffice : t.propertyTax.brOffice}.
         </p>
       </div>

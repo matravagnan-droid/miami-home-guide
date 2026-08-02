@@ -946,6 +946,12 @@ footer a {
   color: var(--bay-deep);
 }
 
+.lead-intro-sm {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a5a56;
+}
+
 .lead-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
