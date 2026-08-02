@@ -30,6 +30,27 @@ const YEAR_MAX = 2027;
 const DEFAULT_CENTER = [25.9, -80.25];
 const DEFAULT_ZOOM = 10;
 
+// Official county GIS municipal-boundary layers (public ArcGIS REST services,
+// no API key). Queried once per county and cached; matched against the
+// checked cities by normalized name so we can outline them on the map.
+const BOUNDARY_SOURCES = {
+  "miami-dade": {
+    url: "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Municipalitypoly_gdb/FeatureServer/0/query?where=1%3D1&outFields=NAME&f=geojson",
+    nameField: "NAME",
+  },
+  broward: {
+    url: "https://bcgishub.broward.org/server/rest/services/GeoHubDownloads/Broward_County_Cities/MapServer/0/query?where=1%3D1&outFields=CITYNAME&f=geojson",
+    nameField: "CITYNAME",
+  },
+};
+
+const normalizeName = (s) => String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+
+function cityMatchName(cityId) {
+  if (cityId === "unincorporated-md" || cityId === "unincorporated-br") return null;
+  return cityId.split("-").join(" ");
+}
+
 function PillRadioField({ label, name, options, includeAny, anyLabel }) {
   return (
     <div className="calc-field">
@@ -71,6 +92,8 @@ export default function SearchHomesClient() {
   const mapNodeRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const drawnLayerRef = useRef(null);
+  const boundaryLayerRef = useRef(null);
+  const boundaryDataRef = useRef({});
 
   function handleCountyChange(nextCountyId) {
     setCountyId(nextCountyId);
@@ -173,6 +196,54 @@ export default function SearchHomesClient() {
       map.fitBounds(points, { padding: [30, 30] });
     }
   }, [cityIds, county]);
+
+  // Outline the checked cities' real municipal boundaries on the map, pulled
+  // from each county's official GIS service and cached after the first fetch.
+  useEffect(() => {
+    const map = mapInstanceRef.current;
+    const L = window.L;
+    if (!map || !L) return;
+    let cancelled = false;
+
+    async function loadBoundaries() {
+      let data = boundaryDataRef.current[countyId];
+      if (!data) {
+        try {
+          const res = await fetch(BOUNDARY_SOURCES[countyId].url);
+          data = await res.json();
+          boundaryDataRef.current[countyId] = data;
+        } catch {
+          return;
+        }
+      }
+      if (cancelled || !data || !data.features) return;
+
+      if (boundaryLayerRef.current) {
+        map.removeLayer(boundaryLayerRef.current);
+        boundaryLayerRef.current = null;
+      }
+
+      const nameField = BOUNDARY_SOURCES[countyId].nameField;
+      const wanted = new Set(
+        cityIds.map((id) => normalizeName(cityMatchName(id))).filter(Boolean)
+      );
+      const matched = data.features.filter((f) =>
+        wanted.has(normalizeName(f.properties && f.properties[nameField]))
+      );
+
+      if (matched.length) {
+        boundaryLayerRef.current = L.geoJSON(
+          { type: "FeatureCollection", features: matched },
+          { style: { color: "#a9762f", weight: 2, fillColor: "#103f45", fillOpacity: 0.15 } }
+        ).addTo(map);
+      }
+    }
+
+    loadBoundaries();
+    return () => {
+      cancelled = true;
+    };
+  }, [cityIds, countyId]);
 
   function clearDrawnArea() {
     if (drawnLayerRef.current) drawnLayerRef.current.clearLayers();
