@@ -8,6 +8,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { COUNTIES } from "../lib/counties";
 import { BOUNDARY_SOURCES, normalizeName, cityMatchName } from "../lib/boundaries";
 import { getNeighborhood } from "../lib/neighborhoods";
+import { MEDIAN_PRICES } from "../lib/medianPrices";
 
 const DEFAULT_CENTER = [26.05, -80.25];
 const DEFAULT_ZOOM = 10;
@@ -122,9 +123,17 @@ export default function MedianPricesClient() {
   }, [leafletReady]);
 
   const neighborhood = selected ? getNeighborhood(selected.cityId) : null;
+  // Second tier: cities without a curated neighborhoods.js entry may still have a
+  // looked-up median from medianPrices.js. Only consulted when neighborhoods.js has
+  // nothing for this city, so the two sources never fight over the same city.
+  const medianPriceEntry = selected && !neighborhood ? MEDIAN_PRICES[selected.cityId] : null;
   const selectedLabel = selected ? t.cityLabels[selected.county][selected.cityId] : null;
-  const singleFamilyValue = neighborhood && neighborhood.pricing.singleFamily.value;
-  const condoValue = neighborhood && neighborhood.pricing.condo.value;
+  const singleFamilyValue = neighborhood
+    ? neighborhood.pricing.singleFamily.value
+    : medianPriceEntry && medianPriceEntry.singleFamily;
+  const condoValue = neighborhood
+    ? neighborhood.pricing.condo.value
+    : medianPriceEntry && medianPriceEntry.condo;
 
   return (
     <>
@@ -169,6 +178,9 @@ export default function MedianPricesClient() {
                     </strong>
                   </div>
                 </div>
+                {medianPriceEntry ? (
+                  <p className="map-search-note">{medianPriceEntry.source}</p>
+                ) : null}
               </>
             ) : (
               <p className="median-select-prompt">{t.medianPrices.selectPrompt}</p>
