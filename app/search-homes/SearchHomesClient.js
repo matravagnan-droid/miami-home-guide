@@ -258,12 +258,13 @@ export default function SearchHomesClient() {
       <section className="hero hero-compact">
         <div className="eyebrow">{t.searchHomes.eyebrow}</div>
         <h1>{t.searchHomes.h1}</h1>
-        <p>{t.searchHomes.p}</p>
       </section>
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
+        <p className="lead-intro">{t.searchHomes.p}</p>
+
         <div className="filter-card">
           <h2>{t.searchHomes.filtersHeading}</h2>
 

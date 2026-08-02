@@ -173,7 +173,8 @@ export default function MortgageCalculator() {
         </ul>
         <p className="calc-note">
           {t.mortgage.downPaymentLabel}: {money(results.downAmount)} &middot;{" "}
-          {t.mortgage.loanAmountLabel}: {money(results.principal)}.{" "}
+          {t.mortgage.loanAmountLabel}: {money(results.principal)}.
+          <br />
           {t.mortgage.estimateDisclaimer}
         </p>
       </div>

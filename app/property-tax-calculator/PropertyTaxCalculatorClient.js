@@ -17,12 +17,12 @@ export default function PropertyTaxCalculatorClient() {
 
       <section className="hero hero-compact">
         <h1>{t.propertyTaxSection.h2}</h1>
-        <p>{t.propertyTaxSection.p}</p>
       </section>
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
+        <p className="lead-intro">{t.propertyTaxSection.p}</p>
         <PropertyTaxCalculator />
       </section>
 
@@ -49,7 +49,7 @@ export default function PropertyTaxCalculatorClient() {
             </div>
           </details>
         </div>
-        <p className="calc-note">{t.zipReference.disclaimer}</p>
+        <p className="section-note">{t.zipReference.disclaimer}</p>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
