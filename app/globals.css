@@ -914,10 +914,22 @@ footer a {
   margin-top: 4px;
 }
 
+.steps-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.steps-layout .steps-list {
+  flex: 1;
+  min-width: 280px;
+}
+
 .wheel-wrap {
   display: none;
   justify-content: center;
-  margin-bottom: 64px;
+  flex-shrink: 0;
 }
 
 @media (min-width: 860px) {
@@ -926,8 +938,8 @@ footer a {
 
 .wheel {
   position: relative;
-  width: 520px;
-  height: 520px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   border: 1px dashed rgba(16,63,69,0.25);
 }
@@ -937,8 +949,8 @@ footer a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 84px;
-  height: 84px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   background: var(--bay-deep);
   color: var(--sunset);
@@ -947,7 +959,7 @@ footer a {
   justify-content: center;
 }
 
-.wheel-center svg { width: 34px; height: 34px; }
+.wheel-center svg { width: 26px; height: 26px; }
 
 .wheel-node {
   position: absolute;
@@ -956,14 +968,14 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 132px;
+  gap: 7px;
+  width: 104px;
   text-align: center;
 }
 
 .wheel-icon {
-  width: 54px;
-  height: 54px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: white;
   border: 2px solid var(--sunset);
@@ -974,19 +986,19 @@ footer a {
   flex-shrink: 0;
 }
 
-.wheel-icon svg { width: 24px; height: 24px; }
+.wheel-icon svg { width: 18px; height: 18px; }
 
 .wheel-label {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--bay-deep);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .wheel-label-num {
   display: block;
   font-family: var(--display);
-  font-size: 15px;
+  font-size: 13px;
   color: var(--sunset);
   margin-bottom: 2px;
 }
