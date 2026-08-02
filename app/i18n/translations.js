@@ -1,7 +1,7 @@
 const translations = {
   en: {
     nav: {
-      tools: "Tools",
+      tools: "Resources",
       mortgageCalculator: "Mortgage Calculator",
       propertyTaxCalculator: "Property Tax Calculator",
       movingToMiami: "New to Miami?",
@@ -102,6 +102,23 @@ const translations = {
       downPaymentLabel: "Down payment",
       loanAmountLabel: "Loan amount",
       estimateDisclaimer: "Estimate only — actual rate, taxes, and insurance vary by lender and property.",
+    },
+    preApprovalPromo: {
+      h2: "Wondering how much you can get pre-approved for?",
+      p: "It's free, a soft check on your credit that won't affect your score, and doesn't commit you to anything until you actually make an offer on a home.",
+      cta: "Get more info",
+    },
+    preApprovalPage: {
+      eyebrow: "Get pre-approved",
+      h1: "Get pre-approved",
+      p: "Leave your info and I'll help you get started — free, no obligation, and it won't commit you to anything.",
+      firstName: "First name",
+      lastName: "Last name",
+      phone: "Phone number",
+      email: "Email (optional)",
+      submit: "Send my info",
+      thankYouH1: "Got it — thank you.",
+      thankYouP: "I'll reach out shortly to help you get pre-approved.",
     },
     mortgageFaqSection: {
       h2: "Frequently asked questions",
@@ -383,7 +400,7 @@ const translations = {
   },
   es: {
     nav: {
-      tools: "Herramientas",
+      tools: "Recursos",
       mortgageCalculator: "Calculadora de Hipoteca",
       propertyTaxCalculator: "Calculadora de Impuestos",
       movingToMiami: "¿Nuevo en Miami?",
@@ -484,6 +501,23 @@ const translations = {
       downPaymentLabel: "Pago inicial",
       loanAmountLabel: "Monto del préstamo",
       estimateDisclaimer: "Solo es un estimado — la tasa real, los impuestos y el seguro varían según el prestamista y la propiedad.",
+    },
+    preApprovalPromo: {
+      h2: "¿Se pregunta para cuánto puede precalificar?",
+      p: "Es gratis, una verificación de crédito suave que no afecta su puntaje, y no lo compromete a nada hasta que realmente haga una oferta por una casa.",
+      cta: "Más información",
+    },
+    preApprovalPage: {
+      eyebrow: "Precalificación",
+      h1: "Obtenga su precalificación",
+      p: "Déjeme su información y le ayudaré a comenzar — gratis, sin compromiso, y no lo compromete a nada.",
+      firstName: "Nombre",
+      lastName: "Apellido",
+      phone: "Número de teléfono",
+      email: "Correo electrónico (opcional)",
+      submit: "Enviar mi información",
+      thankYouH1: "Recibido — gracias.",
+      thankYouP: "Me pondré en contacto en breve para ayudarle a precalificar.",
     },
     mortgageFaqSection: {
       h2: "Preguntas frecuentes",

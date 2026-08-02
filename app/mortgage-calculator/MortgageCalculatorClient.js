@@ -26,6 +26,14 @@ export default function MortgageCalculatorClient() {
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
+        <div className="promo-card">
+          <h2>{t.preApprovalPromo.h2}</h2>
+          <p>{t.preApprovalPromo.p}</p>
+          <a href="/get-pre-approved" className="book-call-btn">{t.preApprovalPromo.cta}</a>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="section-head">
           <h2>{t.mortgageFaqSection.h2}</h2>
         </div>
