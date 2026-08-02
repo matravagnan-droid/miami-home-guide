@@ -35,6 +35,7 @@ export default function BookACallClient() {
         >
           <input type="hidden" name="_subject" value="New lead from Miami Home Guide" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_cc" value="3525520793@txt.att.net" />
           {redirectUrl && <input type="hidden" name="_next" value={redirectUrl} />}
 
           <div className="lead-form-row">
