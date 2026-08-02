@@ -539,8 +539,8 @@ footer a {
 }
 
 .eho-badge svg {
-  width: 22px;
-  height: 22px;
+  width: auto;
+  height: 52px;
   flex-shrink: 0;
 }
 
