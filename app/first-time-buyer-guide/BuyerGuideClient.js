@@ -26,25 +26,11 @@ export default function BuyerGuideClient() {
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
-        <div className="promo-card">
-          <h2>{t.preApprovalPromo.h2}</h2>
-          <p>{t.preApprovalPromo.p}</p>
-          <a href="/get-pre-approved" className="book-call-btn">{t.preApprovalPromo.cta}</a>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="steps-layout">
-          <div className="steps-list">
-            {steps.map((step, i) => (
-              <div className="step-item" key={step.title}>
-                <div className="step-number">{STEP_ICONS[i]}</div>
-                <div className="step-content">
-                  <h3><span className="step-content-num">{i + 1}.</span> {step.title}</h3>
-                  <p>{step.body}</p>
-                </div>
-              </div>
-            ))}
+        <div className="wheel-row">
+          <div className="promo-card">
+            <h2>{t.preApprovalPromo.h2}</h2>
+            <p>{t.preApprovalPromo.p}</p>
+            <a href="/get-pre-approved" className="book-call-btn">{t.preApprovalPromo.cta}</a>
           </div>
 
           <div className="wheel-wrap">
@@ -71,6 +57,20 @@ export default function BuyerGuideClient() {
               })}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="steps-list steps-list-split">
+          {steps.map((step, i) => (
+            <div className="step-item" key={step.title}>
+              <div className="step-number">{STEP_ICONS[i]}</div>
+              <div className="step-content">
+                <h3><span className="step-content-num">{i + 1}.</span> {step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

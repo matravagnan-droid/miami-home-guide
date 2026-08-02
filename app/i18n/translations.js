@@ -104,7 +104,7 @@ const translations = {
       estimateDisclaimer: "Estimate only — actual rate, taxes, and insurance vary by lender and property.",
     },
     preApprovalPromo: {
-      h2: "Wondering how much you can get pre-approved for?",
+      h2: "Wondering how much you could get pre-approved for a mortgage?",
       p: "It's free, a soft check on your credit that won't affect your score, and doesn't commit you to anything until you actually make an offer on a home.",
       cta: "Get more info",
     },
@@ -503,7 +503,7 @@ const translations = {
       estimateDisclaimer: "Solo es un estimado — la tasa real, los impuestos y el seguro varían según el prestamista y la propiedad.",
     },
     preApprovalPromo: {
-      h2: "¿Se pregunta para cuánto puede precalificar?",
+      h2: "¿Se pregunta para cuánto podría precalificar para una hipoteca?",
       p: "Es gratis, una verificación de crédito suave que no afecta su puntaje, y no lo compromete a nada hasta que realmente haga una oferta por una casa.",
       cta: "Más información",
     },

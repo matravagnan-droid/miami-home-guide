@@ -834,10 +834,27 @@ footer a {
   max-width: 72ch;
 }
 
+.steps-list-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  column-gap: 44px;
+  max-width: none;
+}
+
+@media (max-width: 700px) {
+  .steps-list-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+}
+
 .step-item {
   display: flex;
-  gap: 26px;
-  padding: 30px 0;
+  gap: 14px;
+  padding: 18px 0;
   border-bottom: 1px solid rgba(16,63,69,0.12);
 }
 
@@ -849,10 +866,22 @@ footer a {
   border-bottom: none;
 }
 
+@media (min-width: 701px) {
+  .steps-list-split .step-item:nth-child(1),
+  .steps-list-split .step-item:nth-child(4) {
+    padding-top: 0;
+  }
+
+  .steps-list-split .step-item:nth-child(3),
+  .steps-list-split .step-item:nth-child(6) {
+    border-bottom: none;
+  }
+}
+
 .step-number {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   background: var(--bay-deep);
   color: var(--sunset);
   display: flex;
@@ -862,8 +891,8 @@ footer a {
 }
 
 .step-number svg {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }
 
 .step-content-num {
@@ -872,14 +901,14 @@ footer a {
 
 .step-content h3 {
   font-family: var(--display);
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
 .step-content p {
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.55;
   color: #4a5a56;
   margin: 0;
 }
@@ -914,14 +943,14 @@ footer a {
   margin-top: 4px;
 }
 
-.steps-layout {
+.wheel-row {
   display: flex;
   gap: 40px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.steps-layout .steps-list {
+.wheel-row > *:first-child {
   flex: 1;
   min-width: 280px;
 }
