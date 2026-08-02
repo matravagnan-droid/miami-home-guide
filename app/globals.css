@@ -925,6 +925,20 @@ footer a {
   padding: 32px;
 }
 
+.lead-form-wide {
+  max-width: none;
+}
+
+.lead-intro {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 62ch;
+  margin: 0 0 28px;
+  color: var(--bay-deep);
+}
+
 .lead-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

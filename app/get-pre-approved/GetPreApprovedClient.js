@@ -22,14 +22,15 @@ export default function GetPreApprovedClient() {
       <section className="hero hero-compact">
         <div className="eyebrow">{t.preApprovalPage.eyebrow}</div>
         <h1>{t.preApprovalPage.h1}</h1>
-        <p>{t.preApprovalPage.p}</p>
       </section>
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
+        <p className="lead-intro">{t.preApprovalPage.p}</p>
+
         <form
-          className="lead-form"
+          className="lead-form lead-form-wide"
           action="https://formsubmit.co/mat.ravagnan@gmail.com"
           method="POST"
         >
