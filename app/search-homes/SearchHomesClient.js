@@ -9,114 +9,60 @@ import { COUNTIES } from "../lib/counties";
 
 const NUMBER_OPTIONS = ["1", "2", "3", "4", "5+"];
 const STORY_OPTIONS = ["1", "2", "3+"];
-const PARKING_OPTIONS = ["1", "2", "3", "4+"];
 
 const PRICE_MIN = 0;
 const PRICE_MAX = 20000000;
-const PRICE_STEP = 50000;
+const PRICE_STEP = 5000;
 
 const SQFT_MIN = 0;
 const SQFT_MAX = 10000;
 const SQFT_STEP = 100;
 
 const HOA_MIN = 0;
-const HOA_MAX = 2000;
 const HOA_STEP = 25;
 
 const TAX_MIN = 0;
-const TAX_MAX = 50000;
-const TAX_STEP = 500;
+const TAX_STEP = 100;
+
+const YEAR_MIN = 1900;
+const YEAR_MAX = 2027;
 
 const DEFAULT_CENTER = [25.9, -80.25];
 const DEFAULT_ZOOM = 10;
 
-function DualRangeField({ label, min, max, step, value, onChange, format, nameMin, nameMax, spanClass = "filter-grid-full" }) {
-  const [lo, hi] = value;
-  const pct = (v) => ((v - min) / (max - min)) * 100;
-
-  return (
-    <div className={`calc-field ${spanClass}`}>
-      <span>{label}</span>
-      <div className="range-slider">
-        <div className="range-slider-track" />
-        <div
-          className="range-slider-range"
-          style={{ left: `${pct(lo)}%`, right: `${100 - pct(hi)}%` }}
-        />
-        <input
-          type="range"
-          name={nameMin}
-          min={min}
-          max={max}
-          step={step}
-          value={lo}
-          onChange={(e) => onChange([Math.min(Number(e.target.value), hi - step), hi])}
-        />
-        <input
-          type="range"
-          name={nameMax}
-          min={min}
-          max={max}
-          step={step}
-          value={hi}
-          onChange={(e) => onChange([lo, Math.max(Number(e.target.value), lo + step)])}
-        />
-      </div>
-      <div className="range-slider-values">
-        <span>{format(lo)}</span>
-        <span>{hi >= max ? `${format(hi)}+` : format(hi)}</span>
-      </div>
-    </div>
-  );
-}
-
-function MaxRangeField({ label, min, max, step, value, onChange, format, noMaxLabel, name }) {
-  const pct = ((value - min) / (max - min)) * 100;
-
+function PillRadioField({ label, name, options, includeAny, anyLabel }) {
   return (
     <div className="calc-field">
       <span>{label}</span>
-      <div className="range-slider">
-        <div className="range-slider-track" />
-        <div className="range-slider-range" style={{ left: 0, right: `${100 - pct}%` }} />
-        <input
-          type="range"
-          name={name}
-          min={min}
-          max={max}
-          step={step}
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
-        />
-      </div>
-      <div className="range-slider-values range-slider-values-single">
-        <span>{value >= max ? noMaxLabel : format(value)}</span>
+      <div className="filter-checkbox-group">
+        {includeAny && (
+          <label className="filter-checkbox">
+            <input type="radio" name={name} value="Any" defaultChecked />
+            {anyLabel}
+          </label>
+        )}
+        {options.map((n) => (
+          <label className="filter-checkbox" key={n}>
+            <input type="radio" name={name} value={n} />
+            {n}
+          </label>
+        ))}
       </div>
     </div>
   );
 }
 
 export default function SearchHomesClient() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   const [redirectUrl, setRedirectUrl] = useState("");
   const [countyId, setCountyId] = useState("miami-dade");
   const [cityIds, setCityIds] = useState([]);
-  const [priceRange, setPriceRange] = useState([PRICE_MIN, PRICE_MAX]);
-  const [sqftRange, setSqftRange] = useState([SQFT_MIN, SQFT_MAX]);
-  const [hoaMax, setHoaMax] = useState(HOA_MAX);
-  const [taxMax, setTaxMax] = useState(TAX_MAX);
   const [drawnAreaText, setDrawnAreaText] = useState("");
   const [leafletReady, setLeafletReady] = useState(false);
 
   const mapNodeRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const drawnLayerRef = useRef(null);
-
-  const locale = lang === "es" ? "es-US" : "en-US";
-  const money = (n) => n.toLocaleString(locale, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-  const sqft = (n) => `${n.toLocaleString(locale)} sqft`;
-  const hoaMoney = (n) => `${money(n)}/mo`;
-  const taxMoney = (n) => `${money(n)}/yr`;
 
   useEffect(() => {
     setRedirectUrl(`${window.location.origin}/search-homes/thank-you`);
@@ -333,77 +279,57 @@ export default function SearchHomesClient() {
 
           <div className="filter-two-col">
             <div className="filter-col">
-              <DualRangeField
-                label={t.searchHomes.priceRange}
-                min={PRICE_MIN}
-                max={PRICE_MAX}
-                step={PRICE_STEP}
-                value={priceRange}
-                onChange={setPriceRange}
-                format={money}
-                nameMin="Min Price"
-                nameMax="Max Price"
-                spanClass=""
-              />
+              <div className="calc-field">
+                <span>{t.searchHomes.priceRange}</span>
+                <div className="dual-input-row">
+                  <input type="number" name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min $" />
+                  <input type="number" name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max $" />
+                </div>
+              </div>
 
-              <DualRangeField
-                label={t.searchHomes.sqftRange}
-                min={SQFT_MIN}
-                max={SQFT_MAX}
-                step={SQFT_STEP}
-                value={sqftRange}
-                onChange={setSqftRange}
-                format={sqft}
-                nameMin="Min Sqft"
-                nameMax="Max Sqft"
-                spanClass=""
-              />
+              <div className="calc-field">
+                <span>{t.searchHomes.sqftRange}</span>
+                <div className="dual-input-row">
+                  <input type="number" name="Min Sqft" min={SQFT_MIN} max={SQFT_MAX} step={SQFT_STEP} placeholder="Min sqft" />
+                  <input type="number" name="Max Sqft" min={SQFT_MIN} max={SQFT_MAX} step={SQFT_STEP} placeholder="Max sqft" />
+                </div>
+              </div>
 
-              <MaxRangeField
-                label={t.searchHomes.maxHoa}
-                min={HOA_MIN}
-                max={HOA_MAX}
-                step={HOA_STEP}
-                value={hoaMax}
-                onChange={setHoaMax}
-                format={hoaMoney}
-                noMaxLabel={t.searchHomes.noMax}
-                name="Max HOA Fee"
-              />
+              <label className="calc-field">
+                <span>{t.searchHomes.maxHoa}</span>
+                <input type="number" name="Max HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="$/month" />
+              </label>
 
-              <MaxRangeField
-                label={t.searchHomes.maxTax}
-                min={TAX_MIN}
-                max={TAX_MAX}
-                step={TAX_STEP}
-                value={taxMax}
-                onChange={setTaxMax}
-                format={taxMoney}
-                noMaxLabel={t.searchHomes.noMax}
-                name="Max Annual Property Tax"
-              />
+              <label className="calc-field">
+                <span>{t.searchHomes.maxTax}</span>
+                <input type="number" name="Max Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="$/year" />
+              </label>
+
+              <div className="calc-field">
+                <span>{t.searchHomes.yearBuiltRange}</span>
+                <div className="dual-input-row">
+                  <input type="number" name="Min Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Min year" />
+                  <input type="number" name="Max Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Max year" />
+                </div>
+              </div>
             </div>
 
             <div className="filter-col">
-              <label className="calc-field">
-                <span>{t.searchHomes.bedroomsMin}</span>
-                <select name="Bedrooms (min)" defaultValue="Any">
-                  <option value="Any">{t.searchHomes.any}</option>
-                  {NUMBER_OPTIONS.map((n) => (
-                    <option key={n} value={n}>{n}</option>
-                  ))}
-                </select>
-              </label>
+              <PillRadioField
+                label={t.searchHomes.bedroomsMin}
+                name="Bedrooms (min)"
+                options={NUMBER_OPTIONS}
+                includeAny
+                anyLabel={t.searchHomes.any}
+              />
 
-              <label className="calc-field">
-                <span>{t.searchHomes.bathroomsMin}</span>
-                <select name="Bathrooms (min)" defaultValue="Any">
-                  <option value="Any">{t.searchHomes.any}</option>
-                  {NUMBER_OPTIONS.map((n) => (
-                    <option key={n} value={n}>{n}</option>
-                  ))}
-                </select>
-              </label>
+              <PillRadioField
+                label={t.searchHomes.bathroomsMin}
+                name="Bathrooms (min)"
+                options={NUMBER_OPTIONS}
+                includeAny
+                anyLabel={t.searchHomes.any}
+              />
 
               <label className="calc-field">
                 <span>{t.searchHomes.stories}</span>
@@ -429,15 +355,13 @@ export default function SearchHomesClient() {
                 </div>
               </div>
 
-              <label className="calc-field">
-                <span>{t.searchHomes.parkingMin}</span>
-                <select name="Parking Spaces (min)" defaultValue="Any">
-                  <option value="Any">{t.searchHomes.any}</option>
-                  {PARKING_OPTIONS.map((n) => (
-                    <option key={n} value={n}>{n}</option>
-                  ))}
-                </select>
-              </label>
+              <PillRadioField
+                label={t.searchHomes.parkingMin}
+                name="Parking Spaces (min)"
+                options={NUMBER_OPTIONS}
+                includeAny
+                anyLabel={t.searchHomes.any}
+              />
             </div>
           </div>
 
