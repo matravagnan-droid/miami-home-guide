@@ -29,7 +29,7 @@ const translations = {
     },
     tools: {
       h2: "Your Miami Home Guide",
-      p: "Answer a few questions and get a real number back — no obligation, no call required.",
+      p: "Explore our free resources below, and reach out anytime—we're happy to help.",
       valueTag: "Step by step",
       valueTitle: "First-time homebuyer guide",
       valueBody: "Everything from saving for a down payment to getting your keys, laid out in six clear steps.",
@@ -428,7 +428,7 @@ const translations = {
     },
     tools: {
       h2: "Su Miami Home Guide",
-      p: "Responda algunas preguntas y obtenga un número real — sin compromiso, sin necesidad de llamada.",
+      p: "Explore nuestros recursos gratuitos a continuación, y contáctenos cuando quiera—estamos para ayudar.",
       valueTag: "Paso a paso",
       valueTitle: "Guía para compradores primerizos",
       valueBody: "Todo, desde ahorrar para el pago inicial hasta recibir las llaves, explicado en seis pasos claros.",
