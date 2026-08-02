@@ -111,7 +111,7 @@ const translations = {
     preApprovalPage: {
       eyebrow: "Get pre-approved",
       h1: "Get pre-approved",
-      p: "Leave your info and I'll help you get started — free, no obligation, and it won't commit you to anything.",
+      p: "Leave your info and I'll help you get started — it's free and won't commit you to anything.",
       firstName: "First name",
       lastName: "Last name",
       phone: "Phone number",
@@ -545,7 +545,7 @@ const translations = {
     preApprovalPage: {
       eyebrow: "Precalificación",
       h1: "Obtenga su precalificación",
-      p: "Déjeme su información y le ayudaré a comenzar — gratis, sin compromiso, y no lo compromete a nada.",
+      p: "Déjeme su información y le ayudaré a comenzar — es gratis y no lo compromete a nada.",
       firstName: "Nombre",
       lastName: "Apellido",
       phone: "Número de teléfono",

@@ -20,12 +20,13 @@ export default function BuyerGuideClient() {
       <section className="hero hero-compact">
         <div className="eyebrow">{t.buyerGuide.eyebrow}</div>
         <h1>{t.buyerGuide.h1}</h1>
-        <p>{t.buyerGuide.p}</p>
       </section>
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
+        <p className="lead-intro">{t.buyerGuide.p}</p>
+
         <div className="wheel-row">
           <div className="promo-card">
             <h2>{t.preApprovalPromo.h2}</h2>

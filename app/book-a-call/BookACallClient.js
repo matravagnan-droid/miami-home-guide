@@ -29,7 +29,7 @@ export default function BookACallClient() {
 
       <section className="section" style={{ paddingTop: 32 }}>
         <form
-          className="lead-form"
+          className="lead-form lead-form-wide"
           action="https://formsubmit.co/mat.ravagnan@gmail.com"
           method="POST"
         >
