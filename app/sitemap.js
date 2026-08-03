@@ -1,4 +1,5 @@
 import { getAllNeighborhoods } from "./lib/neighborhoods";
+import { getAllBlogPosts } from "./lib/blogPosts";
 
 const BASE_URL = "https://miami-home-guide.vercel.app";
 
@@ -14,6 +15,7 @@ const STATIC_ROUTES = [
   { path: "/search-homes", changeFrequency: "weekly", priority: 0.8 },
   { path: "/median-prices", changeFrequency: "weekly", priority: 0.8 },
   { path: "/first-time-buyer-guide", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/book-a-call", changeFrequency: "yearly", priority: 0.5 },
   { path: "/get-pre-approved", changeFrequency: "yearly", priority: 0.5 },
 ];
@@ -35,5 +37,12 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticEntries, ...neighborhoodEntries];
+  const blogEntries = getAllBlogPosts().map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...neighborhoodEntries, ...blogEntries];
 }

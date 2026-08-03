@@ -131,6 +131,7 @@ export default function HomeClient({ articles }) {
         <div className="section-head">
           <h2>{t.blog.h2}</h2>
           <p>{t.blog.p}</p>
+          <a className="link" href="/blog">{t.blogSection.homepageLink}</a>
         </div>
         <div className="blog-tabs">
           {tabs.map((tab) => (
