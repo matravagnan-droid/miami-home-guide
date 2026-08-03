@@ -2,12 +2,52 @@ import HomeClient from "./HomeClient";
 import { getMiamiArticles } from "./lib/miamiFeeds";
 
 export const metadata = {
-  title: "Miami Real Estate Guide | Homes, Mortgage & Property Tax Calculators",
+  title: "Miami Real Estate Guide | Homes & Mortgage Calculators",
   description:
-    "Explore Miami-Dade and Broward neighborhoods, estimate your mortgage payment and property taxes, and get local insight from a licensed Miami real estate agent — not a national franchise.",
+    "Real Miami-Dade and Broward neighborhood guides, mortgage and property tax calculators, from a licensed local Miami real estate agent.",
+  openGraph: {
+    title: "Miami Real Estate Guide | Homes & Mortgage Calculators",
+    description:
+      "Real Miami-Dade and Broward neighborhood guides, mortgage and property tax calculators, from a licensed local Miami real estate agent.",
+    url: "https://miami-home-guide.vercel.app/",
+    siteName: "Miami Home Guide",
+    images: ["/images/hero-skyline.jpg"],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Miami Real Estate Guide | Homes & Mortgage Calculators",
+    description:
+      "Real Miami-Dade and Broward neighborhood guides, mortgage and property tax calculators, from a licensed local Miami real estate agent.",
+    images: ["/images/hero-skyline.jpg"],
+  },
+};
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: "Miami Home Guide",
+  description:
+    "Licensed Miami real estate agent serving Miami-Dade and Broward County with neighborhood guides, mortgage and property tax calculators, and home search help.",
+  url: "https://miami-home-guide.vercel.app/",
+  image: "https://miami-home-guide.vercel.app/images/hero-skyline.jpg",
+  email: "mat.ravagnan@gmail.com",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Miami-Dade County, FL" },
+    { "@type": "AdministrativeArea", name: "Broward County, FL" },
+  ],
 };
 
 export default async function Page() {
   const articles = await getMiamiArticles();
-  return <HomeClient articles={articles} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+      />
+      <HomeClient articles={articles} />
+    </>
+  );
 }

@@ -24,7 +24,7 @@ const translations = {
     },
     hero: {
       eyebrow: "Buying in Miami-Dade",
-      h1Line1: "Know the block before",
+      h1Line1: "Know the Miami block before",
       h1Line2: "you make the offer.",
       p: "Real neighborhood guides, mortgage and tax calculators, a first-time homebuyer guide, active listings to browse, tips for settling into Miami, and the latest local news.",
     },
@@ -468,8 +468,8 @@ const translations = {
     },
     hero: {
       eyebrow: "Comprando en Miami-Dade",
-      h1Line1: "Conozca la cuadra antes de",
-      h1Line2: "hacer la oferta.",
+      h1Line1: "Conozca la cuadra de Miami",
+      h1Line2: "antes de hacer la oferta.",
       p: "Guías reales de vecindarios, calculadoras de hipoteca e impuestos, una guía para compradores primerizos, propiedades activas para explorar, consejos para instalarse en Miami, y las últimas noticias locales.",
     },
     tools: {
@@ -912,8 +912,8 @@ const translations = {
     },
     hero: {
       eyebrow: "Acheter à Miami-Dade",
-      h1Line1: "Connaissez le quartier avant",
-      h1Line2: "de faire une offre.",
+      h1Line1: "Connaissez le quartier de Miami",
+      h1Line2: "avant de faire une offre.",
       p: "De vrais guides de quartiers, des calculateurs de prêt hypothécaire et de taxe foncière, un guide pour les primo-accédants, des annonces actives à parcourir, des conseils pour s'installer à Miami, et les dernières nouvelles locales.",
     },
     tools: {
@@ -1356,8 +1356,8 @@ const translations = {
     },
     hero: {
       eyebrow: "Achte nan Miami-Dade",
-      h1Line1: "Konnen katye a anvan",
-      h1Line2: "ou fè òf la.",
+      h1Line1: "Konnen katye Miami a",
+      h1Line2: "anvan ou fè òf la.",
       p: "Vrè gid katye, kalkilatè prè ipotekè ak taks, yon gid pou moun k ap achte kay pou premye fwa, lis kay ki disponib pou gade, konsèy pou enstale w nan Miami, ak dènye nouvèl lokal yo.",
     },
     tools: {
@@ -1800,8 +1800,8 @@ const translations = {
     },
     hero: {
       eyebrow: "Comprando em Miami-Dade",
-      h1Line1: "Conheça o quarteirão antes",
-      h1Line2: "de fazer a oferta.",
+      h1Line1: "Conheça o quarteirão de Miami",
+      h1Line2: "antes de fazer a oferta.",
       p: "Guias reais de bairros, calculadoras de financiamento e imposto predial, um guia para compradores de primeira viagem, imóveis ativos para explorar, dicas para se instalar em Miami, e as últimas notícias locais.",
     },
     tools: {
@@ -2244,8 +2244,8 @@ const translations = {
     },
     hero: {
       eyebrow: "Comprare a Miami-Dade",
-      h1Line1: "Conosci il quartiere prima",
-      h1Line2: "di fare l'offerta.",
+      h1Line1: "Conosci il quartiere di Miami",
+      h1Line2: "prima di fare l'offerta.",
       p: "Guide reali sui quartieri, calcolatori del mutuo e delle tasse, una guida per chi acquista casa per la prima volta, annunci attivi da consultare, consigli per ambientarsi a Miami, e le ultime notizie locali.",
     },
     tools: {

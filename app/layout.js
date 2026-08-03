@@ -3,11 +3,22 @@ import './globals.css';
 import { LanguageProvider } from './i18n/LanguageContext';
 
 export const metadata = {
+  metadataBase: new URL('https://miami-home-guide.vercel.app'),
   title: {
     default: 'Miami Home Guide | Miami-Dade & Broward Real Estate',
     template: '%s',
   },
   description: 'Neighborhood guides, mortgage and property tax calculators, and relocation resources for Miami-Dade and Broward County, from a local licensed Miami real estate agent.',
+  openGraph: {
+    siteName: 'Miami Home Guide',
+    locale: 'en_US',
+    type: 'website',
+    images: ['/images/hero-skyline.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/hero-skyline.jpg'],
+  },
 };
 
 export default function RootLayout({ children }) {
