@@ -404,6 +404,11 @@ const translations = {
       faqHeading: "Frequently asked questions",
       moreGuidesHeading: "More guides",
     },
+    realtorPromo: {
+      h2: "Looking for a realtor in Miami?",
+      p: "Whether you're buying, selling, or just want to talk through your options, I'm a phone call away — no pressure, no obligation.",
+      cta: "Connect with me",
+    },
     footer: {
       licensed: "Licensed Real Estate Agent, State of Florida",
     },
@@ -859,6 +864,11 @@ const translations = {
       homepageLink: "Lee nuestras guías inmobiliarias →",
       faqHeading: "Preguntas frecuentes",
       moreGuidesHeading: "Más guías",
+    },
+    realtorPromo: {
+      h2: "¿Busca un agente inmobiliario en Miami?",
+      p: "Ya sea que esté comprando, vendiendo, o solo quiera conversar sobre sus opciones, estoy a una llamada de distancia — sin presión, sin compromiso.",
+      cta: "Contácteme",
     },
     footer: {
       licensed: "Agente de Bienes Raíces con Licencia, Estado de Florida",
@@ -1316,6 +1326,11 @@ const translations = {
       faqHeading: "Questions fréquentes",
       moreGuidesHeading: "Plus de guides",
     },
+    realtorPromo: {
+      h2: "Vous cherchez un agent immobilier à Miami ?",
+      p: "Que vous achetiez, vendiez, ou souhaitiez simplement discuter de vos options, je suis à un appel de distance — sans pression, sans engagement.",
+      cta: "Me contacter",
+    },
     footer: {
       licensed: "Agent immobilier agréé, État de Floride",
     },
@@ -1771,6 +1786,11 @@ const translations = {
       homepageLink: "Li gid imobilye nou yo →",
       faqHeading: "Kesyon yo poze souvan",
       moreGuidesHeading: "Plis gid",
+    },
+    realtorPromo: {
+      h2: "W ap chèche yon ajan imobilye nan Miami?",
+      p: "Kit w ap achte, w ap vann, oswa w jis vle pale sou opsyon ou yo, mwen a yon apèl telefòn — san presyon, san okenn angajman.",
+      cta: "Kontakte m",
     },
     footer: {
       licensed: "Ajan Imobilye ki Gen Lisans, Eta Florid",
@@ -2228,6 +2248,11 @@ const translations = {
       faqHeading: "Perguntas frequentes",
       moreGuidesHeading: "Mais guias",
     },
+    realtorPromo: {
+      h2: "Procurando um corretor de imóveis em Miami?",
+      p: "Seja para comprar, vender, ou apenas conversar sobre suas opções, estou a uma ligação de distância — sem pressão, sem compromisso.",
+      cta: "Fale comigo",
+    },
     footer: {
       licensed: "Corretor de Imóveis Licenciado, Estado da Flórida",
     },
@@ -2683,6 +2708,11 @@ const translations = {
       homepageLink: "Leggi le nostre guide immobiliari →",
       faqHeading: "Domande frequenti",
       moreGuidesHeading: "Altre guide",
+    },
+    realtorPromo: {
+      h2: "Cerchi un agente immobiliare a Miami?",
+      p: "Che tu stia comprando, vendendo, o voglia semplicemente parlare delle tue opzioni, sono a una telefonata di distanza — senza pressione, senza impegno.",
+      cta: "Contattami",
     },
     footer: {
       licensed: "Agente Immobiliare Autorizzato, Stato della Florida",

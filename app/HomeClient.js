@@ -160,6 +160,14 @@ export default function HomeClient({ articles }) {
         )}
       </section>
 
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="realtor-promo">
+          <h2>{t.realtorPromo.h2}</h2>
+          <p>{t.realtorPromo.p}</p>
+          <a href="/book-a-call" className="book-call-btn">{t.realtorPromo.cta}</a>
+        </div>
+      </section>
+
       <SiteFooter>
         <span>{t.footer.licensed}</span>
       </SiteFooter>
