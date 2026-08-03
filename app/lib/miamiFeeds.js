@@ -15,8 +15,19 @@ const FEEDS = [
     badge: "realEstate",
     source: "Miami Today",
     url: "https://www.miamitodaynews.com/feed/",
-    count: 4,
+    count: 2,
     onlyCategory: "Real Estate",
+  },
+  {
+    // Miami Today only tags a handful of stories "Real Estate" at any given
+    // time (their RSS only carries their 10 most recent items total), so
+    // pair it with a dedicated South Florida real estate outlet to keep this
+    // tab reliably populated.
+    tab: "realEstate",
+    badge: "realEstate",
+    source: "The Real Deal Miami",
+    url: "https://therealdeal.com/miami/feed/",
+    count: 4,
   },
   {
     tab: "news",
