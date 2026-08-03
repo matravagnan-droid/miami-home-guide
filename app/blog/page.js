@@ -11,7 +11,7 @@ export const metadata = {
       "In-depth, research-backed guides on buying, financing, and choosing a neighborhood in Miami-Dade and Broward.",
     url: "https://miami-home-guide.vercel.app/blog",
     siteName: "Miami Home Guide",
-    images: ["/images/hero-skyline.jpg"],
+    images: ["/images/hero-skyline-panorama.jpg"],
     locale: "en_US",
     type: "website",
   },

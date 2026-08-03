@@ -22,7 +22,7 @@ export function generateMetadata({ params }) {
       description: post.metaDescription,
       url,
       siteName: "Miami Home Guide",
-      images: ["/images/hero-skyline.jpg"],
+      images: ["/images/hero-skyline-panorama.jpg"],
       locale: "en_US",
       type: "article",
       publishedTime: post.publishDate,
@@ -31,7 +31,7 @@ export function generateMetadata({ params }) {
       card: "summary_large_image",
       title: post.title,
       description: post.metaDescription,
-      images: ["/images/hero-skyline.jpg"],
+      images: ["/images/hero-skyline-panorama.jpg"],
     },
   };
 }
@@ -51,7 +51,7 @@ export default function Page({ params }) {
     dateModified: post.publishDate,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    image: `${BASE_URL}/images/hero-skyline.jpg`,
+    image: `${BASE_URL}/images/hero-skyline-panorama.jpg`,
     articleSection: post.category,
     author: {
       "@type": "Person",

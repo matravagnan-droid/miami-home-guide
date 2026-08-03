@@ -11,7 +11,7 @@ export const metadata = {
       "Real Miami-Dade and Broward neighborhood guides, mortgage and property tax calculators, from a licensed local Miami real estate agent.",
     url: "https://miami-home-guide.vercel.app/",
     siteName: "Miami Home Guide",
-    images: ["/images/hero-skyline.jpg"],
+    images: ["/images/hero-skyline-panorama.jpg"],
     locale: "en_US",
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata = {
     title: "Miami Real Estate Guide | Homes & Mortgage Calculators",
     description:
       "Real Miami-Dade and Broward neighborhood guides, mortgage and property tax calculators, from a licensed local Miami real estate agent.",
-    images: ["/images/hero-skyline.jpg"],
+    images: ["/images/hero-skyline-panorama.jpg"],
   },
 };
 
@@ -31,7 +31,7 @@ const businessSchema = {
   description:
     "Licensed Miami real estate agent serving Miami-Dade and Broward County with neighborhood guides, mortgage and property tax calculators, and home search help.",
   url: "https://miami-home-guide.vercel.app/",
-  image: "https://miami-home-guide.vercel.app/images/hero-skyline.jpg",
+  image: "https://miami-home-guide.vercel.app/images/hero-skyline-panorama.jpg",
   email: "mat.ravagnan@gmail.com",
   areaServed: [
     { "@type": "AdministrativeArea", name: "Miami-Dade County, FL" },

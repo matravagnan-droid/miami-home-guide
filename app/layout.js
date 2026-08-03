@@ -13,11 +13,11 @@ export const metadata = {
     siteName: 'Miami Home Guide',
     locale: 'en_US',
     type: 'website',
-    images: ['/images/hero-skyline.jpg'],
+    images: ['/images/hero-skyline-panorama.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/hero-skyline.jpg'],
+    images: ['/images/hero-skyline-panorama.jpg'],
   },
 };
 
