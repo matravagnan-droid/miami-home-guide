@@ -27,7 +27,7 @@ const translations = {
       eyebrow: "Buying in Miami-Dade",
       h1Line1: "Everything you need to",
       h1Line2: "buy smart in Miami.",
-      p: "Real neighborhood guides, mortgage and tax calculators, a first-time homebuyer guide, active listings to browse, tips for settling into Miami, and the latest local news.",
+      p: "Active listings to browse, a first-time homebuyer guide, mortgage and property tax calculators, real neighborhood guides if you're new to Miami, and the latest local news.",
     },
     tools: {
       h2: "Your Miami Home Guide",
@@ -483,7 +483,7 @@ const translations = {
       eyebrow: "Comprando en Miami-Dade",
       h1Line1: "Todo lo que necesita para",
       h1Line2: "comprar bien en Miami.",
-      p: "Guías reales de vecindarios, calculadoras de hipoteca e impuestos, una guía para compradores primerizos, propiedades activas para explorar, consejos para instalarse en Miami, y las últimas noticias locales.",
+      p: "Propiedades activas para explorar, una guía para compradores primerizos, calculadoras de hipoteca e impuestos sobre la propiedad, guías reales de vecindarios si es nuevo en Miami, y las últimas noticias locales.",
     },
     tools: {
       h2: "Su Miami Home Guide",
@@ -939,7 +939,7 @@ const translations = {
       eyebrow: "Acheter à Miami-Dade",
       h1Line1: "Tout ce qu'il vous faut pour",
       h1Line2: "bien acheter à Miami.",
-      p: "De vrais guides de quartiers, des calculateurs de prêt hypothécaire et de taxe foncière, un guide pour les primo-accédants, des annonces actives à parcourir, des conseils pour s'installer à Miami, et les dernières nouvelles locales.",
+      p: "Des annonces actives à parcourir, un guide pour les primo-accédants, des calculateurs de prêt hypothécaire et de taxe foncière, de vrais guides de quartiers si vous êtes nouveau à Miami, et les dernières nouvelles locales.",
     },
     tools: {
       h2: "Votre guide immobilier de Miami",
@@ -1395,7 +1395,7 @@ const translations = {
       eyebrow: "Achte nan Miami-Dade",
       h1Line1: "Tout sa ou bezwen pou",
       h1Line2: "achte byen nan Miami.",
-      p: "Vrè gid katye, kalkilatè prè ipotekè ak taks, yon gid pou moun k ap achte kay pou premye fwa, lis kay ki disponib pou gade, konsèy pou enstale w nan Miami, ak dènye nouvèl lokal yo.",
+      p: "Lis kay ki disponib pou gade, yon gid pou moun k ap achte kay pou premye fwa, kalkilatè prè ipotekè ak taks sou pwopriyete, vrè gid katye si ou nouvo nan Miami, ak dènye nouvèl lokal yo.",
     },
     tools: {
       h2: "Gid Kay Miami Ou a",
@@ -1851,7 +1851,7 @@ const translations = {
       eyebrow: "Comprando em Miami-Dade",
       h1Line1: "Tudo o que você precisa para",
       h1Line2: "comprar bem em Miami.",
-      p: "Guias reais de bairros, calculadoras de financiamento e imposto predial, um guia para compradores de primeira viagem, imóveis ativos para explorar, dicas para se instalar em Miami, e as últimas notícias locais.",
+      p: "Imóveis ativos para explorar, um guia para compradores de primeira viagem, calculadoras de financiamento e imposto predial, guias reais de bairros para quem é novo em Miami, e as últimas notícias locais.",
     },
     tools: {
       h2: "Seu Guia de Imóveis de Miami",
@@ -2307,7 +2307,7 @@ const translations = {
       eyebrow: "Comprare a Miami-Dade",
       h1Line1: "Tutto ciò che ti serve per",
       h1Line2: "comprare bene a Miami.",
-      p: "Guide reali sui quartieri, calcolatori del mutuo e delle tasse, una guida per chi acquista casa per la prima volta, annunci attivi da consultare, consigli per ambientarsi a Miami, e le ultime notizie locali.",
+      p: "Annunci attivi da consultare, una guida per chi acquista casa per la prima volta, calcolatori del mutuo e delle tasse sulla proprietà, guide reali sui quartieri per chi è nuovo a Miami, e le ultime notizie locali.",
     },
     tools: {
       h2: "La Tua Guida Immobiliare di Miami",
