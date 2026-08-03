@@ -125,12 +125,22 @@ async function fetchFeed(config) {
   }
 }
 
+function byNewestFirst(a, b) {
+  const aTime = a.pubDate ? new Date(a.pubDate).getTime() : 0;
+  const bTime = b.pubDate ? new Date(b.pubDate).getTime() : 0;
+  return bTime - aTime;
+}
+
 export async function getMiamiArticles() {
   const results = await Promise.all(FEEDS.map(fetchFeed));
   const byTab = { realEstate: [], news: [], sportsFood: [], thingsToDo: [] };
 
   FEEDS.forEach((config, i) => {
     byTab[config.tab].push(...results[i]);
+  });
+
+  Object.keys(byTab).forEach((tab) => {
+    byTab[tab].sort(byNewestFirst);
   });
 
   return byTab;
