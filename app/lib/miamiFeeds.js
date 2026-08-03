@@ -27,7 +27,7 @@ const FEEDS = [
     badge: "realEstate",
     source: "The Real Deal Miami",
     url: "https://therealdeal.com/miami/feed/",
-    count: 4,
+    count: 6,
   },
   {
     tab: "news",
