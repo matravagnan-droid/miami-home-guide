@@ -18,6 +18,11 @@ html, body {
   color: var(--ink);
   font-family: var(--body);
   scroll-behavior: smooth;
+  /* Fraunces (--display) has a "wonky" stylistic axis tied to optical size —
+     letting the browser auto-scale it at large heading sizes makes letters
+     like "f" render with an exaggerated, odd-looking curl. Lock optical
+     sizing off so headings stay legible/normal at every size. */
+  font-optical-sizing: none;
 }
 
 a { color: inherit; text-decoration: none; }
