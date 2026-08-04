@@ -1,7 +1,7 @@
 import { getAllNeighborhoods } from "./lib/neighborhoods";
 import { getAllBlogPosts } from "./lib/blogPosts";
 
-const BASE_URL = "https://miami-home-guide.vercel.app";
+const BASE_URL = "https://mymiamihomeguide.com";
 
 const STATIC_ROUTES = [
   { path: "/", changeFrequency: "weekly", priority: 1 },

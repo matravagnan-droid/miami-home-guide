@@ -36,7 +36,7 @@ const STANDALONE_CITY_SOURCE = {
 // Broward's GIS server 403s plain server-to-server requests without a
 // browser-like User-Agent — confirmed live.
 const FETCH_HEADERS = {
-  "User-Agent": "Mozilla/5.0 (compatible; MiamiHomeGuideBot/1.0; +https://miami-home-guide.vercel.app)",
+  "User-Agent": "Mozilla/5.0 (compatible; MiamiHomeGuideBot/1.0; +https://mymiamihomeguide.com)",
 };
 
 const REVALIDATE_SECONDS = 60 * 60 * 24 * 30; // boundaries don't change — monthly is plenty

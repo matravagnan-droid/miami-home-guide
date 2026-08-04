@@ -3,7 +3,7 @@ import { LanguageProvider } from './i18n/LanguageContext';
 import SiteAnalytics from './components/SiteAnalytics';
 
 export const metadata = {
-  metadataBase: new URL('https://miami-home-guide.vercel.app'),
+  metadataBase: new URL('https://mymiamihomeguide.com'),
   title: {
     default: 'Miami Home Guide | Miami-Dade & Broward Real Estate',
     template: '%s',

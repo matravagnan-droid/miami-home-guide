@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getAllBlogPosts, getBlogPost } from "../../lib/blogPosts";
 import BlogPostClient from "./BlogPostClient";
 
-const BASE_URL = "https://miami-home-guide.vercel.app";
+const BASE_URL = "https://mymiamihomeguide.com";
 
 export function generateStaticParams() {
   return getAllBlogPosts().map((post) => ({ slug: post.slug }));

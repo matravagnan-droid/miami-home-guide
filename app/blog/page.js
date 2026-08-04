@@ -9,7 +9,7 @@ export const metadata = {
     title: "Real Estate Guides | Miami Home Guide",
     description:
       "In-depth, research-backed guides on buying, financing, and choosing a neighborhood in Miami-Dade and Broward.",
-    url: "https://miami-home-guide.vercel.app/blog",
+    url: "https://mymiamihomeguide.com/blog",
     siteName: "Miami Home Guide",
     images: ["/images/hero-skyline-panorama.jpg"],
     locale: "en_US",
@@ -23,11 +23,11 @@ const listSchema = {
   name: "Real Estate Guides",
   description:
     "In-depth, research-backed guides on buying, financing, and choosing a neighborhood in Miami-Dade and Broward.",
-  url: "https://miami-home-guide.vercel.app/blog",
+  url: "https://mymiamihomeguide.com/blog",
   hasPart: getAllBlogPosts().map((post) => ({
     "@type": "BlogPosting",
     headline: post.title,
-    url: `https://miami-home-guide.vercel.app/blog/${post.slug}`,
+    url: `https://mymiamihomeguide.com/blog/${post.slug}`,
     datePublished: post.publishDate,
   })),
 };
