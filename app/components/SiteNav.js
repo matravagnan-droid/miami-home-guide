@@ -8,7 +8,7 @@ export default function SiteNav() {
 
   return (
     <nav className="nav">
-      <a className="nav-logo" href="/">Miami Home Guide</a>
+      <a className="nav-logo" href="/">My Miami Home Guide</a>
       <div className="nav-right">
         <div className="nav-links">
           <a href="/#tools">{t.nav.tools}</a>
