@@ -61,6 +61,11 @@ export default function BookACallClient() {
               <input type="email" name="Email" />
             </label>
 
+            <label className="calc-field">
+              <span>{t.bookCallPage.message}</span>
+              <textarea name="Message" rows={4} />
+            </label>
+
             <button type="submit" className="book-call-btn lead-form-submit">
               {t.bookCallPage.submit}
             </button>

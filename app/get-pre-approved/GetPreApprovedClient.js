@@ -62,6 +62,11 @@ export default function GetPreApprovedClient() {
               <input type="email" name="Email" />
             </label>
 
+            <label className="calc-field">
+              <span>{t.preApprovalPage.message}</span>
+              <textarea name="Message" rows={4} />
+            </label>
+
             <button type="submit" className="book-call-btn lead-form-submit">
               {t.preApprovalPage.submit}
             </button>
