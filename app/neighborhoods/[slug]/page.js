@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllNeighborhoods, getNeighborhood } from "../../lib/neighborhoods";
+import { getNearbyPlaces } from "../../lib/nearbyPlaces";
 import NeighborhoodPageClient from "./NeighborhoodPageClient";
 
 export function generateStaticParams() {
@@ -16,9 +17,11 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function Page({ params }) {
+export default async function Page({ params }) {
   const neighborhood = getNeighborhood(params.slug);
   if (!neighborhood) notFound();
 
-  return <NeighborhoodPageClient neighborhood={neighborhood} />;
+  const pois = await getNearbyPlaces(neighborhood.center);
+
+  return <NeighborhoodPageClient neighborhood={neighborhood} pois={pois} />;
 }

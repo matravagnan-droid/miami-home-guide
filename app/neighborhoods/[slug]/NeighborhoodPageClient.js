@@ -13,7 +13,7 @@ const moneyFor = (locale) => (n) =>
     maximumFractionDigits: 0,
   });
 
-export default function NeighborhoodPageClient({ neighborhood }) {
+export default function NeighborhoodPageClient({ neighborhood, pois }) {
   const { t, lang } = useLanguage();
   const money = moneyFor(lang === "es" ? "es-US" : "en-US");
   const text = (field) => field[lang] || field.en;
@@ -99,7 +99,7 @@ export default function NeighborhoodPageClient({ neighborhood }) {
           </div>
           <div className="neighborhood-detail-col neighborhood-detail-map">
             <h3>{t.neighborhoodPage.mapLabel}</h3>
-            <NeighborhoodPOIMap center={neighborhood.center} />
+            <NeighborhoodPOIMap center={neighborhood.center} pois={pois} />
           </div>
         </div>
       </section>
