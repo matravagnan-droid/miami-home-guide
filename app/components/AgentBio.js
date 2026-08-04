@@ -7,7 +7,7 @@ export default function AgentBio() {
 
   return (
     <div className="agent-bio">
-      <img src="/images/mattia-headshot.png" alt={t.agentBio.name} className="agent-bio-photo" />
+      <img src="/images/mattia-headshot.jpg" alt={t.agentBio.name} className="agent-bio-photo" />
       <h3 className="agent-bio-name">{t.agentBio.name}</h3>
       <p className="agent-bio-text">{t.agentBio.bio}</p>
     </div>
