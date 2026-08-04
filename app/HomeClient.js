@@ -121,7 +121,7 @@ export default function HomeClient({ articles }) {
               href={`/neighborhoods/${n.slug}`}
               style={{ backgroundImage: `linear-gradient(180deg, transparent 35%, rgba(7,31,36,0.92) 100%), url(${n.image})` }}
             >
-              <h4>{n.name}</h4><span>{n.tagline[lang]}</span>
+              <h4>{n.name}</h4><span>{n.tagline[lang] || n.tagline.en}</span>
             </a>
           ))}
         </div>

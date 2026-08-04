@@ -59,7 +59,7 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
       >
         <div className="eyebrow">Miami-Dade</div>
         <h1>{neighborhood.name}</h1>
-        <p>{neighborhood.tagline[lang]}</p>
+        <p>{neighborhood.tagline[lang] || neighborhood.tagline.en}</p>
       </section>
 
       <BackLink href="/#neighborhoods">{t.neighborhoodPage.backLink}</BackLink>
@@ -67,7 +67,7 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
       <section className="section" style={{ paddingTop: 32 }}>
         <div className="section-head">
           <h2>{t.neighborhoodPage.historyLabel}</h2>
-          <p>{neighborhood.history[lang]}</p>
+          <p>{neighborhood.history[lang] || neighborhood.history.en}</p>
         </div>
       </section>
 

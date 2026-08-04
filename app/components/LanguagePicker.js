@@ -10,6 +10,9 @@ const LANGUAGES = [
   { code: "ht", flag: "🇭🇹", label: "Kreyòl Ayisyen" },
   { code: "pt", flag: "🇵🇹", label: "Português" },
   { code: "it", flag: "🇮🇹", label: "Italiano" },
+  { code: "de", flag: "🇩🇪", label: "Deutsch" },
+  { code: "nl", flag: "🇳🇱", label: "Nederlands" },
+  { code: "pl", flag: "🇵🇱", label: "Polski" },
 ];
 
 export default function LanguagePicker() {
