@@ -32,7 +32,7 @@ export default function HomeClient({ articles }) {
       <div className="horizon" />
       <SiteNav />
 
-      <section className="hero" style={{ backgroundImage: "linear-gradient(90deg, rgba(7,31,36,0.55) 0%, rgba(7,31,36,0.5) 32%, rgba(7,31,36,0) 62%), linear-gradient(180deg, rgba(7,31,36,0.55) 0%, rgba(16,63,69,0.15) 80%, rgba(246,243,236,0) 86%, rgba(246,243,236,1) 93%), url(/images/hero-skyline-panorama.jpg)" }}>
+      <section className="hero" style={{ backgroundImage: "linear-gradient(90deg, rgba(7,31,36,0.55) 0%, rgba(7,31,36,0.5) 32%, rgba(7,31,36,0) 62%), linear-gradient(180deg, rgba(7,31,36,0.55) 0%, rgba(16,63,69,0.1) 55%, rgba(16,63,69,0) 65%, rgba(246,243,236,0) 90%, rgba(246,243,236,1) 96%), url(/images/hero-skyline-panorama.jpg)" }}>
         <div className="hero-fan" />
         <div className="eyebrow">{t.hero.eyebrow}</div>
         <h1>{t.hero.h1Line1}<br />{t.hero.h1Line2}</h1>
