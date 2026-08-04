@@ -11,7 +11,7 @@ const COLORS = {
   entertainment: "#c0392b",
 };
 
-export default function NeighborhoodPOIMap({ center, pois }) {
+export default function NeighborhoodPOIMap({ center, pois, boundary }) {
   const { t } = useLanguage();
   const containerRef = useRef(null);
   const mapRef = useRef(null);
@@ -30,6 +30,18 @@ export default function NeighborhoodPOIMap({ center, pois }) {
       }).addTo(map);
       mapRef.current = map;
 
+      let boundaryLayer = null;
+      if (boundary && boundary.features?.length) {
+        boundaryLayer = L.geoJSON(boundary, {
+          style: {
+            color: "#a9762f",
+            weight: 2,
+            fillColor: "#a9762f",
+            fillOpacity: 0.06,
+          },
+        }).addTo(map);
+      }
+
       (pois || []).forEach((place) => {
         const marker = L.circleMarker([place.lat, place.lng], {
           radius: 6,
@@ -40,6 +52,10 @@ export default function NeighborhoodPOIMap({ center, pois }) {
         }).addTo(map);
         marker.bindPopup(`<strong>${place.name}</strong>`);
       });
+
+      if (boundaryLayer) {
+        map.fitBounds(boundaryLayer.getBounds(), { padding: [16, 16] });
+      }
     })();
 
     return () => {
@@ -49,7 +65,7 @@ export default function NeighborhoodPOIMap({ center, pois }) {
         mapRef.current = null;
       }
     };
-  }, [center, pois]);
+  }, [center, pois, boundary]);
 
   return (
     <div className="map-wrap neighborhood-poi-map">

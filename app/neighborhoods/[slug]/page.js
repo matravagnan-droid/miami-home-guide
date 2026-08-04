@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getAllNeighborhoods, getNeighborhood } from "../../lib/neighborhoods";
 import { getNearbyPlaces } from "../../lib/nearbyPlaces";
+import { getNeighborhoodBoundary } from "../../lib/neighborhoodBoundaries";
 import NeighborhoodPageClient from "./NeighborhoodPageClient";
 
 export function generateStaticParams() {
@@ -21,7 +22,10 @@ export default async function Page({ params }) {
   const neighborhood = getNeighborhood(params.slug);
   if (!neighborhood) notFound();
 
-  const pois = await getNearbyPlaces(neighborhood.center);
+  const [pois, boundary] = await Promise.all([
+    getNearbyPlaces(neighborhood.center),
+    getNeighborhoodBoundary(neighborhood.slug),
+  ]);
 
-  return <NeighborhoodPageClient neighborhood={neighborhood} pois={pois} />;
+  return <NeighborhoodPageClient neighborhood={neighborhood} pois={pois} boundary={boundary} />;
 }

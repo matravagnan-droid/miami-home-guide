@@ -3,63 +3,63 @@
 // that's too slow and unreliable to call live on every page load. Baking
 // results in via revalidate keeps the map fast and resilient to Overpass
 // having a bad day.
+//
+// One combined multi-category query reliably times out server-side on
+// Overpass (confirmed directly — a single `around` search per category is
+// fast, but stacking several in one query pushes it well past Overpass's
+// own runtime limit). Querying each category separately, with its own
+// timeout and a retry, is far more likely to actually come back with data.
 const OVERPASS_URL = "https://overpass-api.de/api/interpreter";
 const REVALIDATE_SECONDS = 60 * 60 * 24 * 7; // weekly
+const REQUEST_TIMEOUT_MS = 20000;
 
-function classify(tags) {
-  if (!tags) return null;
-  if (tags.shop === "supermarket") return "supermarket";
-  if (tags.amenity === "restaurant") return "restaurant";
-  if (tags.amenity === "school") return "school";
-  if (["cinema", "theatre", "nightclub"].includes(tags.amenity)) return "entertainment";
-  if (["park", "golf_course"].includes(tags.leisure)) return "entertainment";
-  if (tags.tourism === "museum") return "entertainment";
-  return null;
+const CATEGORY_QUERIES = {
+  supermarket: (lat, lng) => `[out:json][timeout:18];node["shop"="supermarket"]["name"](around:2000,${lat},${lng});out body 6;`,
+  restaurant: (lat, lng) => `[out:json][timeout:18];node["amenity"="restaurant"]["name"](around:1200,${lat},${lng});out body 10;`,
+  school: (lat, lng) => `[out:json][timeout:18];node["amenity"="school"]["name"](around:2000,${lat},${lng});out body 8;`,
+  entertainment: (lat, lng) => `[out:json][timeout:18];(node["amenity"~"^(cinema|theatre|nightclub)$"]["name"](around:2000,${lat},${lng});node["leisure"~"^(park|golf_course)$"]["name"](around:2000,${lat},${lng});node["tourism"="museum"]["name"](around:2000,${lat},${lng}););out body 10;`,
+};
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function buildQuery(lat, lng) {
-  return `[out:json][timeout:25];
-(
-  nwr["shop"="supermarket"]["name"](around:2000,${lat},${lng});
-);
-out center 6;
-(
-  nwr["amenity"="restaurant"]["name"](around:1300,${lat},${lng});
-);
-out center 10;
-(
-  nwr["amenity"="school"]["name"](around:2000,${lat},${lng});
-);
-out center 8;
-(
-  nwr["amenity"~"^(cinema|theatre|nightclub)$"]["name"](around:2000,${lat},${lng});
-  nwr["leisure"~"^(park|golf_course)$"]["name"](around:2000,${lat},${lng});
-  nwr["tourism"="museum"]["name"](around:2000,${lat},${lng});
-);
-out center 10;`;
-}
+async function fetchCategory(category, buildQuery, lat, lng, attempt = 0) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
-export async function getNearbyPlaces([lat, lng]) {
   try {
     const res = await fetch(OVERPASS_URL, {
       method: "POST",
       body: buildQuery(lat, lng),
+      signal: controller.signal,
       next: { revalidate: REVALIDATE_SECONDS },
     });
-    if (!res.ok) return [];
+    clearTimeout(timer);
+    if (!res.ok) throw new Error(`overpass ${category} failed: ${res.status}`);
     const data = await res.json();
+    if (data.remark) throw new Error(`overpass ${category} remark: ${data.remark}`);
 
     return (data.elements || [])
-      .map((el) => {
-        const category = classify(el.tags);
-        if (!category || !el.tags?.name) return null;
-        const placeLat = el.lat ?? el.center?.lat;
-        const placeLng = el.lon ?? el.center?.lon;
-        if (placeLat == null || placeLng == null) return null;
-        return { category, name: el.tags.name, lat: placeLat, lng: placeLng };
-      })
-      .filter(Boolean);
+      .filter((el) => el.tags?.name && el.lat != null && el.lon != null)
+      .map((el) => ({ category, name: el.tags.name, lat: el.lat, lng: el.lon }));
   } catch (err) {
+    clearTimeout(timer);
+    if (attempt < 1) {
+      await sleep(1500);
+      return fetchCategory(category, buildQuery, lat, lng, attempt + 1);
+    }
     return [];
   }
+}
+
+export async function getNearbyPlaces([lat, lng]) {
+  const results = [];
+  // Sequential rather than parallel — spreads requests out instead of
+  // bursting four at once against a shared, rate-limited public API.
+  for (const [category, buildQuery] of Object.entries(CATEGORY_QUERIES)) {
+    const places = await fetchCategory(category, buildQuery, lat, lng);
+    results.push(...places);
+  }
+  return results;
 }
