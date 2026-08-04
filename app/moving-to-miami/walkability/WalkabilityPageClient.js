@@ -26,7 +26,7 @@ export default function WalkabilityPageClient() {
           intro={t.walk.intro}
           note={t.walk.note}
           links={[
-            { href: "https://www.walkscore.com/", label: t.walk.linkLabel },
+            { href: "https://www.walkscore.com/FL/Miami", label: t.walk.linkLabel },
           ]}
         />
       </section>

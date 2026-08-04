@@ -26,8 +26,8 @@ export default function CrimePageClient() {
           intro={t.crime.intro}
           note={t.crime.note}
           links={[
-            { href: "https://www.miamidade.gov/global/service.page?Mduid_service=ser1510669357918648", label: t.crime.linkMD },
-            { href: "https://www.sheriff.org/community/", label: t.crime.linkBR },
+            { href: "https://www.crimemapping.com/map/fl/miami-dadecounty", label: t.crime.linkMD },
+            { href: "https://BsoCrimes.sheriff.org", label: t.crime.linkBR },
           ]}
         />
       </section>

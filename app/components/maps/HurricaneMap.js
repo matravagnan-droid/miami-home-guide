@@ -66,8 +66,8 @@ export default function HurricaneMap() {
 
       if (!mapRef.current) {
         mapRef.current = L.map(containerRef.current, { scrollWheelZoom: false });
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution: "&copy; OpenStreetMap contributors",
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+          attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
           maxZoom: 18,
         }).addTo(mapRef.current);
       }
