@@ -434,7 +434,7 @@ const translations = {
       referralCta: "Let's connect.",
     },
     footer: {
-      licensed: "Licensed Real Estate Agent, eXp Realty, State of Florida",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Change language",
@@ -919,7 +919,7 @@ const translations = {
       referralCta: "Conectemos.",
     },
     footer: {
-      licensed: "Agente de Bienes Raíces con Licencia, eXp Realty, Estado de Florida",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Cambiar idioma",
@@ -1404,7 +1404,7 @@ const translations = {
       referralCta: "Connectons-nous.",
     },
     footer: {
-      licensed: "Agent immobilier agréé, eXp Realty, État de Floride",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Changer de langue",
@@ -1889,7 +1889,7 @@ const translations = {
       referralCta: "Ann konekte.",
     },
     footer: {
-      licensed: "Ajan Imobilye ki Gen Lisans, eXp Realty, Eta Florid",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Chanje lang",
@@ -2374,7 +2374,7 @@ const translations = {
       referralCta: "Vamos nos conectar.",
     },
     footer: {
-      licensed: "Corretor de Imóveis Licenciado, eXp Realty, Estado da Flórida",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Mudar idioma",
@@ -2859,7 +2859,7 @@ const translations = {
       referralCta: "Connettiamoci.",
     },
     footer: {
-      licensed: "Agente Immobiliare Autorizzato, eXp Realty, Stato della Florida",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Cambia lingua",
@@ -3344,7 +3344,7 @@ const translations = {
       referralCta: "Lassen Sie uns in Kontakt treten.",
     },
     footer: {
-      licensed: "Lizenzierter Immobilienmakler, eXp Realty, Bundesstaat Florida",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Sprache ändern",
@@ -3829,7 +3829,7 @@ const translations = {
       referralCta: "Laten we contact leggen.",
     },
     footer: {
-      licensed: "Erkend vastgoedmakelaar, eXp Realty, staat Florida",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Taal wijzigen",
@@ -4314,7 +4314,7 @@ const translations = {
       referralCta: "Nawiążmy kontakt.",
     },
     footer: {
-      licensed: "Licencjonowany agent nieruchomości, eXp Realty, stan Floryda",
+      licensed: "eXp Realty",
     },
     toggle: {
       ariaLabel: "Zmień język",
