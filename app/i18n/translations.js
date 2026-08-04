@@ -412,6 +412,8 @@ const translations = {
     agentBio: {
       name: "Mattia Ravagnan",
       bio: "Mattia Ravagnan was born in Venice, Italy, and has called Florida home for over ten years. As a proud member of eXp Realty's Top Listing Group — one of the top teams in Florida — Mattia combines international perspective with local market expertise. Dedicated to providing exceptional service, he ensures every client receives a world-class real estate experience built on professionalism, trust, and results.",
+      referral: "Are you an agent working somewhere else in Florida, another U.S. state, or internationally?",
+      referralCta: "Let's connect.",
     },
     footer: {
       licensed: "Licensed Real Estate Agent, State of Florida",
@@ -877,6 +879,8 @@ const translations = {
     agentBio: {
       name: "Mattia Ravagnan",
       bio: "Mattia Ravagnan nació en Venecia, Italia, y ha considerado Florida su hogar durante más de diez años. Como miembro orgulloso del Top Listing Group de eXp Realty — uno de los mejores equipos de Florida — Mattia combina una perspectiva internacional con experiencia en el mercado local. Dedicado a brindar un servicio excepcional, se asegura de que cada cliente reciba una experiencia inmobiliaria de clase mundial basada en profesionalismo, confianza y resultados.",
+      referral: "¿Eres agente en otra parte de Florida, en otro estado de EE. UU. o internacionalmente?",
+      referralCta: "Conectemos.",
     },
     footer: {
       licensed: "Agente de Bienes Raíces con Licencia, Estado de Florida",
@@ -1342,6 +1346,8 @@ const translations = {
     agentBio: {
       name: "Mattia Ravagnan",
       bio: "Mattia Ravagnan est né à Venise, en Italie, et considère la Floride comme son foyer depuis plus de dix ans. Membre fier du Top Listing Group d'eXp Realty — l'une des meilleures équipes de Floride — Mattia allie une perspective internationale à une expertise du marché local. Dévoué à offrir un service exceptionnel, il veille à ce que chaque client bénéficie d'une expérience immobilière de classe mondiale fondée sur le professionnalisme, la confiance et les résultats.",
+      referral: "Êtes-vous agent ailleurs en Floride, dans un autre État américain ou à l'international ?",
+      referralCta: "Connectons-nous.",
     },
     footer: {
       licensed: "Agent immobilier agréé, État de Floride",
@@ -1807,6 +1813,8 @@ const translations = {
     agentBio: {
       name: "Mattia Ravagnan",
       bio: "Mattia Ravagnan te fèt nan Venice, Itali, e li konsidere Florid kòm lakay li depi plis pase dis ane. Kòm yon manm fyè nan Top Listing Group nan eXp Realty — youn nan pi bon ekip nan Florid — Mattia konbine yon pèspektiv entènasyonal ak eksperyans nan mache lokal la. Devwe pou bay yon sèvis eksepsyonèl, li asire chak kliyan resevwa yon eksperyans imobilye nivo mondyal ki baze sou pwofesyonalis, konfyans, ak rezilta.",
+      referral: "Èske w se yon ajan k ap travay yon lòt kote nan Florid, nan yon lòt eta Ozetazini, oswa entènasyonalman?",
+      referralCta: "Ann konekte.",
     },
     footer: {
       licensed: "Ajan Imobilye ki Gen Lisans, Eta Florid",
@@ -2272,6 +2280,8 @@ const translations = {
     agentBio: {
       name: "Mattia Ravagnan",
       bio: "Mattia Ravagnan nasceu em Veneza, na Itália, e considera a Flórida seu lar há mais de dez anos. Como membro orgulhoso do Top Listing Group da eXp Realty — uma das melhores equipes da Flórida — Mattia combina uma perspectiva internacional com experiência no mercado local. Dedicado a oferecer um atendimento excepcional, ele garante que cada cliente receba uma experiência imobiliária de classe mundial baseada em profissionalismo, confiança e resultados.",
+      referral: "Você é um agente que atua em outra parte da Flórida, em outro estado dos EUA ou internacionalmente?",
+      referralCta: "Vamos nos conectar.",
     },
     footer: {
       licensed: "Corretor de Imóveis Licenciado, Estado da Flórida",
@@ -2737,6 +2747,8 @@ const translations = {
     agentBio: {
       name: "Mattia Ravagnan",
       bio: "Mattia Ravagnan è nato a Venezia, in Italia, e considera la Florida casa sua da oltre dieci anni. Membro orgoglioso del Top Listing Group di eXp Realty — uno dei migliori team della Florida — Mattia unisce una prospettiva internazionale a una profonda conoscenza del mercato locale. Impegnato a offrire un servizio eccezionale, garantisce a ogni cliente un'esperienza immobiliare di livello mondiale basata su professionalità, fiducia e risultati.",
+      referral: "Sei un agente che opera in un'altra zona della Florida, in un altro stato degli Stati Uniti o a livello internazionale?",
+      referralCta: "Connettiamoci.",
     },
     footer: {
       licensed: "Agente Immobiliare Autorizzato, Stato della Florida",
