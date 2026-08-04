@@ -6,7 +6,7 @@ import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
 import { STEP_ICONS } from "./StepIcons";
 
-const RADIUS = 108;
+const RADIUS = 132;
 
 export default function BuyerGuideClient() {
   const { t } = useLanguage();

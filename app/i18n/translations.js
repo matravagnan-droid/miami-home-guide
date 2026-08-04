@@ -399,7 +399,7 @@ const translations = {
     },
     blog: {
       h2: "What's happening in Miami",
-      p: "Real news, real estate updates, sports, restaurants, and things to do — pulled live from Miami's own newsrooms and refreshed every few days.",
+      p: "Real news, real estate updates, sports, restaurants, and things to do — pulled live from Miami's own newsrooms.",
       tabRealEstate: "Real Estate",
       tabNews: "Recent News",
       tabSportsFood: "Sports & Restaurants",
@@ -424,7 +424,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Looking for a realtor in Miami?",
-      p: "Whether you're buying, selling, curious about mortgage pre-approval, or just want to talk through your options, I'm a phone call away.",
+      p: "We are one phone call away.",
       cta: "Let's Connect",
     },
     agentBio: {
@@ -884,7 +884,7 @@ const translations = {
     },
     blog: {
       h2: "Qué está pasando en Miami",
-      p: "Noticias reales, novedades de bienes raíces, deportes, restaurantes y cosas para hacer — obtenidas en vivo directamente de los medios de Miami y actualizadas cada pocos días.",
+      p: "Noticias reales, novedades de bienes raíces, deportes, restaurantes y cosas para hacer — obtenidas en vivo directamente de los medios de Miami.",
       tabRealEstate: "Bienes Raíces",
       tabNews: "Noticias Recientes",
       tabSportsFood: "Deportes y Restaurantes",
@@ -909,7 +909,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "¿Busca un agente inmobiliario en Miami?",
-      p: "Ya sea que esté comprando, vendiendo, tenga curiosidad sobre la precalificación hipotecaria, o solo quiera conversar sobre sus opciones, estoy a una llamada de distancia.",
+      p: "Estamos a una llamada de distancia.",
       cta: "Conectemos",
     },
     agentBio: {
@@ -1369,7 +1369,7 @@ const translations = {
     },
     blog: {
       h2: "Ce qui se passe à Miami",
-      p: "De vraies actualités, des nouvelles immobilières, du sport, des restaurants et des choses à faire — extraits en direct des salles de rédaction de Miami et actualisés tous les quelques jours.",
+      p: "De vraies actualités, des nouvelles immobilières, du sport, des restaurants et des choses à faire — extraits en direct des salles de rédaction de Miami.",
       tabRealEstate: "Immobilier",
       tabNews: "Actualités récentes",
       tabSportsFood: "Sport et restaurants",
@@ -1394,7 +1394,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Vous cherchez un agent immobilier à Miami ?",
-      p: "Que vous achetiez, vendiez, soyez curieux à propos de la préapprobation hypothécaire, ou souhaitiez simplement discuter de vos options, je suis à un appel de distance.",
+      p: "Nous sommes à un appel de distance.",
       cta: "Connectons-nous",
     },
     agentBio: {
@@ -1854,7 +1854,7 @@ const translations = {
     },
     blog: {
       h2: "Sa k ap pase nan Miami",
-      p: "Vrè nouvèl, mizajou imobilye, espò, restoran, ak bagay pou fè — pran an dirèk nan salklas nouvèl Miami yo epi aktyalize chak kèk jou.",
+      p: "Vrè nouvèl, mizajou imobilye, espò, restoran, ak bagay pou fè — pran an dirèk nan salklas nouvèl Miami yo.",
       tabRealEstate: "Imobilye",
       tabNews: "Dènye Nouvèl",
       tabSportsFood: "Espò ak Restoran",
@@ -1879,7 +1879,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "W ap chèche yon ajan imobilye nan Miami?",
-      p: "Kit w ap achte, w ap vann, w kirye sou preapwobasyon ipotèk, oswa w jis vle pale sou opsyon ou yo, mwen a yon apèl telefòn.",
+      p: "Nou se yon apèl telefòn ase.",
       cta: "Ann konekte",
     },
     agentBio: {
@@ -2339,7 +2339,7 @@ const translations = {
     },
     blog: {
       h2: "O que está acontecendo em Miami",
-      p: "Notícias reais, novidades imobiliárias, esportes, restaurantes e coisas para fazer — obtidos ao vivo diretamente das redações de Miami e atualizados a cada poucos dias.",
+      p: "Notícias reais, novidades imobiliárias, esportes, restaurantes e coisas para fazer — obtidos ao vivo diretamente das redações de Miami.",
       tabRealEstate: "Imóveis",
       tabNews: "Notícias Recentes",
       tabSportsFood: "Esportes e Restaurantes",
@@ -2364,7 +2364,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Procurando um corretor de imóveis em Miami?",
-      p: "Seja para comprar, vender, ter curiosidade sobre pré-aprovação de financiamento, ou apenas conversar sobre suas opções, estou a uma ligação de distância.",
+      p: "Estamos a uma ligação de distância.",
       cta: "Vamos conversar",
     },
     agentBio: {
@@ -2824,7 +2824,7 @@ const translations = {
     },
     blog: {
       h2: "Cosa succede a Miami",
-      p: "Notizie reali, aggiornamenti immobiliari, sport, ristoranti e cose da fare — ottenuti in tempo reale direttamente dalle redazioni di Miami e aggiornati ogni pochi giorni.",
+      p: "Notizie reali, aggiornamenti immobiliari, sport, ristoranti e cose da fare — ottenuti in tempo reale direttamente dalle redazioni di Miami.",
       tabRealEstate: "Immobiliare",
       tabNews: "Notizie Recenti",
       tabSportsFood: "Sport e Ristoranti",
@@ -2849,7 +2849,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Cerchi un agente immobiliare a Miami?",
-      p: "Che tu stia comprando, vendendo, sia curioso riguardo alla pre-approvazione del mutuo, o voglia semplicemente parlare delle tue opzioni, sono a una telefonata di distanza.",
+      p: "Siamo a una chiamata di distanza.",
       cta: "Connettiamoci",
     },
     agentBio: {
@@ -3309,7 +3309,7 @@ const translations = {
     },
     blog: {
       h2: "Was in Miami passiert",
-      p: "Echte Nachrichten, Immobilien-Updates, Sport, Restaurants und Unternehmungen — live aus Miamis eigenen Redaktionen abgerufen und alle paar Tage aktualisiert.",
+      p: "Echte Nachrichten, Immobilien-Updates, Sport, Restaurants und Unternehmungen — live aus Miamis eigenen Redaktionen abgerufen.",
       tabRealEstate: "Immobilien",
       tabNews: "Aktuelle Nachrichten",
       tabSportsFood: "Sport & Restaurants",
@@ -3334,7 +3334,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Suchen Sie einen Makler in Miami?",
-      p: "Ob Sie kaufen, verkaufen, sich für eine Hypotheken-Vorabgenehmigung interessieren oder einfach Ihre Optionen besprechen möchten — ich bin nur einen Anruf entfernt.",
+      p: "Wir sind nur einen Anruf entfernt.",
       cta: "Kontakt aufnehmen",
     },
     agentBio: {
@@ -3794,7 +3794,7 @@ const translations = {
     },
     blog: {
       h2: "Wat er gebeurt in Miami",
-      p: "Echt nieuws, vastgoedupdates, sport, restaurants en dingen om te doen — live opgehaald uit Miami's eigen redacties en om de paar dagen bijgewerkt.",
+      p: "Echt nieuws, vastgoedupdates, sport, restaurants en dingen om te doen — live opgehaald uit Miami's eigen redacties.",
       tabRealEstate: "Vastgoed",
       tabNews: "Recent nieuws",
       tabSportsFood: "Sport & Restaurants",
@@ -3819,7 +3819,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Op zoek naar een makelaar in Miami?",
-      p: "Of u nu koopt, verkoopt, benieuwd bent naar hypotheek-vooraanmelding, of gewoon uw opties wilt bespreken — ik ben maar een telefoontje verwijderd.",
+      p: "We zijn maar een telefoontje verwijderd.",
       cta: "Neem contact op",
     },
     agentBio: {
@@ -4279,7 +4279,7 @@ const translations = {
     },
     blog: {
       h2: "Co się dzieje w Miami",
-      p: "Prawdziwe wiadomości, aktualizacje rynku nieruchomości, sport, restauracje i atrakcje — pobierane na żywo z redakcji Miami i odświeżane co kilka dni.",
+      p: "Prawdziwe wiadomości, aktualizacje rynku nieruchomości, sport, restauracje i atrakcje — pobierane na żywo z redakcji Miami.",
       tabRealEstate: "Nieruchomości",
       tabNews: "Najnowsze wiadomości",
       tabSportsFood: "Sport i restauracje",
@@ -4304,7 +4304,7 @@ const translations = {
     },
     realtorPromo: {
       h2: "Szukasz agenta nieruchomości w Miami?",
-      p: "Niezależnie od tego, czy kupujesz, sprzedajesz, jesteś ciekawy wstępnej zgody kredytowej, czy po prostu chcesz omówić swoje opcje — jestem o jeden telefon od Ciebie.",
+      p: "Jesteśmy o jeden telefon od Ciebie.",
       cta: "Nawiążmy kontakt",
     },
     agentBio: {

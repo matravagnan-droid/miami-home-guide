@@ -1514,8 +1514,8 @@ footer a {
 
 .wheel {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   border: 1px dashed rgba(16,63,69,0.25);
 }
@@ -1525,8 +1525,8 @@ footer a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: var(--bay-deep);
   color: var(--sunset);
@@ -1535,7 +1535,7 @@ footer a {
   justify-content: center;
 }
 
-.wheel-center svg { width: 23px; height: 23px; }
+.wheel-center svg { width: 27px; height: 27px; }
 
 .wheel-node {
   position: absolute;
@@ -1545,13 +1545,13 @@ footer a {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  width: 96px;
+  width: 112px;
   text-align: center;
 }
 
 .wheel-icon {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: white;
   border: 2px solid var(--sunset);
@@ -1562,10 +1562,10 @@ footer a {
   flex-shrink: 0;
 }
 
-.wheel-icon svg { width: 15px; height: 15px; }
+.wheel-icon svg { width: 18px; height: 18px; }
 
 .wheel-label {
-  font-size: 10.5px;
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--bay-deep);
   line-height: 1.25;
@@ -1574,7 +1574,7 @@ footer a {
 .wheel-label-num {
   display: block;
   font-family: var(--display);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--sunset);
   margin-bottom: 2px;
 }
