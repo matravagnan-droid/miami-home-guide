@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getAllNeighborhoods, getNeighborhood } from "../../lib/neighborhoods";
-import { getNearbyPlaces } from "../../lib/nearbyPlaces";
 import { getNeighborhoodBoundary } from "../../lib/neighborhoodBoundaries";
 import NeighborhoodPageClient from "./NeighborhoodPageClient";
 
@@ -22,10 +21,7 @@ export default async function Page({ params }) {
   const neighborhood = getNeighborhood(params.slug);
   if (!neighborhood) notFound();
 
-  const [pois, boundary] = await Promise.all([
-    getNearbyPlaces(neighborhood.center),
-    getNeighborhoodBoundary(neighborhood.slug),
-  ]);
+  const boundary = await getNeighborhoodBoundary(neighborhood.slug);
 
-  return <NeighborhoodPageClient neighborhood={neighborhood} pois={pois} boundary={boundary} />;
+  return <NeighborhoodPageClient neighborhood={neighborhood} boundary={boundary} />;
 }

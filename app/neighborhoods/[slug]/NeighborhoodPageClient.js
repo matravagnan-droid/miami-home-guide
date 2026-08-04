@@ -3,7 +3,7 @@
 import SiteNav from "../../components/SiteNav";
 import SiteFooter from "../../components/SiteFooter";
 import BackLink from "../../components/BackLink";
-import NeighborhoodPOIMap from "../../components/maps/NeighborhoodPOIMap";
+import NeighborhoodBoundaryMap from "../../components/maps/NeighborhoodBoundaryMap";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const moneyFor = (locale) => (n) =>
@@ -13,7 +13,7 @@ const moneyFor = (locale) => (n) =>
     maximumFractionDigits: 0,
   });
 
-export default function NeighborhoodPageClient({ neighborhood, pois, boundary }) {
+export default function NeighborhoodPageClient({ neighborhood, boundary }) {
   const { t, lang } = useLanguage();
   const money = moneyFor(lang === "es" ? "es-US" : "en-US");
   const text = (field) => field[lang] || field.en;
@@ -99,7 +99,7 @@ export default function NeighborhoodPageClient({ neighborhood, pois, boundary })
           </div>
           <div className="neighborhood-detail-col neighborhood-detail-map">
             <h3>{t.neighborhoodPage.mapLabel}</h3>
-            <NeighborhoodPOIMap center={neighborhood.center} pois={pois} boundary={boundary} />
+            <NeighborhoodBoundaryMap center={neighborhood.center} boundary={boundary} />
           </div>
         </div>
       </section>
