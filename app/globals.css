@@ -1123,6 +1123,66 @@ footer a {
   text-decoration: underline;
 }
 
+.neighborhood-detail-grid {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.neighborhood-detail-col {
+  flex: 1;
+  min-width: 320px;
+}
+
+.neighborhood-detail-block {
+  margin-bottom: 28px;
+}
+
+.neighborhood-detail-block h3 {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.neighborhood-detail-block p,
+.neighborhood-detail-block li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a5a56;
+}
+
+.neighborhood-detail-block ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.neighborhood-detail-block li {
+  margin-bottom: 6px;
+}
+
+.neighborhood-detail-map h3 {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.neighborhood-poi-map .map-canvas {
+  height: 420px;
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .neighborhood-detail-grid {
+    gap: 32px;
+  }
+  .neighborhood-poi-map .map-canvas {
+    height: 320px;
+  }
+}
+
 .lead-intro {
   font-family: var(--display);
   font-size: clamp(20px, 2.4vw, 28px);

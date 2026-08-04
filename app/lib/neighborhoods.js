@@ -27,6 +27,31 @@ const neighborhoods = [
       singleFamily: { value: null, note: { en: "Almost no single-family stock — Brickell is nearly all high-rise.", es: "Casi no hay viviendas unifamiliares — Brickell es casi todo rascacielos." } },
       condo: { value: 790000, note: { en: "Entry-level 1BR units run roughly $300K–$500K.", es: "Las unidades de 1 habitación de nivel inicial rondan los $300,000–$500,000." } },
     },
+    center: [25.7617, -80.1918],
+    newConstruction: {
+      en: "Brickell's skyline keeps climbing — SIRO Brickell (350 branded residences by Kerzner), the Foster + Partners-designed 619 Brickell, and a 60-story Miami River tower with 300 feet of waterfront are all underway, adding to roughly 4,500 new condo units expected by 2030.",
+      es: "El horizonte de Brickell sigue creciendo — SIRO Brickell (350 residencias de marca por Kerzner), la torre 619 Brickell diseñada por Foster + Partners, y una torre de 60 pisos junto al río Miami con 300 pies de frente al agua están en construcción, sumando cerca de 4,500 nuevas unidades de condominio previstas para 2030.",
+    },
+    funFacts: {
+      en: [
+        "Brickell Avenue was once called 'Millionaire's Row' — lined with waterfront mansions in the early 1900s before it became Miami's financial district.",
+        "With over 26,500 condo units packed into about one square mile, it's one of the most densely built residential neighborhoods in the U.S.",
+        "Brickell City Centre's open-air 'Climate Ribbon' canopy was engineered specifically to cool and shade the plaza below.",
+      ],
+      es: [
+        "Brickell Avenue alguna vez se llamó 'la Milla de los Millonarios' — bordeada de mansiones frente al agua a principios del siglo XX antes de convertirse en el distrito financiero de Miami.",
+        "Con más de 26,500 unidades de condominio en aproximadamente una milla cuadrada, es uno de los vecindarios residenciales más densos de EE. UU.",
+        "El techo abierto 'Climate Ribbon' de Brickell City Centre fue diseñado específicamente para enfriar y dar sombra a la plaza.",
+      ],
+    },
+    family: {
+      en: "Brickell is almost entirely high-rise condos, so it suits families who want an urban, walkable lifestyle more than a big yard — Brickell Key and the Simpson Park green spaces are the main outdoor options, and most families with school-age kids look at private schools nearby rather than zoned public options.",
+      es: "Brickell es casi todo condominios de gran altura, así que se adapta mejor a familias que buscan un estilo de vida urbano y transitable a pie que a las que buscan un gran patio — Brickell Key y el parque Simpson Park son las principales opciones al aire libre, y la mayoría de las familias con niños en edad escolar consideran escuelas privadas cercanas en lugar de opciones públicas zonificadas.",
+    },
+    movingTips: {
+      en: "Coming from outside Miami-Dade, budget for condo association fees on top of the mortgage — they can run $1,000–$2,000+/month in Brickell towers — and know that most buildings require board approval before you can close.",
+      es: "Si vienes de fuera de Miami-Dade, presupuesta las cuotas de la asociación de condominio además de la hipoteca — pueden ser de $1,000–$2,000+ al mes en las torres de Brickell — y ten en cuenta que la mayoría de los edificios requieren aprobación de la junta antes de poder cerrar la compra.",
+    },
   },
   {
     slug: "coral-gables",
@@ -51,6 +76,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 2400000, note: { en: "Among the highest in Miami-Dade, driven by historic estates and strict zoning.", es: "Entre los más altos de Miami-Dade, impulsado por propiedades históricas y zonificación estricta." } },
       condo: { value: 650000, note: { en: "Fewer condo towers than Brickell — most stock is mid-rise.", es: "Menos torres de condominios que Brickell — la mayoría son edificios de baja altura." } },
+    },
+    center: [25.7215, -80.2685],
+    newConstruction: {
+      en: "Construction has broken ground on Seventeen Gables Residences (117 condos from the mid-$600Ks) on Douglas Road, and two North Gables apartment projects will add 362 more units along the Galiano Street corridor by 2028.",
+      es: "Ya comenzó la construcción de Seventeen Gables Residences (117 condominios desde los $600,000) en Douglas Road, y dos proyectos de apartamentos en North Gables sumarán 362 unidades más a lo largo del corredor de Galiano Street para 2028.",
+    },
+    funFacts: {
+      en: [
+        "Founder George Merrick required Mediterranean Revival architecture and coral-rock detailing by deed restriction — rules the city still enforces today.",
+        "The Venetian Pool, carved out of a former coral rock quarry in 1923, is on the National Register of Historic Places and still open to swim.",
+        "Coral Gables has its own police, fire, and public works departments — one of the few Miami-Dade cities to run nearly everything in-house.",
+      ],
+      es: [
+        "El fundador George Merrick exigió arquitectura de estilo mediterráneo y detalles de piedra coralina mediante restricciones de escritura — reglas que la ciudad todavía hace cumplir hoy.",
+        "La Venetian Pool, tallada en una antigua cantera de piedra coralina en 1923, está en el Registro Nacional de Lugares Históricos y sigue abierta para nadar.",
+        "Coral Gables tiene su propio departamento de policía, bomberos y obras públicas — una de las pocas ciudades de Miami-Dade que maneja casi todo internamente.",
+      ],
+    },
+    family: {
+      en: "Coral Gables is consistently one of the most family-oriented cities in the county — strict zoning keeps streets low-density and tree-canopied, and it's zoned for some of Miami-Dade's top-rated public schools alongside well-known private schools like Ransom Everglades.",
+      es: "Coral Gables es constantemente una de las ciudades más orientadas a familias del condado — la zonificación estricta mantiene las calles de baja densidad y con dosel de árboles, y está zonificada para algunas de las escuelas públicas mejor calificadas de Miami-Dade junto con escuelas privadas reconocidas como Ransom Everglades.",
+    },
+    movingTips: {
+      en: "If you're relocating from out of state, know that Coral Gables enforces some of the strictest architectural and landscaping review rules in Florida — even paint colors and tree removal can require city approval, so factor that into renovation plans.",
+      es: "Si te mudas desde otro estado, ten en cuenta que Coral Gables aplica algunas de las reglas de revisión arquitectónica y paisajística más estrictas de Florida — incluso el color de la pintura y la remoción de árboles pueden requerir aprobación de la ciudad, así que considera esto en tus planes de renovación.",
     },
   },
   {
@@ -77,6 +127,31 @@ const neighborhoods = [
       singleFamily: { value: null, note: { en: "Very limited single-family inventory — the area is dominated by lofts and new towers.", es: "Inventario unifamiliar muy limitado — el área está dominada por lofts y torres nuevas." } },
       condo: { value: 550000, note: { en: "Loft and condo prices vary widely by building age and finish level.", es: "Los precios de lofts y condominios varían mucho según la antigüedad del edificio y el nivel de acabado." } },
     },
+    center: [25.8010, -80.1990],
+    newConstruction: {
+      en: "NoMad Residences Wynwood (329 condos) is nearing completion, while Twenty Sixth & 2nd Wynwood Residences and the Frida Kahlo Residences — both from PMG and Lndmrk — are under construction, adding hundreds more condo and retail units through 2028.",
+      es: "NoMad Residences Wynwood (329 condominios) está por terminarse, mientras que Twenty Sixth & 2nd Wynwood Residences y Frida Kahlo Residences — ambos de PMG y Lndmrk — están en construcción, sumando cientos de unidades más de condominio y locales comerciales hasta 2028.",
+    },
+    funFacts: {
+      en: [
+        "Wynwood Walls, launched in 2009 by developer Tony Goldman, turned old warehouse walls into one of the world's largest outdoor street-art collections.",
+        "The neighborhood was once Miami's garment-manufacturing district — many of today's galleries and breweries still sit inside converted 1950s warehouses.",
+        "Wynwood has one of the highest concentrations of independent breweries in South Florida, several within walking distance of each other.",
+      ],
+      es: [
+        "Wynwood Walls, lanzado en 2009 por el desarrollador Tony Goldman, convirtió antiguos muros de bodegas en una de las colecciones de arte urbano al aire libre más grandes del mundo.",
+        "El vecindario fue alguna vez el distrito de manufactura de ropa de Miami — muchas de las galerías y cervecerías actuales todavía están dentro de bodegas convertidas de los años 1950.",
+        "Wynwood tiene una de las concentraciones más altas de cervecerías independientes del sur de Florida, varias a poca distancia caminando entre sí.",
+      ],
+    },
+    family: {
+      en: "Wynwood skews young and nightlife-heavy rather than family-oriented — there's very little single-family housing or green space, so most families passing through are visiting rather than settling down, though that could shift as new residential towers add more livable square footage.",
+      es: "Wynwood tiende a ser más joven y orientado a la vida nocturna que a las familias — hay muy poca vivienda unifamiliar o espacio verde, así que la mayoría de las familias que pasan por ahí están de visita más que estableciéndose, aunque eso podría cambiar a medida que las nuevas torres residenciales agreguen más espacio habitable.",
+    },
+    movingTips: {
+      en: "Coming from a quieter area, be prepared for street noise and foot traffic on weekends — Wynwood is one of Miami's busiest nightlife and events districts, which is part of the appeal for some buyers and a dealbreaker for others.",
+      es: "Si vienes de una zona más tranquila, prepárate para el ruido de la calle y el tráfico peatonal los fines de semana — Wynwood es uno de los distritos de vida nocturna y eventos más concurridos de Miami, lo cual es parte del atractivo para algunos compradores y un problema para otros.",
+    },
   },
   {
     slug: "coconut-grove",
@@ -101,6 +176,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 2700000, note: { en: "Among the priciest in the county, especially near the bay.", es: "Entre los más caros del condado, especialmente cerca de la bahía." } },
       condo: { value: 700000, note: { en: "Concentrated in a handful of bayfront and village-center buildings.", es: "Concentrado en un puñado de edificios frente a la bahía y en el centro del pueblo." } },
+    },
+    center: [25.7280, -80.2400],
+    newConstruction: {
+      en: "Terra Group's wellness-focused tower 'The Well' broke ground in January 2026 (194 residences, completion 2028), while Arbor Coconut Grove (45 boutique homes) just delivered and Four Seasons Residences' second tower is selling high-floor units from $4.5M.",
+      es: "La torre enfocada en bienestar 'The Well' de Terra Group inició construcción en enero de 2026 (194 residencias, finalización en 2028), mientras que Arbor Coconut Grove (45 residencias boutique) acaba de entregarse y la segunda torre de Four Seasons Residences vende unidades de piso alto desde $4.5M.",
+    },
+    funFacts: {
+      en: [
+        "Coconut Grove is Miami's oldest continuously inhabited neighborhood, settled in the 1820s — decades before the city of Miami itself was incorporated.",
+        "It was once a bohemian artists' enclave and is still home to Miami's oldest house museum, the 1891 Barnacle Historic State Park.",
+        "The Grove's tree canopy is so dense in parts that some streets feel more like rural Florida than a major city.",
+      ],
+      es: [
+        "Coconut Grove es el vecindario más antiguo de Miami habitado sin interrupción, establecido en la década de 1820 — décadas antes de que la ciudad de Miami misma se incorporara.",
+        "Alguna vez fue un enclave bohemio de artistas y todavía alberga la casa-museo más antigua de Miami, el Barnacle Historic State Park de 1891.",
+        "El dosel de árboles del Grove es tan denso en algunas partes que algunas calles se sienten más como la Florida rural que como una gran ciudad.",
+      ],
+    },
+    family: {
+      en: "Coconut Grove is one of Miami's most established family neighborhoods — it's zoned for well-regarded public and private schools, has some of the city's best parkland (Kennedy Park, Peacock Park, the Vizcaya grounds nearby), and its sailing clubs and youth programs are a draw for active families.",
+      es: "Coconut Grove es uno de los vecindarios familiares más consolidados de Miami — está zonificado para escuelas públicas y privadas bien valoradas, tiene algunos de los mejores parques de la ciudad (Kennedy Park, Peacock Park, los terrenos de Vizcaya cerca) y sus clubes de vela y programas juveniles atraen a familias activas.",
+    },
+    movingTips: {
+      en: "If you're used to flat grid streets, note the Grove's older, curving, tree-lined layout can make navigation and parking trickier — and its bayfront and low-lying pockets carry real flood risk, so check elevation and flood zone before buying.",
+      es: "Si estás acostumbrado a calles rectas en cuadrícula, ten en cuenta que el trazado más antiguo, curvo y arbolado del Grove puede complicar la navegación y el estacionamiento — y sus zonas bajas cerca de la bahía tienen riesgo real de inundación, así que verifica la elevación y la zona de inundación antes de comprar.",
     },
   },
   {
@@ -127,6 +227,31 @@ const neighborhoods = [
       singleFamily: { value: 1000000, note: { en: "Mostly newer-construction homes in gated communities.", es: "Principalmente casas de construcción reciente en comunidades cerradas." } },
       condo: { value: 476000, note: { en: "Large, relatively young condo inventory compared to the rest of the county.", es: "Inventario de condominios grande y relativamente joven comparado con el resto del condado." } },
     },
+    center: [25.8195, -80.3553],
+    newConstruction: {
+      en: "Doral keeps adding master-planned communities — Urbana and Landmark by Lennar, Park Central, Modern Doral, and Canarias at Downtown Doral are all active, with new-construction list prices around a median of $680,000.",
+      es: "Doral sigue sumando comunidades planificadas — Urbana y Landmark de Lennar, Park Central, Modern Doral y Canarias en Downtown Doral están activas, con precios de nueva construcción en una mediana de alrededor de $680,000.",
+    },
+    funFacts: {
+      en: [
+        "Doral is named after founders Doris and Alfred Kaskel, who combined their first names to name the resort they built here in the 1960s.",
+        "It's home to Trump National Doral, one of the largest golf resorts in the country, with four courses on-site.",
+        "Doral has one of the largest concentrations of Venezuelan and other Latin American residents in Miami-Dade, earning it the nickname 'Doralzuela.'",
+      ],
+      es: [
+        "Doral lleva el nombre de sus fundadores Doris y Alfred Kaskel, quienes combinaron sus nombres para nombrar el resort que construyeron aquí en la década de 1960.",
+        "Es sede de Trump National Doral, uno de los resorts de golf más grandes del país, con cuatro campos en el sitio.",
+        "Doral tiene una de las mayores concentraciones de residentes venezolanos y de otros países latinoamericanos en Miami-Dade, lo que le valió el apodo de 'Doralzuela'.",
+      ],
+    },
+    family: {
+      en: "Doral is one of Miami-Dade's most family-friendly newer cities — its gated communities, A-rated schools, and low crime consistently draw relocating families, and Downtown Doral's walkable park-and-retail core was purpose-built with families in mind.",
+      es: "Doral es una de las ciudades más nuevas y orientadas a familias de Miami-Dade — sus comunidades cerradas, escuelas calificadas A y baja criminalidad atraen constantemente a familias que se mudan, y el núcleo transitable de parques y comercios de Downtown Doral fue construido pensando en las familias.",
+    },
+    movingTips: {
+      en: "Doral sits close to Miami International Airport, so check flight-path noise before committing to a specific block — and many communities are HOA-gated, so factor HOA dues and rules into your budget the same way you would condo fees elsewhere.",
+      es: "Doral está cerca del Aeropuerto Internacional de Miami, así que verifica el ruido de las rutas de vuelo antes de comprometerte con una cuadra específica — y muchas comunidades tienen HOA cerrada, así que considera las cuotas y reglas del HOA en tu presupuesto igual que las cuotas de condominio en otros lugares.",
+    },
   },
   {
     slug: "midtown-edgewater",
@@ -151,6 +276,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "Almost no single-family stock — this is a dense, high-rise corridor.", es: "Casi no hay propiedades unifamiliares — este es un corredor denso de gran altura." } },
       condo: { value: 715000, note: { en: "Newer waterfront towers in Edgewater command a premium over Midtown's older stock.", es: "Las torres más nuevas frente al agua en Edgewater tienen un precio superior al inventario más antiguo de Midtown." } },
+    },
+    center: [25.8050, -80.1920],
+    newConstruction: {
+      en: "Edgewater is in the middle of a major building wave — Villa Miami (72 ultra-luxury units) completes in late 2026, EDITION Residences Edgewater (185 units, 55 stories) is underway, and ELLE Residences broke ground in 2026 as the fashion brand's first residential tower.",
+      es: "Edgewater está en medio de una gran ola de construcción — Villa Miami (72 unidades de ultra lujo) se completa a finales de 2026, EDITION Residences Edgewater (185 unidades, 55 pisos) está en construcción, y ELLE Residences inició obras en 2026 como la primera torre residencial de la marca de moda.",
+    },
+    funFacts: {
+      en: [
+        "Edgewater's Bayshore Drive gives it one of the most uninterrupted stretches of Biscayne Bay waterfront in the city, which is driving its current condo boom.",
+        "Midtown Miami was built on the site of a former Florida East Coast Railway freight yard, redeveloped in the mid-2000s into open-air shopping and lofts.",
+        "The neighborhood sits directly between the Design District and Downtown, making it one of the most central places to live in the urban core.",
+      ],
+      es: [
+        "Bayshore Drive le da a Edgewater uno de los tramos más ininterrumpidos de costa en la Bahía de Biscayne de la ciudad, lo que impulsa su actual auge de condominios.",
+        "Midtown Miami se construyó sobre el sitio de un antiguo patio de carga del ferrocarril Florida East Coast, remodelado a mediados de la década de 2000 en tiendas al aire libre y lofts.",
+        "El vecindario está justo entre el Design District y Downtown, lo que lo convierte en uno de los lugares más centrales para vivir en el núcleo urbano.",
+      ],
+    },
+    family: {
+      en: "Like Brickell, Midtown/Edgewater is almost entirely condo towers, so it suits families prioritizing walkability and bay views over yard space — Margaret Pace Park is the main green space and popular with young families for its waterfront playground and dog park.",
+      es: "Al igual que Brickell, Midtown/Edgewater es casi todo torres de condominios, así que se adapta a familias que priorizan la caminabilidad y las vistas a la bahía sobre el espacio de patio — Margaret Pace Park es el principal espacio verde y popular entre familias jóvenes por su parque infantil frente a la bahía y su área para perros.",
+    },
+    movingTips: {
+      en: "If you're coming from outside Florida, note that many Edgewater towers are still in pre-construction or under construction — buying pre-construction means deposits held in escrow and a closing date years out, which is a different process than buying a finished resale home.",
+      es: "Si vienes de fuera de Florida, ten en cuenta que muchas torres de Edgewater todavía están en preconstrucción o en obra — comprar en preconstrucción significa depósitos en garantía (escrow) y una fecha de cierre a años vista, lo cual es un proceso diferente a comprar una casa de reventa ya terminada.",
     },
   },
   {
@@ -177,6 +327,31 @@ const neighborhoods = [
       singleFamily: { value: 630000, note: { en: "Wide range — from small bungalows to waterfront mansions on the barrier island.", es: "Amplio rango — desde pequeños bungalós hasta mansiones frente al mar en la isla barrera." } },
       condo: { value: 539000, note: { en: "Includes everything from vintage Art Deco walk-ups to new luxury towers.", es: "Incluye desde edificios Art Deco vintage sin ascensor hasta nuevas torres de lujo." } },
     },
+    center: [25.7907, -80.1300],
+    newConstruction: {
+      en: "New development is concentrated in Mid-Beach — a 12-story, 222-residence short-term-rental-friendly tower broke ground in March 2026, alongside ultra-luxury projects like The Perigon and Cipriani Residences, with oceanfront pricing starting around $1,500–$2,500 per square foot.",
+      es: "El nuevo desarrollo se concentra en Mid-Beach — una torre de 12 pisos y 222 residencias apta para alquiler a corto plazo inició obras en marzo de 2026, junto con proyectos de ultra lujo como The Perigon y Cipriani Residences, con precios frente al mar que comienzan alrededor de $1,500–$2,500 por pie cuadrado.",
+    },
+    funFacts: {
+      en: [
+        "Miami Beach's Art Deco Historic District has the largest concentration of Art Deco architecture in the world, with over 800 protected buildings.",
+        "The city is built almost entirely on a barrier island and dredged land, connected to the mainland by a handful of causeways.",
+        "South Beach's Ocean Drive became a design and nightlife icon largely through 1980s-90s preservation efforts that saved its pastel hotels from demolition.",
+      ],
+      es: [
+        "El Distrito Histórico Art Deco de Miami Beach tiene la mayor concentración de arquitectura Art Deco del mundo, con más de 800 edificios protegidos.",
+        "La ciudad está construida casi por completo sobre una isla de barrera y tierra dragada, conectada al continente por un puñado de calzadas.",
+        "Ocean Drive en South Beach se convirtió en un ícono de diseño y vida nocturna en gran parte gracias a esfuerzos de preservación en los años 80 y 90 que salvaron sus hoteles de colores pastel de la demolición.",
+      ],
+    },
+    family: {
+      en: "Families tend to gravitate toward the quieter North Beach and Mid-Beach areas rather than South Beach's nightlife strip — North Beach has a more residential, walkable feel with good parks, while South Beach's schools and street noise make it a tougher sell for young kids.",
+      es: "Las familias tienden a preferir las zonas más tranquilas de North Beach y Mid-Beach en lugar de la franja de vida nocturna de South Beach — North Beach tiene un ambiente más residencial y transitable con buenos parques, mientras que las escuelas y el ruido de South Beach lo hacen más difícil para niños pequeños.",
+    },
+    movingTips: {
+      en: "Miami Beach is a barrier island, so flood insurance and hurricane preparedness aren't optional — get a flood zone and elevation certificate before making an offer, and budget for windstorm insurance on top of standard homeowner's coverage.",
+      es: "Miami Beach es una isla de barrera, así que el seguro contra inundaciones y la preparación para huracanes no son opcionales — obtén una zona de inundación y un certificado de elevación antes de hacer una oferta, y presupuesta el seguro contra vientos además de la cobertura estándar de propietario.",
+    },
   },
   {
     slug: "downtown",
@@ -201,6 +376,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: null, note: { en: "No meaningful single-family market — Downtown is entirely high-rise.", es: "No hay un mercado unifamiliar significativo — el Downtown es completamente de rascacielos." } },
       condo: { value: 650000, note: { en: "Ranges from older 2000s-boom towers to brand-new luxury developments.", es: "Va desde torres más antiguas del auge de los 2000 hasta desarrollos de lujo completamente nuevos." } },
+    },
+    center: [25.7743, -80.1937],
+    newConstruction: {
+      en: "Downtown's skyline is filling in fast — Downtown 6 (824 units, 60 stories) finishes in Q4 2026, the 902-foot Okan Tower is topping out with a Hilton hotel and 399 combined residences, and Palm Tree Residences launched sales ahead of the 2026 FIFA World Cup in Miami.",
+      es: "El horizonte de Downtown se está llenando rápidamente — Downtown 6 (824 unidades, 60 pisos) se termina en el cuarto trimestre de 2026, la torre Okan de 902 pies está alcanzando su altura máxima con un hotel Hilton y 399 residencias combinadas, y Palm Tree Residences lanzó ventas antes de la Copa Mundial de la FIFA 2026 en Miami.",
+    },
+    funFacts: {
+      en: [
+        "Downtown Miami's Freedom Tower, built in 1925, processed more than 400,000 Cuban refugees in the 1960s-70s and is now a National Historic Landmark.",
+        "Miami Worldcenter is one of the largest urban development projects in the U.S., spanning 27 acres and multiple city blocks.",
+        "The Metromover, Downtown's elevated people-mover train, is completely free to ride.",
+      ],
+      es: [
+        "La Freedom Tower de Downtown Miami, construida en 1925, procesó a más de 400,000 refugiados cubanos entre los años 60 y 70 y ahora es un Monumento Histórico Nacional.",
+        "Miami Worldcenter es uno de los proyectos de desarrollo urbano más grandes de EE. UU., que abarca 27 acres y varias cuadras de la ciudad.",
+        "El Metromover, el tren elevado de Downtown, es completamente gratis.",
+      ],
+    },
+    family: {
+      en: "Downtown is still primarily young professionals and investors rather than families — there's limited green space and few zoned public schools nearby, though Museum Park and the growing Worldcenter retail core are slowly adding family-friendly amenities.",
+      es: "Downtown todavía es principalmente de jóvenes profesionales e inversionistas más que de familias — hay espacio verde limitado y pocas escuelas públicas zonificadas cerca, aunque Museum Park y el creciente núcleo comercial de Worldcenter están agregando poco a poco comodidades para familias.",
+    },
+    movingTips: {
+      en: "If you're relocating for work downtown, most buildings are condo towers with rental restrictions and HOA rules — check whether a building allows short-term rentals if that matters to you, and expect to pay for parking separately from your unit.",
+      es: "Si te mudas por trabajo a Downtown, la mayoría de los edificios son torres de condominios con restricciones de alquiler y reglas de HOA — verifica si un edificio permite alquileres a corto plazo si eso te importa, y espera pagar el estacionamiento por separado de tu unidad.",
     },
   },
   {
@@ -227,6 +427,31 @@ const neighborhoods = [
       singleFamily: { value: 450000, note: { en: "One of the more affordable single-family markets in Miami-Dade.", es: "Uno de los mercados unifamiliares más asequibles de Miami-Dade." } },
       condo: { value: 350000, note: { en: "Mostly older, smaller buildings compared to coastal neighborhoods.", es: "Principalmente edificios más antiguos y pequeños comparados con los vecindarios costeros." } },
     },
+    center: [25.8576, -80.2781],
+    newConstruction: {
+      en: "New construction in Hialeah leans smaller-scale than its high-rise neighbors — recent approvals include a 71-unit apartment building and the Flightway Nineteen mixed-use project with over 91,000 sq ft of commercial and warehouse space, alongside steady single-family building from Lennar, D.R. Horton, and other national builders.",
+      es: "La nueva construcción en Hialeah tiende a ser de menor escala que la de sus vecinos con rascacielos — las aprobaciones recientes incluyen un edificio de apartamentos de 71 unidades y el proyecto de uso mixto Flightway Nineteen con más de 91,000 pies cuadrados de espacio comercial y de bodega, junto con construcción constante de viviendas unifamiliares por parte de Lennar, D.R. Horton y otras constructoras nacionales.",
+    },
+    funFacts: {
+      en: [
+        "Hialeah is the second-most populous city in Miami-Dade after Miami itself, and one of the most densely Cuban-American cities in the U.S.",
+        "Hialeah Park Race Track, opened in 1925, was once home to a flock of flamingos so famous it inspired the pink color scheme used across the city.",
+        "Spanish is the primary language spoken at home for the vast majority of Hialeah households — it's one of the most Spanish-speaking cities in the country.",
+      ],
+      es: [
+        "Hialeah es la segunda ciudad más poblada de Miami-Dade después de Miami misma, y una de las ciudades cubanoamericanas más densas de EE. UU.",
+        "El Hialeah Park Race Track, inaugurado en 1925, alguna vez albergó una bandada de flamencos tan famosa que inspiró el esquema de color rosa usado en toda la ciudad.",
+        "El español es el idioma principal que se habla en casa para la gran mayoría de los hogares de Hialeah — es una de las ciudades más hispanohablantes del país.",
+      ],
+    },
+    family: {
+      en: "Hialeah is a working- and middle-class family city with some of the most affordable housing in Miami-Dade — it's largely single-family and duplex housing rather than high-rises, which appeals to families wanting more space and yard for the price.",
+      es: "Hialeah es una ciudad de familias de clase trabajadora y media con algunas de las viviendas más asequibles de Miami-Dade — la vivienda es en su mayoría unifamiliar y dúplex en lugar de rascacielos, lo cual atrae a familias que buscan más espacio y patio por el precio.",
+    },
+    movingTips: {
+      en: "If you're moving from outside the Cuban-American community, know that daily life here runs heavily in Spanish — city services are bilingual, but expect Spanish to be the default in stores, restaurants, and casual conversation more than almost anywhere else in the county.",
+      es: "Si te mudas desde fuera de la comunidad cubanoamericana, ten en cuenta que la vida diaria aquí se desarrolla mayormente en español — los servicios de la ciudad son bilingües, pero espera que el español sea el idioma predeterminado en tiendas, restaurantes y conversaciones casuales más que en casi cualquier otro lugar del condado.",
+    },
   },
   {
     slug: "miami-gardens",
@@ -251,6 +476,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 400000, note: { en: "One of the more affordable single-family markets in the county.", es: "Uno de los mercados unifamiliares más asequibles del condado." } },
       condo: { value: 300000, note: { en: "Smaller condo/townhome market than coastal areas.", es: "Mercado de condominios/casas adosadas más pequeño que en las áreas costeras." } },
+    },
+    center: [25.9420, -80.2456],
+    newConstruction: {
+      en: "Miami Gardens is investing heavily in civic and mixed-use projects — a $60–70M Performing Arts Center breaks ground in fall 2026, Serenity Gardens will add 153 affordable senior residences, and a 162-acre mixed-use project nearby includes 190 affordable rental units plus new retail.",
+      es: "Miami Gardens está invirtiendo fuertemente en proyectos cívicos y de uso mixto — un Centro de Artes Escénicas de $60–70M inicia obras en otoño de 2026, Serenity Gardens sumará 153 residencias asequibles para adultos mayores, y un proyecto de uso mixto de 162 acres cercano incluye 190 unidades de alquiler asequible además de nuevos comercios.",
+    },
+    funFacts: {
+      en: [
+        "Miami Gardens is home to Hard Rock Stadium, host to Super Bowls, College Football Playoff games, and the Miami Dolphins.",
+        "Incorporated in 2003, it's one of Florida's newer cities, formed when several unincorporated communities voted to combine into a single municipality.",
+        "It's one of the largest predominantly African-American cities in the United States by population.",
+      ],
+      es: [
+        "Miami Gardens alberga el Hard Rock Stadium, sede de Super Bowls, juegos de playoffs universitarios de fútbol americano y los Miami Dolphins.",
+        "Incorporada en 2003, es una de las ciudades más nuevas de Florida, formada cuando varias comunidades no incorporadas votaron para unirse en un solo municipio.",
+        "Es una de las ciudades predominantemente afroamericanas más grandes de Estados Unidos por población.",
+      ],
+    },
+    family: {
+      en: "Miami Gardens offers some of the most affordable single-family housing in Miami-Dade, and the city has invested significantly in parks and youth recreation programs, though families should research specific school zones carefully since ratings vary block to block.",
+      es: "Miami Gardens ofrece algunas de las viviendas unifamiliares más asequibles de Miami-Dade, y la ciudad ha invertido significativamente en parques y programas de recreación juvenil, aunque las familias deben investigar cuidadosamente las zonas escolares específicas ya que las calificaciones varían de cuadra a cuadra.",
+    },
+    movingTips: {
+      en: "Traffic around Hard Rock Stadium spikes hard on game days and event nights — if you're looking at homes near the stadium, drive the area during an event before you commit so you know what to expect.",
+      es: "El tráfico alrededor de Hard Rock Stadium aumenta mucho los días de juego y noches de eventos — si estás viendo casas cerca del estadio, maneja por la zona durante un evento antes de comprometerte para saber qué esperar.",
     },
   },
   {
@@ -277,6 +527,31 @@ const neighborhoods = [
       singleFamily: { value: null, note: { en: "Almost no single-family homes — this is a barrier-island condo market.", es: "Casi no hay casas unifamiliares — este es un mercado de condominios en isla barrera." } },
       condo: { value: 749000, note: { en: "Luxury oceanfront towers push the median well above nearby areas; some units trade above $1.3M.", es: "Las torres de lujo frente al mar elevan la mediana muy por encima de las áreas cercanas; algunas unidades se venden por encima de $1.3M." } },
     },
+    center: [25.9420, -80.1225],
+    newConstruction: {
+      en: "Two supertall towers are reshaping the skyline — the 62-story Bentley Residences (216 units, the world's first Bentley-branded tower, with in-unit car elevators) has gone vertical, and Related/Dezer/BH's newly approved 62-story oceanfront tower at 19051 Collins adds 145 more residences.",
+      es: "Dos torres supertall están transformando el horizonte — Bentley Residences de 62 pisos (216 unidades, la primera torre de marca Bentley en el mundo, con elevadores de autos dentro de la unidad) ya está en construcción vertical, y la torre frente al mar de 62 pisos recién aprobada de Related/Dezer/BH en 19051 Collins suma 145 residencias más.",
+    },
+    funFacts: {
+      en: [
+        "Sunny Isles Beach is nicknamed 'Florida's Riviera' for its dense strip of oceanfront luxury condo towers.",
+        "It's one of the smallest cities in Miami-Dade by land area, yet has one of the highest concentrations of high-rise buildings per square mile.",
+        "The city has a large Russian and Eastern European community, with signage and services in Russian common along Collins Avenue.",
+      ],
+      es: [
+        "Sunny Isles Beach es apodada 'la Riviera de Florida' por su densa fila de torres de condominios de lujo frente al mar.",
+        "Es una de las ciudades más pequeñas de Miami-Dade en área terrestre, pero tiene una de las mayores concentraciones de edificios altos por milla cuadrada.",
+        "La ciudad tiene una gran comunidad rusa y de Europa del Este, con señalización y servicios en ruso comunes a lo largo de Collins Avenue.",
+      ],
+    },
+    family: {
+      en: "Most Sunny Isles housing is oceanfront condo towers rather than single-family homes, but the city has invested in a well-regarded K-8 school and beachfront parks, making it workable for families who want beach living in a high-rise.",
+      es: "La mayoría de las viviendas en Sunny Isles son torres de condominios frente al mar en lugar de casas unifamiliares, pero la ciudad ha invertido en una escuela K-8 bien valorada y parques frente a la playa, lo que la hace viable para familias que quieren vivir en la playa en un edificio alto.",
+    },
+    movingTips: {
+      en: "Collins Avenue traffic can be heavy, especially in winter tourist season — and like any barrier-island city, confirm flood zone and windstorm insurance costs before you make an offer, since they can add significantly to monthly costs.",
+      es: "El tráfico en Collins Avenue puede ser pesado, especialmente en temporada alta de invierno — y como en cualquier ciudad de isla de barrera, confirma la zona de inundación y los costos del seguro contra vientos antes de hacer una oferta, ya que pueden aumentar significativamente los costos mensuales.",
+    },
   },
   {
     slug: "aventura",
@@ -301,6 +576,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 480000, note: { en: "A small slice of the market — Aventura is overwhelmingly condo towers.", es: "Una pequeña parte del mercado — Aventura es abrumadoramente de torres de condominios." } },
       condo: { value: 550000, note: { en: "Wide range from older towers to new luxury high-rises near the mall.", es: "Amplio rango desde torres antiguas hasta nuevos rascacielos de lujo cerca del centro comercial." } },
+    },
+    center: [25.9565, -80.1392],
+    newConstruction: {
+      en: "Aventura's Biscayne Boulevard corridor is adding Centtral Aventura, a 9-story, 145,000-sq-ft mixed-use project with the city's first multi-story digital billboard, plus Avenia Aventura by Fendi Casa completing in 2026 and two proposed 31-story towers at the Arium Lincoln Pointe site.",
+      es: "El corredor de Biscayne Boulevard en Aventura está sumando Centtral Aventura, un proyecto de uso mixto de 9 pisos y 145,000 pies cuadrados con la primera valla publicitaria digital de varios pisos de la ciudad, además de Avenia Aventura de Fendi Casa que se completa en 2026 y dos torres propuestas de 31 pisos en el sitio de Arium Lincoln Pointe.",
+    },
+    funFacts: {
+      en: [
+        "Aventura Mall is the third-largest mall in the U.S. by leasable retail space, drawing shoppers from across South Florida and abroad.",
+        "The city is built around the Turnberry golf course and marina, developed by the Soffer family starting in the 1970s.",
+        "Aventura is one of the most walkable cities in Miami-Dade, with a dedicated trolley system connecting residential towers to the mall and business district.",
+      ],
+      es: [
+        "Aventura Mall es el tercer centro comercial más grande de EE. UU. por espacio comercial arrendable, atrayendo compradores de todo el sur de Florida y del extranjero.",
+        "La ciudad se construyó alrededor del campo de golf y la marina de Turnberry, desarrollados por la familia Soffer a partir de la década de 1970.",
+        "Aventura es una de las ciudades más transitables a pie de Miami-Dade, con un sistema de trolebús dedicado que conecta las torres residenciales con el centro comercial y el distrito de negocios.",
+      ],
+    },
+    family: {
+      en: "Aventura draws families who want a resort-like, walkable lifestyle in condo towers — the city runs its own highly-rated charter school (Aventura City of Excellence School), a strong draw for families choosing between condo living and a traditional suburb.",
+      es: "Aventura atrae a familias que buscan un estilo de vida transitable y tipo resort en torres de condominios — la ciudad opera su propia escuela chárter muy bien calificada (Aventura City of Excellence School), un fuerte atractivo para familias que eligen entre vivir en condominio y un suburbio tradicional.",
+    },
+    movingTips: {
+      en: "Aventura sits right on the Miami-Dade/Broward county line, so double check which county and school district a specific building or address falls into — it affects property tax rates and school zoning even for addresses just blocks apart.",
+      es: "Aventura está justo en el límite entre los condados de Miami-Dade y Broward, así que verifica bien en qué condado y distrito escolar cae un edificio o dirección específica — esto afecta las tasas de impuesto a la propiedad y la zonificación escolar incluso para direcciones a pocas cuadras de distancia.",
     },
   },
   {
@@ -327,6 +627,31 @@ const neighborhoods = [
       singleFamily: { value: 383000, note: { en: "Notably more affordable than Sunny Isles Beach or Aventura just to the south.", es: "Notablemente más asequible que Sunny Isles Beach o Aventura, justo al sur." } },
       condo: { value: 300000, note: { en: "A mix of older beachfront buildings and newer towers near Gulfstream Park.", es: "Una mezcla de edificios más antiguos frente a la playa y torres más nuevas cerca de Gulfstream Park." } },
     },
+    center: [25.9812, -80.1484],
+    newConstruction: {
+      en: "Hallandale Beach is in the middle of a development wave — Oasis Hallandale's second 25-story tower just topped off within a 10-acre mixed-use project, Seven Park is adding 121 condos from $375,000, and SQUARE Hallandale delivered a 360,000-sq-ft office-condo project.",
+      es: "Hallandale Beach está en medio de una ola de desarrollo — la segunda torre de 25 pisos de Oasis Hallandale acaba de alcanzar su altura máxima dentro de un proyecto de uso mixto de 10 acres, Seven Park suma 121 condominios desde $375,000, y SQUARE Hallandale entregó un proyecto de oficinas-condominio de 360,000 pies cuadrados.",
+    },
+    funFacts: {
+      en: [
+        "Hallandale Beach is home to Gulfstream Park, a historic thoroughbred horse racing track and casino operating since 1939.",
+        "It's one of the smallest cities by land area in Broward County, but its beachfront and casino draw crowds well beyond its size.",
+        "The city has a significant Canadian and Quebecois snowbird population, especially in the winter months.",
+      ],
+      es: [
+        "Hallandale Beach alberga Gulfstream Park, un histórico hipódromo y casino en operación desde 1939.",
+        "Es una de las ciudades más pequeñas por área terrestre del condado de Broward, pero su costa y su casino atraen multitudes mucho mayores que su tamaño.",
+        "La ciudad tiene una población significativa de 'snowbirds' canadienses y quebequenses, especialmente en los meses de invierno.",
+      ],
+    },
+    family: {
+      en: "Hallandale Beach is more of a mixed retiree-and-investor market than a traditional family suburb — condo towers dominate the housing stock, and families looking for zoned public schools often look slightly inland or toward neighboring Aventura and Hollywood.",
+      es: "Hallandale Beach es más un mercado mixto de jubilados e inversionistas que un suburbio familiar tradicional — las torres de condominios dominan la vivienda, y las familias que buscan escuelas públicas zonificadas suelen mirar un poco más hacia el interior o hacia las vecinas Aventura y Hollywood.",
+    },
+    movingTips: {
+      en: "Hallandale Beach is in Broward County, not Miami-Dade, so property tax rates, school districts, and some permitting rules differ from Miami-Dade cities just a few minutes south — don't assume Miami-Dade rules apply here.",
+      es: "Hallandale Beach está en el condado de Broward, no en Miami-Dade, así que las tasas de impuesto a la propiedad, los distritos escolares y algunas reglas de permisos difieren de las ciudades de Miami-Dade a solo minutos al sur — no asumas que las reglas de Miami-Dade aplican aquí.",
+    },
   },
   {
     slug: "kendall-pinecrest",
@@ -351,6 +676,31 @@ const neighborhoods = [
     pricing: {
       singleFamily: { value: 500000, note: { en: "Kendall runs closer to this citywide figure; incorporated Pinecrest next door is far pricier, often averaging $2.5M+.", es: "Kendall se acerca más a esta cifra general; el vecino Pinecrest, incorporado, es mucho más caro, con un promedio de $2.5M o más." } },
       condo: { value: 320000, note: { en: "Condo and townhome stock is concentrated in Kendall — Pinecrest has almost none and strongly favors single-family zoning.", es: "El inventario de condominios y casas adosadas se concentra en Kendall — Pinecrest tiene casi ninguno y favorece fuertemente la zonificación unifamiliar." } },
+    },
+    center: [25.6660, -80.3010],
+    newConstruction: {
+      en: "New construction here is almost entirely custom single-family homes rather than towers — recent Kendall-area completions include multi-million-dollar modern estates on large lots, with roughly 150 active new-home communities and builders across the broader Kendall area.",
+      es: "La nueva construcción aquí es casi toda de casas unifamiliares personalizadas en lugar de torres — las finalizaciones recientes en el área de Kendall incluyen fincas modernas multimillonarias en lotes grandes, con aproximadamente 150 comunidades y constructores activos de casas nuevas en el área más amplia de Kendall.",
+    },
+    funFacts: {
+      en: [
+        "Pinecrest incorporated as its own village in 1996 specifically to preserve its oak-canopied streets and large-lot zoning from denser development.",
+        "Kendall is named after Henry Kendall, a 19th-century land manager for the Florida East Coast Railway who never actually lived there.",
+        "Pinecrest Gardens, the village's signature park, sits on the site of the former Parrot Jungle attraction and still has tropical botanical gardens open to the public.",
+      ],
+      es: [
+        "Pinecrest se incorporó como su propio pueblo en 1996 específicamente para preservar sus calles con dosel de robles y la zonificación de lotes grandes frente a un desarrollo más denso.",
+        "Kendall lleva el nombre de Henry Kendall, un administrador de tierras del siglo XIX del ferrocarril Florida East Coast que nunca vivió allí realmente.",
+        "Pinecrest Gardens, el parque insignia del pueblo, está en el sitio de la antigua atracción Parrot Jungle y todavía tiene jardines botánicos tropicales abiertos al público.",
+      ],
+    },
+    family: {
+      en: "This is one of the most family-oriented corners of Miami-Dade — large lots, mature tree canopy, and some of the county's top-rated public schools make Pinecrest especially popular with families, while Kendall offers a more affordable version of the same suburban lifestyle.",
+      es: "Este es uno de los rincones más orientados a familias de Miami-Dade — lotes grandes, dosel de árboles maduros y algunas de las escuelas públicas mejor calificadas del condado hacen que Pinecrest sea especialmente popular entre familias, mientras que Kendall ofrece una versión más asequible del mismo estilo de vida suburbano.",
+    },
+    movingTips: {
+      en: "If you're moving from a dense urban area, expect to need a car for almost everything here — this is classic car-dependent Miami-Dade suburb, with far less walkability than Brickell or Coral Gables, so factor commute times into your decision.",
+      es: "Si te mudas desde una zona urbana densa, espera necesitar un auto para casi todo aquí — este es un suburbio clásico de Miami-Dade dependiente del auto, con mucha menos posibilidad de caminar que Brickell o Coral Gables, así que considera los tiempos de traslado en tu decisión.",
     },
   },
 ];

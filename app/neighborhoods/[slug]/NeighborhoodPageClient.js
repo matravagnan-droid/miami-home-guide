@@ -3,6 +3,7 @@
 import SiteNav from "../../components/SiteNav";
 import SiteFooter from "../../components/SiteFooter";
 import BackLink from "../../components/BackLink";
+import NeighborhoodPOIMap from "../../components/maps/NeighborhoodPOIMap";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const moneyFor = (locale) => (n) =>
@@ -15,6 +16,7 @@ const moneyFor = (locale) => (n) =>
 export default function NeighborhoodPageClient({ neighborhood }) {
   const { t, lang } = useLanguage();
   const money = moneyFor(lang === "es" ? "es-US" : "en-US");
+  const text = (field) => field[lang] || field.en;
 
   const priceCard = (labelKey, entry) => (
     <div className="tool-card">
@@ -23,13 +25,13 @@ export default function NeighborhoodPageClient({ neighborhood }) {
         <>
           <h3>{money(entry.value)}</h3>
           <p>
-            {t.neighborhoodPage.medianLabel} · {entry.note[lang]}
+            {t.neighborhoodPage.medianLabel} · {entry.note[lang] || entry.note.en}
           </p>
         </>
       ) : (
         <>
           <h3>{t.neighborhoodPage.noData}</h3>
-          <p>{entry.note[lang]}</p>
+          <p>{entry.note[lang] || entry.note.en}</p>
         </>
       )}
     </div>
@@ -43,7 +45,7 @@ export default function NeighborhoodPageClient({ neighborhood }) {
       <section
         className="hero"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(7,31,36,0.82) 0%, rgba(16,63,69,0.7) 82%, var(--sand) 82%), url(${neighborhood.image})`,
+          backgroundImage: `linear-gradient(180deg, rgba(7,31,36,0.82) 0%, rgba(16,63,69,0.2) 76%, rgba(246,243,236,0) 82%, rgba(246,243,236,1) 88%), url(${neighborhood.image})`,
         }}
       >
         <div className="eyebrow">Miami-Dade</div>
@@ -69,6 +71,37 @@ export default function NeighborhoodPageClient({ neighborhood }) {
           {priceCard("condoLabel", neighborhood.pricing.condo)}
         </div>
         <p className="map-note">{t.neighborhoodPage.disclaimer}</p>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="neighborhood-detail-grid">
+          <div className="neighborhood-detail-col">
+            <div className="neighborhood-detail-block">
+              <h3>{t.neighborhoodPage.newConstructionLabel}</h3>
+              <p>{text(neighborhood.newConstruction)}</p>
+            </div>
+            <div className="neighborhood-detail-block">
+              <h3>{t.neighborhoodPage.funFactsLabel}</h3>
+              <ul>
+                {(neighborhood.funFacts[lang] || neighborhood.funFacts.en).map((fact) => (
+                  <li key={fact}>{fact}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="neighborhood-detail-block">
+              <h3>{t.neighborhoodPage.familyLabel}</h3>
+              <p>{text(neighborhood.family)}</p>
+            </div>
+            <div className="neighborhood-detail-block">
+              <h3>{t.neighborhoodPage.movingTipsLabel}</h3>
+              <p>{text(neighborhood.movingTips)}</p>
+            </div>
+          </div>
+          <div className="neighborhood-detail-col neighborhood-detail-map">
+            <h3>{t.neighborhoodPage.mapLabel}</h3>
+            <NeighborhoodPOIMap center={neighborhood.center} />
+          </div>
+        </div>
       </section>
 
       <SiteFooter>
