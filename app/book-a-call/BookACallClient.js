@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
+import AgentBio from "../components/AgentBio";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function BookACallClient() {
@@ -28,41 +29,45 @@ export default function BookACallClient() {
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
-        <form
-          className="lead-form lead-form-wide"
-          action="https://formsubmit.co/mat.ravagnan@gmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="New lead from Miami Home Guide" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_cc" value="3525520793@txt.att.net" />
-          {redirectUrl && <input type="hidden" name="_next" value={redirectUrl} />}
+        <div className="lead-split">
+          <form
+            className="lead-form"
+            action="https://formsubmit.co/mat.ravagnan@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New lead from Miami Home Guide" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_cc" value="3525520793@txt.att.net" />
+            {redirectUrl && <input type="hidden" name="_next" value={redirectUrl} />}
 
-          <div className="lead-form-row">
+            <div className="lead-form-row">
+              <label className="calc-field">
+                <span>{t.bookCallPage.firstName}</span>
+                <input type="text" name="First Name" required />
+              </label>
+              <label className="calc-field">
+                <span>{t.bookCallPage.lastName}</span>
+                <input type="text" name="Last Name" required />
+              </label>
+            </div>
+
             <label className="calc-field">
-              <span>{t.bookCallPage.firstName}</span>
-              <input type="text" name="First Name" required />
+              <span>{t.bookCallPage.phone}</span>
+              <input type="tel" name="Phone" required />
             </label>
+
             <label className="calc-field">
-              <span>{t.bookCallPage.lastName}</span>
-              <input type="text" name="Last Name" required />
+              <span>{t.bookCallPage.email}</span>
+              <input type="email" name="Email" />
             </label>
-          </div>
 
-          <label className="calc-field">
-            <span>{t.bookCallPage.phone}</span>
-            <input type="tel" name="Phone" required />
-          </label>
+            <button type="submit" className="book-call-btn lead-form-submit">
+              {t.bookCallPage.submit}
+            </button>
+          </form>
 
-          <label className="calc-field">
-            <span>{t.bookCallPage.email}</span>
-            <input type="email" name="Email" />
-          </label>
-
-          <button type="submit" className="book-call-btn lead-form-submit">
-            {t.bookCallPage.submit}
-          </button>
-        </form>
+          <AgentBio />
+        </div>
       </section>
 
       <SiteFooter>

@@ -1064,8 +1064,47 @@ footer a {
   padding: 32px;
 }
 
-.lead-form-wide {
-  max-width: none;
+.lead-split {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.lead-split .lead-form {
+  flex: 1;
+  min-width: 320px;
+}
+
+.agent-bio {
+  flex: 1;
+  min-width: 280px;
+}
+
+.agent-bio-photo {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+  border-top: 3px solid var(--sunset);
+  margin-bottom: 20px;
+}
+
+.agent-bio-name {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.agent-bio-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a5a56;
+  max-width: 46ch;
+  margin: 0;
 }
 
 .lead-intro {
