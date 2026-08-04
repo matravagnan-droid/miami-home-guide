@@ -371,6 +371,15 @@ const translations = {
       h2: "Pick a neighborhood",
       p: "Every area of Miami-Dade has its own personality and its own price per square foot. Click one for history, photos, and real estate pricing.",
     },
+    crossLinks: {
+      heading: "Keep exploring",
+      neighborhoodsGuide: { title: "Best Miami neighborhoods guide", note: "See which neighborhoods fit families, young professionals, or investors best." },
+      mortgageCalc: { title: "Mortgage calculator", note: "See what the monthly payment looks like at different price points." },
+      propertyTaxCalc: { title: "Property tax calculator", note: "Estimate the annual property tax bill for a specific ZIP code." },
+      condoGuide: { title: "Condo buying guide", note: "What to check before buying into a Florida condo building — milestone inspections, SIRS, and special assessments." },
+      downPaymentGuide: { title: "How much down payment do you actually need?", note: "The 20% myth, explained — what conventional and FHA loans really require." },
+      closingCostsGuide: { title: "Miami closing costs explained", note: "Every fee on a typical closing statement, and Florida's unusual rules on who pays what." },
+    },
     neighborhoodPage: {
       historyLabel: "History",
       pricingLabel: "Real estate snapshot",
@@ -844,6 +853,15 @@ const translations = {
     neighborhoods: {
       h2: "Elija un vecindario",
       p: "Cada área de Miami-Dade tiene su propia personalidad y su propio precio por pie cuadrado. Haga clic en uno para ver historia, fotos y precios de bienes raíces.",
+    },
+    crossLinks: {
+      heading: "Sigue explorando",
+      neighborhoodsGuide: { title: "Guía de los mejores vecindarios de Miami", note: "Descubre qué vecindarios se adaptan mejor a familias, jóvenes profesionales o inversionistas." },
+      mortgageCalc: { title: "Calculadora de hipoteca", note: "Mira cómo se ve el pago mensual en distintos rangos de precio." },
+      propertyTaxCalc: { title: "Calculadora de impuesto a la propiedad", note: "Estima el impuesto anual a la propiedad para un código postal específico." },
+      condoGuide: { title: "Guía para comprar un condominio", note: "Qué revisar antes de comprar en un edificio de condominios en Florida — inspecciones de hito, SIRS y evaluaciones especiales." },
+      downPaymentGuide: { title: "¿Cuánto pago inicial necesitas realmente?", note: "El mito del 20%, explicado — lo que realmente requieren los préstamos convencionales y FHA." },
+      closingCostsGuide: { title: "Costos de cierre en Miami explicados", note: "Cada cargo en un estado de cierre típico, y las reglas particulares de Florida sobre quién paga qué." },
     },
     neighborhoodPage: {
       historyLabel: "Historia",
@@ -1319,6 +1337,15 @@ const translations = {
       h2: "Choisissez un quartier",
       p: "Chaque zone de Miami-Dade a sa propre personnalité et son propre prix au pied carré. Cliquez sur l'une d'elles pour voir son histoire, ses photos et les prix immobiliers.",
     },
+    crossLinks: {
+      heading: "Continuez à explorer",
+      neighborhoodsGuide: { title: "Guide des meilleurs quartiers de Miami", note: "Découvrez quels quartiers conviennent le mieux aux familles, aux jeunes professionnels ou aux investisseurs." },
+      mortgageCalc: { title: "Calculateur de prêt hypothécaire", note: "Voyez à quoi ressemble le paiement mensuel à différents niveaux de prix." },
+      propertyTaxCalc: { title: "Calculateur de taxe foncière", note: "Estimez la taxe foncière annuelle pour un code postal spécifique." },
+      condoGuide: { title: "Guide d'achat de condo", note: "Ce qu'il faut vérifier avant d'acheter dans un immeuble en copropriété en Floride — inspections de référence, SIRS et cotisations spéciales." },
+      downPaymentGuide: { title: "De combien d'acompte avez-vous vraiment besoin ?", note: "Le mythe des 20 %, expliqué — ce que les prêts conventionnels et FHA exigent réellement." },
+      closingCostsGuide: { title: "Frais de clôture à Miami expliqués", note: "Chaque frais d'un relevé de clôture typique, et les règles particulières de la Floride sur qui paie quoi." },
+    },
     neighborhoodPage: {
       historyLabel: "Histoire",
       pricingLabel: "Aperçu immobilier",
@@ -1792,6 +1819,15 @@ const translations = {
     neighborhoods: {
       h2: "Chwazi yon katye",
       p: "Chak zòn nan Miami-Dade gen pwòp pèsonalite li ak pwòp pri pa pye kare li. Klike sou youn pou wè istwa, foto, ak pri imobilye.",
+    },
+    crossLinks: {
+      heading: "Kontinye eksplore",
+      neighborhoodsGuide: { title: "Gid pi bon katye Miami yo", note: "Gade ki katye ki pi bon pou fanmi, jèn pwofesyonèl, oswa envestisè." },
+      mortgageCalc: { title: "Kalkilatè ipotèk", note: "Gade ki jan peman chak mwa a ye nan diferan nivo pri." },
+      propertyTaxCalc: { title: "Kalkilatè taks pwopriyete", note: "Estime taks anyèl pwopriyete pou yon kòd postal espesifik." },
+      condoGuide: { title: "Gid pou achte yon kondo", note: "Sa pou verifye anvan ou achte nan yon bilding kondo Florid — enspeksyon milestone, SIRS, ak evalyasyon espesyal." },
+      downPaymentGuide: { title: "Konbyen down payment ou reyèlman bezwen?", note: "Mit 20% la, eksplike — sa prè konvansyonèl ak FHA reyèlman egzije." },
+      closingCostsGuide: { title: "Frè klotiraj Miami eksplike", note: "Chak frè sou yon deklarasyon klotiraj tipik, ak règ patikilye Florid sou ki moun ki peye ki bagay." },
     },
     neighborhoodPage: {
       historyLabel: "Istwa",
@@ -2267,6 +2303,15 @@ const translations = {
       h2: "Escolha um bairro",
       p: "Cada área de Miami-Dade tem sua própria personalidade e seu próprio preço por metro quadrado. Clique em uma para ver história, fotos e preços imobiliários.",
     },
+    crossLinks: {
+      heading: "Continue explorando",
+      neighborhoodsGuide: { title: "Guia dos melhores bairros de Miami", note: "Veja quais bairros combinam melhor com famílias, jovens profissionais ou investidores." },
+      mortgageCalc: { title: "Calculadora de financiamento", note: "Veja como fica o pagamento mensal em diferentes faixas de preço." },
+      propertyTaxCalc: { title: "Calculadora de imposto predial", note: "Estime o imposto predial anual para um CEP específico." },
+      condoGuide: { title: "Guia de compra de condomínio", note: "O que verificar antes de comprar em um prédio de condomínio na Flórida — inspeções marco, SIRS e taxas extraordinárias." },
+      downPaymentGuide: { title: "Quanto de entrada você realmente precisa?", note: "O mito dos 20%, explicado — o que os financiamentos convencionais e FHA realmente exigem." },
+      closingCostsGuide: { title: "Custos de fechamento em Miami explicados", note: "Cada taxa em um extrato de fechamento típico, e as regras peculiares da Flórida sobre quem paga o quê." },
+    },
     neighborhoodPage: {
       historyLabel: "História",
       pricingLabel: "Panorama imobiliário",
@@ -2740,6 +2785,15 @@ const translations = {
     neighborhoods: {
       h2: "Scegli un quartiere",
       p: "Ogni area di Miami-Dade ha la propria personalità e il proprio prezzo al metro quadro. Clicca su uno per vedere storia, foto e prezzi immobiliari.",
+    },
+    crossLinks: {
+      heading: "Continua a esplorare",
+      neighborhoodsGuide: { title: "Guida ai migliori quartieri di Miami", note: "Scopri quali quartieri si adattano meglio a famiglie, giovani professionisti o investitori." },
+      mortgageCalc: { title: "Calcolatore del mutuo", note: "Guarda come cambia la rata mensile a diversi livelli di prezzo." },
+      propertyTaxCalc: { title: "Calcolatore delle tasse sulla proprietà", note: "Stima la tassa annuale sulla proprietà per un CAP specifico." },
+      condoGuide: { title: "Guida all'acquisto di un condominio", note: "Cosa controllare prima di comprare in un edificio condominiale in Florida — ispezioni milestone, SIRS e contributi straordinari." },
+      downPaymentGuide: { title: "Di quanto acconto hai davvero bisogno?", note: "Il mito del 20%, spiegato — cosa richiedono davvero i mutui convenzionali e FHA." },
+      closingCostsGuide: { title: "Costi di chiusura a Miami spiegati", note: "Ogni spesa in un tipico prospetto di chiusura, e le regole particolari della Florida su chi paga cosa." },
     },
     neighborhoodPage: {
       historyLabel: "Storia",

@@ -4,6 +4,7 @@ import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
 import PropertyTaxCalculator from "../components/PropertyTaxCalculator";
+import RelatedLinks from "../components/RelatedLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 import { MIAMI_DADE_ZIPS, BROWARD_ZIPS } from "../lib/zipCodes";
 
@@ -65,6 +66,14 @@ export default function PropertyTaxCalculatorClient() {
           ))}
         </div>
       </section>
+
+      <RelatedLinks
+        items={[
+          { href: "/blog/miami-closing-costs-explained-what-buyers-actually-pay", key: "closingCostsGuide" },
+          { href: "/mortgage-calculator", key: "mortgageCalc" },
+          { href: "/blog/best-miami-neighborhoods-families-young-professionals-investors", key: "neighborhoodsGuide" },
+        ]}
+      />
 
       <SiteFooter>
         <a href="/">{t.moving.backLink}</a>

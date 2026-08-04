@@ -4,6 +4,7 @@ import SiteNav from "../../components/SiteNav";
 import SiteFooter from "../../components/SiteFooter";
 import BackLink from "../../components/BackLink";
 import NeighborhoodBoundaryMap from "../../components/maps/NeighborhoodBoundaryMap";
+import RelatedLinks from "../../components/RelatedLinks";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const moneyFor = (locale) => (n) =>
@@ -17,6 +18,14 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
   const { t, lang } = useLanguage();
   const money = moneyFor(lang === "es" ? "es-US" : "en-US");
   const text = (field) => field[lang] || field.en;
+  const isCondoHeavy = neighborhood.pricing.singleFamily.value === null;
+  const relatedItems = [
+    { href: "/blog/best-miami-neighborhoods-families-young-professionals-investors", key: "neighborhoodsGuide" },
+    { href: "/mortgage-calculator", key: "mortgageCalc" },
+    isCondoHeavy
+      ? { href: "/blog/florida-condo-buying-guide-milestone-inspections-sirs-special-assessments", key: "condoGuide" }
+      : { href: "/property-tax-calculator", key: "propertyTaxCalc" },
+  ];
 
   const priceCard = (labelKey, entry) => (
     <div className="tool-card">
@@ -103,6 +112,8 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
           </div>
         </div>
       </section>
+
+      <RelatedLinks items={relatedItems} />
 
       <SiteFooter>
         <a href="/#neighborhoods">{t.neighborhoodPage.backLink}</a>

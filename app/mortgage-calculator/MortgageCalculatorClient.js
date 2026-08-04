@@ -4,6 +4,7 @@ import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
 import MortgageCalculator from "../components/MortgageCalculator";
+import RelatedLinks from "../components/RelatedLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function MortgageCalculatorClient() {
@@ -46,6 +47,14 @@ export default function MortgageCalculatorClient() {
           ))}
         </div>
       </section>
+
+      <RelatedLinks
+        items={[
+          { href: "/blog/how-much-down-payment-do-you-need-to-buy-a-home-in-miami", key: "downPaymentGuide" },
+          { href: "/blog/miami-closing-costs-explained-what-buyers-actually-pay", key: "closingCostsGuide" },
+          { href: "/property-tax-calculator", key: "propertyTaxCalc" },
+        ]}
+      />
 
       <SiteFooter>
         <a href="/">{t.moving.backLink}</a>
