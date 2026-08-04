@@ -1,6 +1,6 @@
-import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import { LanguageProvider } from './i18n/LanguageContext';
+import SiteAnalytics from './components/SiteAnalytics';
 
 export const metadata = {
   metadataBase: new URL('https://miami-home-guide.vercel.app'),
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <LanguageProvider>{children}</LanguageProvider>
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   );
