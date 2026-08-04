@@ -254,6 +254,56 @@ const neighborhoods = [
     },
   },
   {
+    slug: "downtown",
+    name: "Downtown Miami",
+    image: "/images/downtown.jpg",
+    tagline: {
+      en: "Urban core, business, transit hub",
+      es: "Núcleo urbano, negocios, centro de transporte",
+      fr: "Cœur urbain, affaires, pôle de transport",
+      ht: "Sant iben, biznis, pwen tranzit",
+      pt: "Centro urbano, negócios, polo de transporte",
+      it: "Centro urbano, affari, snodo dei trasporti",
+    },
+    history: {
+      en: "The site of Miami's original 1896 incorporation around the Miami River and Flagler Street, Downtown spent decades as a daytime-only business district before a 2000s condo boom filled it with residential towers, turning it into a genuine 24-hour urban core connected by Metromover and Metrorail.",
+      es: "El sitio de la incorporación original de Miami en 1896 alrededor del río Miami y Flagler Street, el Downtown pasó décadas como distrito de negocios solo diurno antes de que un auge de condominios en la década de 2000 lo llenara de torres residenciales, convirtiéndolo en un verdadero núcleo urbano de 24 horas conectado por Metromover y Metrorail.",
+      fr: "Site de l'incorporation originelle de Miami en 1896 autour de la rivière Miami et de Flagler Street, le Downtown a passé des décennies comme district d'affaires uniquement diurne avant qu'un boom des condos dans les années 2000 ne le remplisse de tours résidentielles, en faisant un véritable cœur urbain actif 24h/24, connecté par le Metromover et le Metrorail.",
+      ht: "Sit orijinal enkòporasyon Miami nan 1896 alantou Rivyè Miami ak Flagler Street, Downtown te pase plizyè dekad kòm yon distri biznis ki fonksyone sèlman lajounen anvan yon boom kondo nan ane 2000 yo te ranpli l ak gratsyèl rezidansyèl, sa ki te fè l vin yon vrè sant iben 24 sou 24, konekte pa Metromover ak Metrorail.",
+      pt: "Local da incorporação original de Miami em 1896, ao redor do Rio Miami e da Flagler Street, o Downtown passou décadas como um distrito comercial apenas diurno antes que um boom de condomínios nos anos 2000 o preenchesse com torres residenciais, transformando-o em um verdadeiro centro urbano 24 horas conectado pelo Metromover e Metrorail.",
+      it: "Sede dell'incorporazione originale di Miami nel 1896 attorno al fiume Miami e a Flagler Street, il Downtown ha trascorso decenni come distretto commerciale solo diurno prima che un boom immobiliare di condomini negli anni 2000 lo riempisse di torri residenziali, trasformandolo in un vero centro urbano attivo 24 ore su 24, collegato da Metromover e Metrorail.",
+    },
+    pricing: {
+      singleFamily: { value: null, note: { en: "No meaningful single-family market — Downtown is entirely high-rise.", es: "No hay un mercado unifamiliar significativo — el Downtown es completamente de rascacielos." } },
+      condo: { value: 650000, note: { en: "Ranges from older 2000s-boom towers to brand-new luxury developments.", es: "Va desde torres más antiguas del auge de los 2000 hasta desarrollos de lujo completamente nuevos." } },
+    },
+    center: [25.7743, -80.1937],
+    newConstruction: {
+      en: "Downtown's skyline is filling in fast — Downtown 6 (824 units, 60 stories) finishes in Q4 2026, the 902-foot Okan Tower is topping out with a Hilton hotel and 399 combined residences, and Palm Tree Residences launched sales ahead of the 2026 FIFA World Cup in Miami.",
+      es: "El horizonte de Downtown se está llenando rápidamente — Downtown 6 (824 unidades, 60 pisos) se termina en el cuarto trimestre de 2026, la torre Okan de 902 pies está alcanzando su altura máxima con un hotel Hilton y 399 residencias combinadas, y Palm Tree Residences lanzó ventas antes de la Copa Mundial de la FIFA 2026 en Miami.",
+    },
+    funFacts: {
+      en: [
+        "Downtown Miami's Freedom Tower, built in 1925, processed more than 400,000 Cuban refugees in the 1960s-70s and is now a National Historic Landmark.",
+        "Miami Worldcenter is one of the largest urban development projects in the U.S., spanning 27 acres and multiple city blocks.",
+        "The Metromover, Downtown's elevated people-mover train, is completely free to ride.",
+      ],
+      es: [
+        "La Freedom Tower de Downtown Miami, construida en 1925, procesó a más de 400,000 refugiados cubanos entre los años 60 y 70 y ahora es un Monumento Histórico Nacional.",
+        "Miami Worldcenter es uno de los proyectos de desarrollo urbano más grandes de EE. UU., que abarca 27 acres y varias cuadras de la ciudad.",
+        "El Metromover, el tren elevado de Downtown, es completamente gratis.",
+      ],
+    },
+    family: {
+      en: "Downtown is still primarily young professionals and investors rather than families — there's limited green space and few zoned public schools nearby, though Museum Park and the growing Worldcenter retail core are slowly adding family-friendly amenities.",
+      es: "Downtown todavía es principalmente de jóvenes profesionales e inversionistas más que de familias — hay espacio verde limitado y pocas escuelas públicas zonificadas cerca, aunque Museum Park y el creciente núcleo comercial de Worldcenter están agregando poco a poco comodidades para familias.",
+    },
+    movingTips: {
+      en: "If you're relocating for work downtown, most buildings are condo towers with rental restrictions and HOA rules — check whether a building allows short-term rentals if that matters to you, and expect to pay for parking separately from your unit.",
+      es: "Si te mudas por trabajo a Downtown, la mayoría de los edificios son torres de condominios con restricciones de alquiler y reglas de HOA — verifica si un edificio permite alquileres a corto plazo si eso te importa, y espera pagar el estacionamiento por separado de tu unidad.",
+    },
+  },
+  {
     slug: "midtown-edgewater",
     name: "Midtown / Edgewater",
     image: "/images/midtown-edgewater.jpg",
@@ -351,56 +401,6 @@ const neighborhoods = [
     movingTips: {
       en: "Miami Beach is a barrier island, so flood insurance and hurricane preparedness aren't optional — get a flood zone and elevation certificate before making an offer, and budget for windstorm insurance on top of standard homeowner's coverage.",
       es: "Miami Beach es una isla de barrera, así que el seguro contra inundaciones y la preparación para huracanes no son opcionales — obtén una zona de inundación y un certificado de elevación antes de hacer una oferta, y presupuesta el seguro contra vientos además de la cobertura estándar de propietario.",
-    },
-  },
-  {
-    slug: "downtown",
-    name: "Downtown Miami",
-    image: "/images/downtown.jpg",
-    tagline: {
-      en: "Urban core, business, transit hub",
-      es: "Núcleo urbano, negocios, centro de transporte",
-      fr: "Cœur urbain, affaires, pôle de transport",
-      ht: "Sant iben, biznis, pwen tranzit",
-      pt: "Centro urbano, negócios, polo de transporte",
-      it: "Centro urbano, affari, snodo dei trasporti",
-    },
-    history: {
-      en: "The site of Miami's original 1896 incorporation around the Miami River and Flagler Street, Downtown spent decades as a daytime-only business district before a 2000s condo boom filled it with residential towers, turning it into a genuine 24-hour urban core connected by Metromover and Metrorail.",
-      es: "El sitio de la incorporación original de Miami en 1896 alrededor del río Miami y Flagler Street, el Downtown pasó décadas como distrito de negocios solo diurno antes de que un auge de condominios en la década de 2000 lo llenara de torres residenciales, convirtiéndolo en un verdadero núcleo urbano de 24 horas conectado por Metromover y Metrorail.",
-      fr: "Site de l'incorporation originelle de Miami en 1896 autour de la rivière Miami et de Flagler Street, le Downtown a passé des décennies comme district d'affaires uniquement diurne avant qu'un boom des condos dans les années 2000 ne le remplisse de tours résidentielles, en faisant un véritable cœur urbain actif 24h/24, connecté par le Metromover et le Metrorail.",
-      ht: "Sit orijinal enkòporasyon Miami nan 1896 alantou Rivyè Miami ak Flagler Street, Downtown te pase plizyè dekad kòm yon distri biznis ki fonksyone sèlman lajounen anvan yon boom kondo nan ane 2000 yo te ranpli l ak gratsyèl rezidansyèl, sa ki te fè l vin yon vrè sant iben 24 sou 24, konekte pa Metromover ak Metrorail.",
-      pt: "Local da incorporação original de Miami em 1896, ao redor do Rio Miami e da Flagler Street, o Downtown passou décadas como um distrito comercial apenas diurno antes que um boom de condomínios nos anos 2000 o preenchesse com torres residenciais, transformando-o em um verdadeiro centro urbano 24 horas conectado pelo Metromover e Metrorail.",
-      it: "Sede dell'incorporazione originale di Miami nel 1896 attorno al fiume Miami e a Flagler Street, il Downtown ha trascorso decenni come distretto commerciale solo diurno prima che un boom immobiliare di condomini negli anni 2000 lo riempisse di torri residenziali, trasformandolo in un vero centro urbano attivo 24 ore su 24, collegato da Metromover e Metrorail.",
-    },
-    pricing: {
-      singleFamily: { value: null, note: { en: "No meaningful single-family market — Downtown is entirely high-rise.", es: "No hay un mercado unifamiliar significativo — el Downtown es completamente de rascacielos." } },
-      condo: { value: 650000, note: { en: "Ranges from older 2000s-boom towers to brand-new luxury developments.", es: "Va desde torres más antiguas del auge de los 2000 hasta desarrollos de lujo completamente nuevos." } },
-    },
-    center: [25.7743, -80.1937],
-    newConstruction: {
-      en: "Downtown's skyline is filling in fast — Downtown 6 (824 units, 60 stories) finishes in Q4 2026, the 902-foot Okan Tower is topping out with a Hilton hotel and 399 combined residences, and Palm Tree Residences launched sales ahead of the 2026 FIFA World Cup in Miami.",
-      es: "El horizonte de Downtown se está llenando rápidamente — Downtown 6 (824 unidades, 60 pisos) se termina en el cuarto trimestre de 2026, la torre Okan de 902 pies está alcanzando su altura máxima con un hotel Hilton y 399 residencias combinadas, y Palm Tree Residences lanzó ventas antes de la Copa Mundial de la FIFA 2026 en Miami.",
-    },
-    funFacts: {
-      en: [
-        "Downtown Miami's Freedom Tower, built in 1925, processed more than 400,000 Cuban refugees in the 1960s-70s and is now a National Historic Landmark.",
-        "Miami Worldcenter is one of the largest urban development projects in the U.S., spanning 27 acres and multiple city blocks.",
-        "The Metromover, Downtown's elevated people-mover train, is completely free to ride.",
-      ],
-      es: [
-        "La Freedom Tower de Downtown Miami, construida en 1925, procesó a más de 400,000 refugiados cubanos entre los años 60 y 70 y ahora es un Monumento Histórico Nacional.",
-        "Miami Worldcenter es uno de los proyectos de desarrollo urbano más grandes de EE. UU., que abarca 27 acres y varias cuadras de la ciudad.",
-        "El Metromover, el tren elevado de Downtown, es completamente gratis.",
-      ],
-    },
-    family: {
-      en: "Downtown is still primarily young professionals and investors rather than families — there's limited green space and few zoned public schools nearby, though Museum Park and the growing Worldcenter retail core are slowly adding family-friendly amenities.",
-      es: "Downtown todavía es principalmente de jóvenes profesionales e inversionistas más que de familias — hay espacio verde limitado y pocas escuelas públicas zonificadas cerca, aunque Museum Park y el creciente núcleo comercial de Worldcenter están agregando poco a poco comodidades para familias.",
-    },
-    movingTips: {
-      en: "If you're relocating for work downtown, most buildings are condo towers with rental restrictions and HOA rules — check whether a building allows short-term rentals if that matters to you, and expect to pay for parking separately from your unit.",
-      es: "Si te mudas por trabajo a Downtown, la mayoría de los edificios son torres de condominios con restricciones de alquiler y reglas de HOA — verifica si un edificio permite alquileres a corto plazo si eso te importa, y espera pagar el estacionamiento por separado de tu unidad.",
     },
   },
   {
