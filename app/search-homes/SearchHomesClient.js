@@ -85,6 +85,19 @@ export default function SearchHomesClient() {
     });
   }
 
+  // Close any open filter pill when the user clicks anywhere outside the topbar.
+  useEffect(() => {
+    function handleOutsideClick(e) {
+      const container = topbarRef.current;
+      if (!container || container.contains(e.target)) return;
+      container.querySelectorAll("details.search-pill[open]").forEach((el) => {
+        el.open = false;
+      });
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
   function handleCountyChange(nextCountyId) {
     setCountyId(nextCountyId);
     setCityIds([]);

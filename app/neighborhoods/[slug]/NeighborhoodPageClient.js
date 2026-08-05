@@ -54,7 +54,7 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
       <section
         className="hero"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(7,31,36,0.82) 0%, rgba(16,63,69,0.2) 76%, rgba(246,243,236,0) 82%, rgba(246,243,236,1) 88%), url(${neighborhood.image})`,
+          backgroundImage: `linear-gradient(180deg, rgba(7,31,36,0.82) 0%, rgba(16,63,69,0.2) 76%, rgba(16,63,69,0) 92%), url(${neighborhood.image})`,
         }}
       >
         <div className="eyebrow">Miami-Dade</div>
