@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import translations from "./translations";
 
-export const SUPPORTED_LANGS = ["en", "es", "fr", "ht", "pt", "it", "de", "nl", "pl"];
+export const SUPPORTED_LANGS = ["en", "es", "fr", "ht", "pt", "it", "de", "nl", "pl", "zh", "ja", "ru"];
 
 const LanguageContext = createContext(null);
 

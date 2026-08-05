@@ -13,6 +13,9 @@ const LANGUAGES = [
   { code: "de", flag: "🇩🇪", label: "Deutsch" },
   { code: "nl", flag: "🇳🇱", label: "Nederlands" },
   { code: "pl", flag: "🇵🇱", label: "Polski" },
+  { code: "zh", flag: "🇨🇳", label: "中文" },
+  { code: "ja", flag: "🇯🇵", label: "日本語" },
+  { code: "ru", flag: "🇷🇺", label: "Русский" },
 ];
 
 export default function LanguagePicker() {
