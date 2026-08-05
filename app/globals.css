@@ -1410,6 +1410,126 @@ footer a {
   margin: 8px 0 0;
 }
 
+.search-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  z-index: 25;
+  margin-bottom: 24px;
+}
+
+.search-pill {
+  position: relative;
+}
+
+.search-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid rgba(16,63,69,0.18);
+  border-radius: 999px;
+  padding: 11px 16px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.search-pill-btn::-webkit-details-marker {
+  display: none;
+}
+
+.search-pill-btn:hover {
+  border-color: var(--sunset);
+}
+
+.search-pill[open] .search-pill-btn {
+  border-color: var(--sunset);
+  background: var(--sand);
+}
+
+.search-pill-chevron {
+  font-size: 10px;
+  color: var(--sunset);
+  transition: transform 0.15s ease;
+}
+
+.search-pill[open] .search-pill-chevron {
+  transform: rotate(180deg);
+}
+
+.search-pill-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 30;
+  min-width: 300px;
+  max-width: min(90vw, 460px);
+  background: white;
+  border: 1px solid rgba(16,63,69,0.14);
+  border-radius: 6px;
+  box-shadow: 0 12px 32px rgba(7,31,36,0.16);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.search-pill-panel-wide {
+  min-width: 340px;
+}
+
+.search-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.search-map-pane {
+  flex: 0 0 44%;
+  min-width: 0;
+  position: sticky;
+  top: 20px;
+}
+
+.search-results-pane {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-map-canvas-tall {
+  height: 640px;
+}
+
+.search-results-placeholder {
+  min-height: 420px;
+  border: 1px dashed rgba(16,63,69,0.22);
+  border-radius: 6px;
+  background: white;
+}
+
+@media (max-width: 900px) {
+  .search-body {
+    flex-direction: column;
+  }
+  .search-map-pane {
+    position: static;
+    flex-basis: auto;
+    width: 100%;
+  }
+  .search-map-canvas-tall {
+    height: 380px;
+  }
+  .search-results-placeholder {
+    min-height: 240px;
+  }
+}
+
 .median-map-canvas {
   height: 520px;
   cursor: pointer;

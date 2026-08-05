@@ -230,6 +230,16 @@ export default function SearchHomesClient() {
     setDrawnAreaText("");
   }
 
+  const selectedCityNames = cityIds
+    .map((id) => t.cityLabels[countyId][id])
+    .filter(Boolean);
+  const locationSummary =
+    selectedCityNames.length === 0
+      ? t.countyLabels[countyId]
+      : selectedCityNames.length <= 2
+      ? selectedCityNames.join(", ")
+      : `${selectedCityNames.slice(0, 2).join(", ")} +${selectedCityNames.length - 2}`;
+
   return (
     <>
       <div className="horizon" />
@@ -243,43 +253,86 @@ export default function SearchHomesClient() {
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
-        <p className="lead-intro">{t.searchHomes.p}</p>
+        <div className="search-topbar">
+          <details className="search-pill">
+            <summary className="search-pill-btn">
+              {locationSummary}
+              <span className="search-pill-chevron">▾</span>
+            </summary>
+            <div className="search-pill-panel search-pill-panel-wide">
+              <label className="calc-field county-field">
+                <span>{t.searchHomes.county}</span>
+                <select
+                  name="County"
+                  value={countyId}
+                  onChange={(e) => handleCountyChange(e.target.value)}
+                >
+                  {Object.keys(COUNTIES).map((id) => (
+                    <option key={id} value={id}>{t.countyLabels[id]}</option>
+                  ))}
+                </select>
+              </label>
 
-        <div className="filter-card">
-          <h2>{t.searchHomes.filtersHeading}</h2>
-
-          <div className="filter-grid">
-            <label className="calc-field filter-grid-full county-field">
-              <span>{t.searchHomes.county}</span>
-              <select
-                name="County"
-                value={countyId}
-                onChange={(e) => handleCountyChange(e.target.value)}
-              >
-                {Object.keys(COUNTIES).map((id) => (
-                  <option key={id} value={id}>{t.countyLabels[id]}</option>
-                ))}
-              </select>
-            </label>
-
-            <div className="calc-field filter-grid-full">
-              <span>{t.searchHomes.cityArea}</span>
-              <div className="city-checkbox-box">
-                {county.cities.map((c) => (
-                  <label className="city-checkbox" key={c.id}>
-                    <input
-                      type="checkbox"
-                      checked={cityIds.includes(c.id)}
-                      onChange={() => toggleCity(c.id)}
-                    />
-                    {t.cityLabels[countyId][c.id]}
-                  </label>
-                ))}
+              <div className="calc-field">
+                <span>{t.searchHomes.cityArea}</span>
+                <div className="city-checkbox-box">
+                  {county.cities.map((c) => (
+                    <label className="city-checkbox" key={c.id}>
+                      <input
+                        type="checkbox"
+                        checked={cityIds.includes(c.id)}
+                        onChange={() => toggleCity(c.id)}
+                      />
+                      {t.cityLabels[countyId][c.id]}
+                    </label>
+                  ))}
+                </div>
               </div>
             </div>
+          </details>
 
-            <div className="calc-field filter-grid-full">
-              <span>{t.searchHomes.propertyType}</span>
+          <details className="search-pill">
+            <summary className="search-pill-btn">
+              {t.searchHomes.priceRange}
+              <span className="search-pill-chevron">▾</span>
+            </summary>
+            <div className="search-pill-panel">
+              <div className="dual-input-row">
+                <MoneyInput name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min" />
+                <MoneyInput name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max" />
+              </div>
+            </div>
+          </details>
+
+          <details className="search-pill">
+            <summary className="search-pill-btn">
+              {t.searchHomes.bedsBaths}
+              <span className="search-pill-chevron">▾</span>
+            </summary>
+            <div className="search-pill-panel">
+              <PillRadioField
+                label={t.searchHomes.bedroomsMin}
+                name="Bedrooms (min)"
+                options={NUMBER_OPTIONS}
+                includeAny
+                anyLabel={t.searchHomes.any}
+              />
+              <PillRadioField
+                label={t.searchHomes.bathroomsMin}
+                name="Bathrooms (min)"
+                options={NUMBER_OPTIONS}
+                includeAny
+                anyLabel={t.searchHomes.any}
+              />
+            </div>
+          </details>
+
+          <details className="search-pill">
+            <summary className="search-pill-btn">
+              {t.searchHomes.propertyType}
+              <span className="search-pill-chevron">▾</span>
+            </summary>
+            <div className="search-pill-panel">
               <div className="filter-checkbox-group">
                 <label className="filter-checkbox">
                   <input type="checkbox" name="Property Type - Single-family" value="Yes" />
@@ -307,18 +360,14 @@ export default function SearchHomesClient() {
                 </label>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div className="filter-two-col">
-            <div className="filter-col">
-              <div className="calc-field">
-                <span>{t.searchHomes.priceRange}</span>
-                <div className="dual-input-row">
-                  <MoneyInput name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min" />
-                  <MoneyInput name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max" />
-                </div>
-              </div>
-
+          <details className="search-pill">
+            <summary className="search-pill-btn">
+              {t.searchHomes.moreFilters}
+              <span className="search-pill-chevron">▾</span>
+            </summary>
+            <div className="search-pill-panel search-pill-panel-wide">
               <div className="calc-field">
                 <span>{t.searchHomes.sqftRange}</span>
                 <div className="dual-input-row">
@@ -350,24 +399,6 @@ export default function SearchHomesClient() {
                   <input type="number" name="Max Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Max year" />
                 </div>
               </div>
-            </div>
-
-            <div className="filter-col">
-              <PillRadioField
-                label={t.searchHomes.bedroomsMin}
-                name="Bedrooms (min)"
-                options={NUMBER_OPTIONS}
-                includeAny
-                anyLabel={t.searchHomes.any}
-              />
-
-              <PillRadioField
-                label={t.searchHomes.bathroomsMin}
-                name="Bathrooms (min)"
-                options={NUMBER_OPTIONS}
-                includeAny
-                anyLabel={t.searchHomes.any}
-              />
 
               <label className="calc-field">
                 <span>{t.searchHomes.stories}</span>
@@ -401,12 +432,13 @@ export default function SearchHomesClient() {
                 anyLabel={t.searchHomes.any}
               />
             </div>
-          </div>
+          </details>
+        </div>
 
-          <div className="calc-field" style={{ marginTop: 28 }}>
-            <span>{t.searchHomes.mapLabel}</span>
+        <div className="search-body">
+          <div className="search-map-pane">
             <div className="map-search-box">
-              <div ref={mapNodeRef} className="map-search-canvas" />
+              <div ref={mapNodeRef} className="map-search-canvas search-map-canvas-tall" />
             </div>
             <p className="map-search-note">{t.searchHomes.mapNote}</p>
             {drawnAreaText && (
@@ -417,12 +449,15 @@ export default function SearchHomesClient() {
             )}
           </div>
 
-          <div className="filter-divider" />
-
-          <p className="search-tour-prompt">
-            {t.searchHomes.tourPromptText}{" "}
-            <a href="/book-a-call">{t.searchHomes.tourPromptLink}</a>
-          </p>
+          <div className="search-results-pane">
+            <p className="lead-intro">{t.searchHomes.p}</p>
+            <div className="search-results-placeholder" />
+            <div className="filter-divider" />
+            <p className="search-tour-prompt">
+              {t.searchHomes.tourPromptText}{" "}
+              <a href="/book-a-call">{t.searchHomes.tourPromptLink}</a>
+            </p>
+          </div>
         </div>
       </section>
 
