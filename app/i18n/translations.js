@@ -434,7 +434,7 @@ const translations = {
       referralCta: "Let's connect.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Licensed Florida Realtor",
     },
     toggle: {
       ariaLabel: "Change language",
@@ -919,7 +919,7 @@ const translations = {
       referralCta: "Conectemos.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Agente Inmobiliario con Licencia en Florida",
     },
     toggle: {
       ariaLabel: "Cambiar idioma",
@@ -1404,7 +1404,7 @@ const translations = {
       referralCta: "Connectons-nous.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Agent immobilier agréé en Floride",
     },
     toggle: {
       ariaLabel: "Changer de langue",
@@ -1889,7 +1889,7 @@ const translations = {
       referralCta: "Ann konekte.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Ajan Imobilye ki Gen Lisans nan Florid",
     },
     toggle: {
       ariaLabel: "Chanje lang",
@@ -2374,7 +2374,7 @@ const translations = {
       referralCta: "Vamos nos conectar.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Corretor de Imóveis Licenciado na Flórida",
     },
     toggle: {
       ariaLabel: "Mudar idioma",
@@ -2859,7 +2859,7 @@ const translations = {
       referralCta: "Connettiamoci.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Agente Immobiliare Autorizzato in Florida",
     },
     toggle: {
       ariaLabel: "Cambia lingua",
@@ -3344,7 +3344,7 @@ const translations = {
       referralCta: "Lassen Sie uns in Kontakt treten.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Lizenzierter Immobilienmakler in Florida",
     },
     toggle: {
       ariaLabel: "Sprache ändern",
@@ -3829,7 +3829,7 @@ const translations = {
       referralCta: "Laten we contact leggen.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Erkend Vastgoedmakelaar in Florida",
     },
     toggle: {
       ariaLabel: "Taal wijzigen",
@@ -4314,7 +4314,7 @@ const translations = {
       referralCta: "Nawiążmy kontakt.",
     },
     footer: {
-      licensed: "eXp Realty",
+      licensed: "eXp Realty, Licencjonowany Agent Nieruchomości na Florydzie",
     },
     toggle: {
       ariaLabel: "Zmień język",
