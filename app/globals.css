@@ -151,6 +151,10 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
 }
 
+.lang-picker-menu .lang-flag {
+  font-size: 22px;
+}
+
 .lang-picker-chevron {
   font-size: 11px;
   color: var(--sunset);
