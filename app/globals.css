@@ -1454,7 +1454,7 @@ footer a {
 }
 
 .search-pill-chevron {
-  font-size: 10px;
+  font-size: 16px;
   color: var(--sunset);
   transition: transform 0.15s ease;
 }

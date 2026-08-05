@@ -74,6 +74,16 @@ export default function SearchHomesClient() {
   const drawnLayerRef = useRef(null);
   const boundaryLayerRef = useRef(null);
   const boundaryDataRef = useRef({});
+  const topbarRef = useRef(null);
+
+  function handlePillToggle(e) {
+    if (!e.target.open) return;
+    const container = topbarRef.current;
+    if (!container) return;
+    container.querySelectorAll("details.search-pill").forEach((el) => {
+      if (el !== e.target) el.open = false;
+    });
+  }
 
   function handleCountyChange(nextCountyId) {
     setCountyId(nextCountyId);
@@ -253,8 +263,8 @@ export default function SearchHomesClient() {
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
       <section className="section" style={{ paddingTop: 32 }}>
-        <div className="search-topbar">
-          <details className="search-pill">
+        <div className="search-topbar" ref={topbarRef}>
+          <details className="search-pill" onToggle={handlePillToggle}>
             <summary className="search-pill-btn">
               {locationSummary}
               <span className="search-pill-chevron">▾</span>
@@ -291,7 +301,7 @@ export default function SearchHomesClient() {
             </div>
           </details>
 
-          <details className="search-pill">
+          <details className="search-pill" onToggle={handlePillToggle}>
             <summary className="search-pill-btn">
               {t.searchHomes.priceRange}
               <span className="search-pill-chevron">▾</span>
@@ -304,7 +314,7 @@ export default function SearchHomesClient() {
             </div>
           </details>
 
-          <details className="search-pill">
+          <details className="search-pill" onToggle={handlePillToggle}>
             <summary className="search-pill-btn">
               {t.searchHomes.bedsBaths}
               <span className="search-pill-chevron">▾</span>
@@ -327,7 +337,7 @@ export default function SearchHomesClient() {
             </div>
           </details>
 
-          <details className="search-pill">
+          <details className="search-pill" onToggle={handlePillToggle}>
             <summary className="search-pill-btn">
               {t.searchHomes.propertyType}
               <span className="search-pill-chevron">▾</span>
@@ -362,7 +372,7 @@ export default function SearchHomesClient() {
             </div>
           </details>
 
-          <details className="search-pill">
+          <details className="search-pill" onToggle={handlePillToggle}>
             <summary className="search-pill-btn">
               {t.searchHomes.moreFilters}
               <span className="search-pill-chevron">▾</span>
