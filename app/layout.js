@@ -19,6 +19,9 @@ export const metadata = {
     card: 'summary_large_image',
     images: ['/images/hero-skyline-panorama.jpg'],
   },
+  verification: {
+    google: 'US9jxNakqSrKUSLIDGYNlN1eQcClZbYSpn6HlzESZl0',
+  },
 };
 
 export default function RootLayout({ children }) {
