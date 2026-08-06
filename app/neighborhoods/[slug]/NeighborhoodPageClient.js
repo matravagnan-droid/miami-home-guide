@@ -27,20 +27,22 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
       : { href: "/property-tax-calculator", key: "propertyTaxCalc" },
   ];
 
-  const priceCard = (labelKey, entry) => (
-    <div className="tool-card">
-      <span className="tool-tag">{t.neighborhoodPage[labelKey]}</span>
+  const priceCard = (labelKey, entry, rail, icon) => (
+    <div className="price-card" style={{ "--price-rail": rail }}>
+      <div className="price-card-top">
+        <span className="price-card-tag">{t.neighborhoodPage[labelKey]}</span>
+        <span className="price-card-icon">{icon}</span>
+      </div>
       {entry.value ? (
         <>
-          <h3>{money(entry.value)}</h3>
-          <p>
-            {t.neighborhoodPage.medianLabel} · {entry.note[lang] || entry.note.en}
-          </p>
+          <p className="price-card-value">{money(entry.value)}</p>
+          <div className="price-card-median">{t.neighborhoodPage.medianLabel}</div>
+          <p className="price-card-note">{entry.note[lang] || entry.note.en}</p>
         </>
       ) : (
         <>
-          <h3>{t.neighborhoodPage.noData}</h3>
-          <p>{entry.note[lang] || entry.note.en}</p>
+          <p className="price-card-value">{t.neighborhoodPage.noData}</p>
+          <p className="price-card-note">{entry.note[lang] || entry.note.en}</p>
         </>
       )}
     </div>
@@ -76,8 +78,8 @@ export default function NeighborhoodPageClient({ neighborhood, boundary }) {
           <h2>{t.neighborhoodPage.pricingLabel}</h2>
         </div>
         <div className="tools-grid">
-          {priceCard("singleFamilyLabel", neighborhood.pricing.singleFamily)}
-          {priceCard("condoLabel", neighborhood.pricing.condo)}
+          {priceCard("singleFamilyLabel", neighborhood.pricing.singleFamily, "var(--bay)", "⌂")}
+          {priceCard("condoLabel", neighborhood.pricing.condo, "var(--sunset)", "▤")}
         </div>
         <p className="map-note">{t.neighborhoodPage.disclaimer}</p>
       </section>
