@@ -7,14 +7,14 @@ export default function SiteFooter({ children }) {
       </div>
       <div className="eho-badge">
         <svg viewBox="0 0 100 118" fill="currentColor" role="img" aria-label="Equal Housing Opportunity">
-          <path d="M50 6 L93 43 L79 43 L50 21 L21 43 L7 43 Z" />
-          <rect x="19" y="43" width="9" height="37" />
-          <rect x="72" y="43" width="9" height="37" />
-          <rect x="37" y="47" width="26" height="14" />
-          <rect x="37" y="65" width="26" height="14" />
-          <rect x="7" y="82" width="86" height="7" />
-          <text x="50" y="100" textAnchor="middle" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="0.3">EQUAL HOUSING</text>
-          <text x="50" y="113" textAnchor="middle" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="0.3">OPPORTUNITY</text>
+          <path d="M50 4 L92 42 L78 42 L50 20 L22 42 L8 42 Z" />
+          <rect x="20" y="42" width="11" height="40" />
+          <rect x="69" y="42" width="11" height="40" />
+          <rect x="35" y="48" width="30" height="15" />
+          <rect x="35" y="67" width="30" height="15" />
+          <rect x="8" y="84" width="84" height="8" />
+          <text x="50" y="101" textAnchor="middle" fontSize="11.5" fontWeight="700" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="0.4">EQUAL HOUSING</text>
+          <text x="50" y="114" textAnchor="middle" fontSize="11.5" fontWeight="700" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="0.4">OPPORTUNITY</text>
         </svg>
       </div>
     </footer>
