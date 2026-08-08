@@ -1,8 +1,15 @@
+"use client";
+
+import { useLanguage } from "../i18n/LanguageContext";
+
 export default function SiteFooter({ children }) {
+  const { t } = useLanguage();
+
   return (
     <footer>
       <div className="footer-left">
         <span>&copy; {new Date().getFullYear()} Miami Home Guide</span>
+        <span>{t.footer.licensed}</span>
         {children}
       </div>
       <div className="eho-badge">

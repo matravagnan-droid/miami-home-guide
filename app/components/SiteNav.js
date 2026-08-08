@@ -13,8 +13,8 @@ export default function SiteNav() {
         <div className="nav-links">
           <a href="/#tools">{t.nav.tools}</a>
           <a href="/moving-to-miami">{t.nav.movingToMiami}</a>
-          <a href="/#neighborhoods">{t.nav.neighborhoods}</a>
           <a href="/#blog">{t.nav.blog}</a>
+          <a href="/#neighborhoods">{t.nav.neighborhoods}</a>
         </div>
         <a className="book-call-btn" href="/book-a-call">{t.nav.bookCall}</a>
         <LanguagePicker />

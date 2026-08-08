@@ -168,9 +168,7 @@ export default function HomeClient({ articles }) {
         </div>
       </section>
 
-      <SiteFooter>
-        <span>{t.footer.licensed}</span>
-      </SiteFooter>
+      <SiteFooter />
     </>
   );
 }
