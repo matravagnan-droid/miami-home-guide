@@ -1391,11 +1391,6 @@ footer a {
   accent-color: var(--sunset);
 }
 
-.filter-divider {
-  border-top: 1px solid rgba(16,63,69,0.12);
-  margin: 32px 0;
-}
-
 .filter-two-col {
   display: flex;
   gap: 40px;
@@ -1443,18 +1438,6 @@ footer a {
 .money-input input {
   width: 100%;
   padding-left: 24px;
-}
-
-.search-tour-prompt {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #4a5a56;
-}
-
-.search-tour-prompt a {
-  color: var(--bay);
-  font-weight: 600;
-  text-decoration: underline;
 }
 
 .city-checkbox-box {
@@ -1603,11 +1586,23 @@ footer a {
   height: 640px;
 }
 
-.search-results-placeholder {
-  min-height: 420px;
-  border: 1px dashed rgba(16,63,69,0.22);
-  border-radius: 6px;
-  background: white;
+.search-intro {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #4a5a56;
+  max-width: 56ch;
+  margin: 0 0 24px;
+}
+
+.search-contact-card {
+  max-width: 560px;
+}
+
+.search-contact-card h2 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
 }
 
 @media (max-width: 900px) {
@@ -1621,9 +1616,6 @@ footer a {
   }
   .search-map-canvas-tall {
     height: 380px;
-  }
-  .search-results-placeholder {
-    min-height: 240px;
   }
 }
 

@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/book-a-call/thank-you", "/get-pre-approved/thank-you"],
+      disallow: ["/book-a-call/thank-you", "/get-pre-approved/thank-you", "/search-homes/thank-you"],
     },
     sitemap: "https://mymiamihomeguide.com/sitemap.xml",
   };

@@ -5,6 +5,7 @@ import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
 import { COUNTIES } from "../lib/counties";
 import { BOUNDARY_SOURCES, normalizeName, cityMatchName } from "../lib/boundaries";
 
@@ -68,6 +69,11 @@ export default function SearchHomesClient() {
   const [cityIds, setCityIds] = useState([]);
   const [drawnAreaText, setDrawnAreaText] = useState("");
   const [leafletReady, setLeafletReady] = useState(false);
+  const [redirectUrl, setRedirectUrl] = useState("");
+
+  useEffect(() => {
+    setRedirectUrl(`${window.location.origin}/search-homes/thank-you`);
+  }, []);
 
   const mapNodeRef = useRef(null);
   const mapInstanceRef = useRef(null);
@@ -263,6 +269,11 @@ export default function SearchHomesClient() {
       ? selectedCityNames.join(", ")
       : `${selectedCityNames.slice(0, 2).join(", ")} +${selectedCityNames.length - 2}`;
 
+  const submittedCities = cityIds
+    .map((id) => translations.en.cityLabels[countyId][id])
+    .filter(Boolean)
+    .join(", ");
+
   return (
     <>
       <div className="horizon" />
@@ -275,7 +286,20 @@ export default function SearchHomesClient() {
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
 
-      <section className="section" style={{ paddingTop: 32 }}>
+      <form
+        className="section"
+        style={{ paddingTop: 32 }}
+        action="https://formsubmit.co/mat.ravagnan@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New custom home list request from Miami Home Guide" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_cc" value="3525520793@txt.att.net" />
+        {redirectUrl && <input type="hidden" name="_next" value={redirectUrl} />}
+        <input type="hidden" name="County" value={translations.en.countyLabels[countyId]} />
+        <input type="hidden" name="Cities" value={submittedCities} />
+        <input type="hidden" name="Drawn Area (lat,lng)" value={drawnAreaText} />
+
         <div className="search-topbar" ref={topbarRef}>
           <details className="search-pill" onToggle={handlePillToggle}>
             <summary className="search-pill-btn">
@@ -286,7 +310,6 @@ export default function SearchHomesClient() {
               <label className="calc-field county-field">
                 <span>{t.searchHomes.county}</span>
                 <select
-                  name="County"
                   value={countyId}
                   onChange={(e) => handleCountyChange(e.target.value)}
                 >
@@ -311,6 +334,11 @@ export default function SearchHomesClient() {
                   ))}
                 </div>
               </div>
+
+              <label className="calc-field">
+                <span>{t.searchHomes.zipCodes}</span>
+                <input type="text" name="ZIP Codes" placeholder={t.searchHomes.zipPlaceholder} />
+              </label>
             </div>
           </details>
 
@@ -362,16 +390,20 @@ export default function SearchHomesClient() {
                   {t.searchHomes.typeSingleFamily}
                 </label>
                 <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Multi-family" value="Yes" />
-                  {t.searchHomes.typeMultiFamily}
+                  <input type="checkbox" name="Property Type - Condo" value="Yes" />
+                  {t.searchHomes.typeCondo}
                 </label>
                 <label className="filter-checkbox">
                   <input type="checkbox" name="Property Type - Townhouse" value="Yes" />
                   {t.searchHomes.typeTownhouse}
                 </label>
                 <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Condo" value="Yes" />
-                  {t.searchHomes.typeCondo}
+                  <input type="checkbox" name="Property Type - Apartment" value="Yes" />
+                  {t.searchHomes.typeApartment}
+                </label>
+                <label className="filter-checkbox">
+                  <input type="checkbox" name="Property Type - Multi-family" value="Yes" />
+                  {t.searchHomes.typeMultiFamily}
                 </label>
                 <label className="filter-checkbox">
                   <input type="checkbox" name="Property Type - Villa" value="Yes" />
@@ -473,16 +505,44 @@ export default function SearchHomesClient() {
           </div>
 
           <div className="search-results-pane">
-            <p className="lead-intro">{t.searchHomes.p}</p>
-            <div className="search-results-placeholder" />
-            <div className="filter-divider" />
-            <p className="search-tour-prompt">
-              {t.searchHomes.tourPromptText}{" "}
-              <a href="/book-a-call">{t.searchHomes.tourPromptLink}</a>
-            </p>
+            <p className="search-intro">{t.searchHomes.p}</p>
+
+            <div className="lead-form search-contact-card">
+              <h2>{t.searchHomes.contactHeading}</h2>
+
+              <div className="lead-form-row">
+                <label className="calc-field">
+                  <span>{t.bookCallPage.firstName}</span>
+                  <input type="text" name="First Name" required />
+                </label>
+                <label className="calc-field">
+                  <span>{t.bookCallPage.lastName}</span>
+                  <input type="text" name="Last Name" required />
+                </label>
+              </div>
+
+              <label className="calc-field">
+                <span>{t.bookCallPage.phone}</span>
+                <input type="tel" name="Phone" required />
+              </label>
+
+              <label className="calc-field">
+                <span>{t.bookCallPage.email}</span>
+                <input type="email" name="Email" />
+              </label>
+
+              <label className="calc-field">
+                <span>{t.bookCallPage.message}</span>
+                <textarea name="Message" rows={3} />
+              </label>
+
+              <button type="submit" className="book-call-btn lead-form-submit">
+                {t.searchHomes.submit}
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      </form>
 
       <SiteFooter>
         <a href="/">{t.moving.backLink}</a>

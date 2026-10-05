@@ -1,9 +1,9 @@
 import SearchHomesClient from "./SearchHomesClient";
 
 export const metadata = {
-  title: "Search Homes in Miami-Dade & Broward | Miami Home Guide",
+  title: "Get a Custom Home List in Miami-Dade & Broward | Miami Home Guide",
   description:
-    "Set your search criteria — city, price, property type, beds, baths, HOA, taxes, and more — and get matching active listings in Miami-Dade and Broward County emailed to you.",
+    "Tell us your price, areas, property type, beds, baths, and more — and get a customized list of matching homes in Miami-Dade and Broward County sent to you.",
 };
 
 export default function Page() {
