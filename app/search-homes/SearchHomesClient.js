@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import BackLink from "../components/BackLink";
 import { useLanguage } from "../i18n/LanguageContext";
 import translations from "../i18n/translations";
 import { COUNTIES } from "../lib/counties";
-import { BOUNDARY_SOURCES, normalizeName, cityMatchName } from "../lib/boundaries";
 
 const NUMBER_OPTIONS = ["1", "2", "3", "4", "5+"];
 const STORY_OPTIONS = ["1", "2", "3+"];
+const PRICE_BANDS = ["$0–300K", "$300–500K", "$500–750K", "$750K–1M", "$1–2M", "$2M+"];
 
 const PRICE_MIN = 0;
 const PRICE_MAX = 20000000;
@@ -29,24 +29,31 @@ const TAX_STEP = 100;
 const YEAR_MIN = 1900;
 const YEAR_MAX = 2027;
 
-const DEFAULT_CENTER = [25.9, -80.25];
-const DEFAULT_ZOOM = 10;
-
-function PillRadioField({ label, name, options, includeAny, anyLabel }) {
+function ChipRadioGroup({ label, name, options }) {
   return (
-    <div className="calc-field">
+    <div className="filter-field">
       <span>{label}</span>
-      <div className="filter-checkbox-group">
-        {includeAny && (
-          <label className="filter-checkbox">
-            <input type="radio" name={name} value="Any" defaultChecked />
-            {anyLabel}
+      <div className="chip-group" role="radiogroup" aria-label={label}>
+        {options.map((o, i) => (
+          <label className="chip-option" key={o.value}>
+            <input type="radio" name={name} value={o.value} defaultChecked={i === 0} />
+            <span>{o.label}</span>
           </label>
-        )}
-        {options.map((n) => (
-          <label className="filter-checkbox" key={n}>
-            <input type="radio" name={name} value={n} />
-            {n}
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ChipCheckboxGroup({ label, options }) {
+  return (
+    <div className="filter-field">
+      <span>{label}</span>
+      <div className="chip-group">
+        {options.map((o) => (
+          <label className="chip-option" key={o.name}>
+            <input type="checkbox" name={o.name} value="Yes" />
+            <span>{o.label}</span>
           </label>
         ))}
       </div>
@@ -65,43 +72,13 @@ function MoneyInput({ name, min, max, step, placeholder }) {
 
 export default function SearchHomesClient() {
   const { t } = useLanguage();
+  const s = t.searchHomes;
   const [countyId, setCountyId] = useState("miami-dade");
   const [cityIds, setCityIds] = useState([]);
-  const [drawnAreaText, setDrawnAreaText] = useState("");
-  const [leafletReady, setLeafletReady] = useState(false);
   const [redirectUrl, setRedirectUrl] = useState("");
 
   useEffect(() => {
     setRedirectUrl(`${window.location.origin}/search-homes/thank-you`);
-  }, []);
-
-  const mapNodeRef = useRef(null);
-  const mapInstanceRef = useRef(null);
-  const drawnLayerRef = useRef(null);
-  const boundaryLayerRef = useRef(null);
-  const boundaryDataRef = useRef({});
-  const topbarRef = useRef(null);
-
-  function handlePillToggle(e) {
-    if (!e.target.open) return;
-    const container = topbarRef.current;
-    if (!container) return;
-    container.querySelectorAll("details.search-pill").forEach((el) => {
-      if (el !== e.target) el.open = false;
-    });
-  }
-
-  // Close any open filter pill when the user clicks anywhere outside the topbar.
-  useEffect(() => {
-    function handleOutsideClick(e) {
-      const container = topbarRef.current;
-      if (!container || container.contains(e.target)) return;
-      container.querySelectorAll("details.search-pill[open]").forEach((el) => {
-        el.open = false;
-      });
-    }
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
   function handleCountyChange(nextCountyId) {
@@ -114,165 +91,17 @@ export default function SearchHomesClient() {
   }
 
   const county = COUNTIES[countyId];
-
-  // Load Leaflet + Leaflet.draw from a CDN (no API key needed) once, client-side only.
-  useEffect(() => {
-    if (typeof window === "undefined" || window.L) {
-      if (window.L) setLeafletReady(true);
-      return;
-    }
-
-    const addLink = (href) => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      document.head.appendChild(link);
-    };
-
-    addLink("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
-    addLink("https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css");
-
-    const leafletScript = document.createElement("script");
-    leafletScript.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
-    leafletScript.onload = () => {
-      const drawScript = document.createElement("script");
-      drawScript.src = "https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js";
-      drawScript.onload = () => setLeafletReady(true);
-      document.body.appendChild(drawScript);
-    };
-    document.body.appendChild(leafletScript);
-  }, []);
-
-  // Initialize the map once Leaflet is ready.
-  useEffect(() => {
-    if (!leafletReady || !mapNodeRef.current || mapInstanceRef.current) return;
-    const L = window.L;
-    if (!L) return;
-
-    const map = L.map(mapNodeRef.current).setView(DEFAULT_CENTER, DEFAULT_ZOOM);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-      attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-      maxZoom: 19,
-      subdomains: "abcd",
-    }).addTo(map);
-
-    const drawnItems = new L.FeatureGroup();
-    map.addLayer(drawnItems);
-    drawnLayerRef.current = drawnItems;
-
-    const drawControl = new L.Control.Draw({
-      draw: {
-        polygon: true,
-        rectangle: true,
-        marker: false,
-        circle: false,
-        circlemarker: false,
-        polyline: false,
-      },
-      edit: { featureGroup: drawnItems },
-    });
-    map.addControl(drawControl);
-
-    map.on(L.Draw.Event.CREATED, (e) => {
-      drawnItems.clearLayers();
-      drawnItems.addLayer(e.layer);
-      const latlngs = e.layer.getLatLngs()[0]
-        .map((p) => `${p.lat.toFixed(4)},${p.lng.toFixed(4)}`)
-        .join(" | ");
-      setDrawnAreaText(latlngs);
-    });
-
-    map.on(L.Draw.Event.DELETED, () => setDrawnAreaText(""));
-
-    mapInstanceRef.current = map;
-  }, [leafletReady]);
-
-  // Re-center or fit the map to the checked cities.
-  useEffect(() => {
-    const map = mapInstanceRef.current;
-    if (!map) return;
-
-    const points = cityIds
-      .map((id) => county.cities.find((c) => c.id === id))
-      .filter(Boolean)
-      .map((c) => [c.lat, c.lng]);
-
-    if (points.length === 0) {
-      map.setView(DEFAULT_CENTER, DEFAULT_ZOOM);
-    } else if (points.length === 1) {
-      map.setView(points[0], 12);
-    } else {
-      map.fitBounds(points, { padding: [30, 30] });
-    }
-  }, [cityIds, county]);
-
-  // Outline the checked cities' real municipal boundaries on the map, pulled
-  // from each county's official GIS service and cached after the first fetch.
-  useEffect(() => {
-    const map = mapInstanceRef.current;
-    const L = window.L;
-    if (!map || !L) return;
-    let cancelled = false;
-
-    async function loadBoundaries() {
-      let data = boundaryDataRef.current[countyId];
-      if (!data) {
-        try {
-          const res = await fetch(BOUNDARY_SOURCES[countyId].url);
-          data = await res.json();
-          boundaryDataRef.current[countyId] = data;
-        } catch {
-          return;
-        }
-      }
-      if (cancelled || !data || !data.features) return;
-
-      if (boundaryLayerRef.current) {
-        map.removeLayer(boundaryLayerRef.current);
-        boundaryLayerRef.current = null;
-      }
-
-      const nameField = BOUNDARY_SOURCES[countyId].nameField;
-      const wanted = new Set(
-        cityIds.map((id) => normalizeName(cityMatchName(id))).filter(Boolean)
-      );
-      const matched = data.features.filter((f) =>
-        wanted.has(normalizeName(f.properties && f.properties[nameField]))
-      );
-
-      if (matched.length) {
-        boundaryLayerRef.current = L.geoJSON(
-          { type: "FeatureCollection", features: matched },
-          { style: { color: "#a9762f", weight: 2, fillColor: "#103f45", fillOpacity: 0.15 } }
-        ).addTo(map);
-      }
-    }
-
-    loadBoundaries();
-    return () => {
-      cancelled = true;
-    };
-  }, [cityIds, countyId]);
-
-  function clearDrawnArea() {
-    if (drawnLayerRef.current) drawnLayerRef.current.clearLayers();
-    setDrawnAreaText("");
-  }
-
-  const selectedCityNames = cityIds
-    .map((id) => t.cityLabels[countyId][id])
-    .filter(Boolean);
-  const locationSummary =
-    selectedCityNames.length === 0
-      ? t.countyLabels[countyId]
-      : selectedCityNames.length <= 2
-      ? selectedCityNames.join(", ")
-      : `${selectedCityNames.slice(0, 2).join(", ")} +${selectedCityNames.length - 2}`;
-
   const submittedCities = cityIds
     .map((id) => translations.en.cityLabels[countyId][id])
     .filter(Boolean)
     .join(", ");
+
+  const anyYesNo = [
+    { value: "Any", label: s.any },
+    { value: "Yes", label: s.yes },
+    { value: "No", label: s.no },
+  ];
+  const anyNumber = [{ value: "Any", label: s.any }, ...NUMBER_OPTIONS.map((n) => ({ value: n, label: n }))];
 
   return (
     <>
@@ -280,8 +109,8 @@ export default function SearchHomesClient() {
       <SiteNav />
 
       <section className="hero hero-compact">
-        <div className="eyebrow">{t.searchHomes.eyebrow}</div>
-        <h1>{t.searchHomes.h1}</h1>
+        <div className="eyebrow">{s.eyebrow}</div>
+        <h1>{s.h1}</h1>
       </section>
 
       <BackLink href="/">{t.moving.backLink}</BackLink>
@@ -298,217 +127,154 @@ export default function SearchHomesClient() {
         {redirectUrl && <input type="hidden" name="_next" value={redirectUrl} />}
         <input type="hidden" name="County" value={translations.en.countyLabels[countyId]} />
         <input type="hidden" name="Cities" value={submittedCities} />
-        <input type="hidden" name="Drawn Area (lat,lng)" value={drawnAreaText} />
 
-        <div className="search-topbar" ref={topbarRef}>
-          <details className="search-pill" onToggle={handlePillToggle}>
-            <summary className="search-pill-btn">
-              {locationSummary}
-              <span className="search-pill-chevron">▾</span>
-            </summary>
-            <div className="search-pill-panel search-pill-panel-wide">
-              <label className="calc-field county-field">
-                <span>{t.searchHomes.county}</span>
-                <select
-                  value={countyId}
-                  onChange={(e) => handleCountyChange(e.target.value)}
-                >
-                  {Object.keys(COUNTIES).map((id) => (
-                    <option key={id} value={id}>{t.countyLabels[id]}</option>
-                  ))}
-                </select>
-              </label>
+        <p className="search-intro">{s.p}</p>
 
-              <div className="calc-field">
-                <span>{t.searchHomes.cityArea}</span>
-                <div className="city-checkbox-box">
-                  {county.cities.map((c) => (
-                    <label className="city-checkbox" key={c.id}>
-                      <input
-                        type="checkbox"
-                        checked={cityIds.includes(c.id)}
-                        onChange={() => toggleCity(c.id)}
-                      />
-                      {t.cityLabels[countyId][c.id]}
-                    </label>
-                  ))}
+        <div className="search-layout">
+          <div className="search-filters">
+            <section className="filter-section">
+              <h3>{s.groupLocation}</h3>
+              <div className="filter-fields">
+                <label className="calc-field county-field">
+                  <span>{s.county}</span>
+                  <select value={countyId} onChange={(e) => handleCountyChange(e.target.value)}>
+                    {Object.keys(COUNTIES).map((id) => (
+                      <option key={id} value={id}>{t.countyLabels[id]}</option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className="calc-field">
+                  <span>{s.zipCodes}</span>
+                  <input type="text" name="ZIP Codes" placeholder={s.zipPlaceholder} />
+                </label>
+
+                <div className="calc-field filter-field-wide">
+                  <span>{s.cityArea}</span>
+                  <div className="city-checkbox-box">
+                    {county.cities.map((c) => (
+                      <label className="city-checkbox" key={c.id}>
+                        <input
+                          type="checkbox"
+                          checked={cityIds.includes(c.id)}
+                          onChange={() => toggleCity(c.id)}
+                        />
+                        {t.cityLabels[countyId][c.id]}
+                      </label>
+                    ))}
+                  </div>
                 </div>
               </div>
+            </section>
 
-              <label className="calc-field">
-                <span>{t.searchHomes.zipCodes}</span>
-                <input type="text" name="ZIP Codes" placeholder={t.searchHomes.zipPlaceholder} />
-              </label>
-            </div>
-          </details>
-
-          <details className="search-pill" onToggle={handlePillToggle}>
-            <summary className="search-pill-btn">
-              {t.searchHomes.priceRange}
-              <span className="search-pill-chevron">▾</span>
-            </summary>
-            <div className="search-pill-panel">
-              <div className="dual-input-row">
-                <MoneyInput name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min" />
-                <MoneyInput name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max" />
-              </div>
-            </div>
-          </details>
-
-          <details className="search-pill" onToggle={handlePillToggle}>
-            <summary className="search-pill-btn">
-              {t.searchHomes.bedsBaths}
-              <span className="search-pill-chevron">▾</span>
-            </summary>
-            <div className="search-pill-panel">
-              <PillRadioField
-                label={t.searchHomes.bedroomsMin}
-                name="Bedrooms (min)"
-                options={NUMBER_OPTIONS}
-                includeAny
-                anyLabel={t.searchHomes.any}
-              />
-              <PillRadioField
-                label={t.searchHomes.bathroomsMin}
-                name="Bathrooms (min)"
-                options={NUMBER_OPTIONS}
-                includeAny
-                anyLabel={t.searchHomes.any}
-              />
-            </div>
-          </details>
-
-          <details className="search-pill" onToggle={handlePillToggle}>
-            <summary className="search-pill-btn">
-              {t.searchHomes.propertyType}
-              <span className="search-pill-chevron">▾</span>
-            </summary>
-            <div className="search-pill-panel">
-              <div className="filter-checkbox-group">
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Single-family" value="Yes" />
-                  {t.searchHomes.typeSingleFamily}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Condo" value="Yes" />
-                  {t.searchHomes.typeCondo}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Townhouse" value="Yes" />
-                  {t.searchHomes.typeTownhouse}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Apartment" value="Yes" />
-                  {t.searchHomes.typeApartment}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Multi-family" value="Yes" />
-                  {t.searchHomes.typeMultiFamily}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Villa" value="Yes" />
-                  {t.searchHomes.typeVilla}
-                </label>
-                <label className="filter-checkbox">
-                  <input type="checkbox" name="Property Type - Land" value="Yes" />
-                  {t.searchHomes.typeLand}
-                </label>
-              </div>
-            </div>
-          </details>
-
-          <details className="search-pill" onToggle={handlePillToggle}>
-            <summary className="search-pill-btn">
-              {t.searchHomes.moreFilters}
-              <span className="search-pill-chevron">▾</span>
-            </summary>
-            <div className="search-pill-panel search-pill-panel-wide">
-              <div className="calc-field">
-                <span>{t.searchHomes.sqftRange}</span>
-                <div className="dual-input-row">
-                  <input type="number" name="Min Sqft" min={SQFT_MIN} max={SQFT_MAX} step={SQFT_STEP} placeholder="Min sqft" />
-                  <input type="number" name="Max Sqft" min={SQFT_MIN} max={SQFT_MAX} step={SQFT_STEP} placeholder="Max sqft" />
-                </div>
-              </div>
-
-              <div className="calc-field">
-                <span>{t.searchHomes.hoaRange}</span>
-                <div className="dual-input-row">
-                  <MoneyInput name="Min HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="Min" />
-                  <MoneyInput name="Max HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="Max" />
-                </div>
-              </div>
-
-              <div className="calc-field">
-                <span>{t.searchHomes.taxRange}</span>
-                <div className="dual-input-row">
-                  <MoneyInput name="Min Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="Min" />
-                  <MoneyInput name="Max Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="Max" />
-                </div>
-              </div>
-
-              <div className="calc-field">
-                <span>{t.searchHomes.yearBuiltRange}</span>
-                <div className="dual-input-row">
-                  <input type="number" name="Min Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Min year" />
-                  <input type="number" name="Max Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Max year" />
-                </div>
-              </div>
-
-              <label className="calc-field">
-                <span>{t.searchHomes.stories}</span>
-                <select name="Stories" defaultValue="Any">
-                  <option value="Any">{t.searchHomes.storiesAny}</option>
-                  {STORY_OPTIONS.map((n) => (
-                    <option key={n} value={n}>{n}</option>
-                  ))}
-                </select>
-              </label>
-
-              <div className="calc-field">
-                <span>{t.searchHomes.pool}</span>
-                <div className="filter-checkbox-group">
-                  <label className="filter-checkbox">
-                    <input type="radio" name="Pool" value="Yes" />
-                    {t.searchHomes.poolYes}
+            <section className="filter-section">
+              <h3>{s.propertyType}</h3>
+              <div className="chip-group">
+                {[
+                  ["Single-family", s.typeSingleFamily],
+                  ["Condo", s.typeCondo],
+                  ["Townhouse", s.typeTownhouse],
+                  ["Apartment", s.typeApartment],
+                  ["Multi-family", s.typeMultiFamily],
+                  ["Villa", s.typeVilla],
+                  ["Land", s.typeLand],
+                ].map(([key, label]) => (
+                  <label className="chip-option" key={key}>
+                    <input type="checkbox" name={`Property Type - ${key}`} value="Yes" />
+                    <span>{label}</span>
                   </label>
-                  <label className="filter-checkbox">
-                    <input type="radio" name="Pool" value="No" />
-                    {t.searchHomes.poolNo}
-                  </label>
+                ))}
+              </div>
+            </section>
+
+            <section className="filter-section">
+              <h3>{s.groupBudget}</h3>
+              <div className="filter-fields">
+                <div className="filter-field-wide">
+                  <ChipCheckboxGroup
+                    label={s.priceRange}
+                    options={PRICE_BANDS.map((band) => ({
+                      name: `Price Range - ${band.replace("–", "-")}`,
+                      label: band,
+                    }))}
+                  />
+                  <div className="calc-field" style={{ marginTop: 12 }}>
+                    <div className="dual-input-row">
+                      <MoneyInput name="Min Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Min" />
+                      <MoneyInput name="Max Price" min={PRICE_MIN} max={PRICE_MAX} step={PRICE_STEP} placeholder="Max" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="calc-field">
+                  <span>{s.hoaRange}</span>
+                  <div className="dual-input-row">
+                    <MoneyInput name="Min HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="Min" />
+                    <MoneyInput name="Max HOA Fee" min={HOA_MIN} step={HOA_STEP} placeholder="Max" />
+                  </div>
+                </div>
+
+                <div className="calc-field">
+                  <span>{s.taxRange}</span>
+                  <div className="dual-input-row">
+                    <MoneyInput name="Min Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="Min" />
+                    <MoneyInput name="Max Annual Property Tax" min={TAX_MIN} step={TAX_STEP} placeholder="Max" />
+                  </div>
                 </div>
               </div>
+            </section>
 
-              <PillRadioField
-                label={t.searchHomes.parkingMin}
-                name="Parking Spaces (min)"
-                options={NUMBER_OPTIONS}
-                includeAny
-                anyLabel={t.searchHomes.any}
-              />
-            </div>
-          </details>
-        </div>
+            <section className="filter-section">
+              <h3>{s.groupSize}</h3>
+              <div className="filter-fields">
+                <ChipRadioGroup label={s.bedroomsMin} name="Bedrooms (min)" options={anyNumber} />
+                <ChipRadioGroup label={s.bathroomsMin} name="Bathrooms (min)" options={anyNumber} />
 
-        <div className="search-body">
-          <div className="search-map-pane">
-            <div className="map-search-box">
-              <div ref={mapNodeRef} className="map-search-canvas search-map-canvas-tall" />
-            </div>
-            <p className="map-search-note">{t.searchHomes.mapNote}</p>
-            {drawnAreaText && (
-              <div className="map-drawn-note">
-                <span>{t.searchHomes.drawnAreaSet}</span>
-                <button type="button" onClick={clearDrawnArea}>{t.searchHomes.clearDrawnArea}</button>
+                <div className="calc-field">
+                  <span>{s.sqftRange}</span>
+                  <div className="dual-input-row">
+                    <input type="number" name="Min Sqft" min={SQFT_MIN} max={SQFT_MAX} step={SQFT_STEP} placeholder="Min sqft" />
+                    <input type="number" name="Max Sqft" min={SQFT_MIN} max={SQFT_MAX} step={SQFT_STEP} placeholder="Max sqft" />
+                  </div>
+                </div>
+
+                <div className="calc-field">
+                  <span>{s.yearBuiltRange}</span>
+                  <div className="dual-input-row">
+                    <input type="number" name="Min Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Min year" />
+                    <input type="number" name="Max Year Built" min={YEAR_MIN} max={YEAR_MAX} step="1" placeholder="Max year" />
+                  </div>
+                </div>
+
+                <label className="calc-field">
+                  <span>{s.stories}</span>
+                  <select name="Stories" defaultValue="Any">
+                    <option value="Any">{s.storiesAny}</option>
+                    {STORY_OPTIONS.map((n) => (
+                      <option key={n} value={n}>{n}</option>
+                    ))}
+                  </select>
+                </label>
+
+                <ChipRadioGroup label={s.parkingMin} name="Parking Spaces (min)" options={anyNumber} />
               </div>
-            )}
+            </section>
+
+            <section className="filter-section">
+              <h3>{s.groupFeatures}</h3>
+              <div className="filter-fields">
+                <ChipRadioGroup label={s.pool} name="Pool" options={anyYesNo} />
+                <ChipRadioGroup label={s.hasHoa} name="Has HOA Fees" options={anyYesNo} />
+                <ChipRadioGroup label={s.gatedCommunity} name="Gated Community" options={anyYesNo} />
+                <ChipRadioGroup label={s.waterfront} name="Waterfront" options={anyYesNo} />
+                <ChipRadioGroup label={s.newConstruction} name="New Construction" options={anyYesNo} />
+              </div>
+            </section>
           </div>
 
-          <div className="search-results-pane">
-            <p className="search-intro">{t.searchHomes.p}</p>
-
+          <aside className="search-contact">
             <div className="lead-form search-contact-card">
-              <h2>{t.searchHomes.contactHeading}</h2>
+              <h2>{s.contactHeading}</h2>
 
               <div className="lead-form-row">
                 <label className="calc-field">
@@ -537,10 +303,10 @@ export default function SearchHomesClient() {
               </label>
 
               <button type="submit" className="book-call-btn lead-form-submit">
-                {t.searchHomes.submit}
+                {s.submit}
               </button>
             </div>
-          </div>
+          </aside>
         </div>
       </form>
 
