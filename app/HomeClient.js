@@ -36,7 +36,11 @@ export default function HomeClient({ articles }) {
         <div className="hero-fan" />
         <div className="eyebrow">{t.hero.eyebrow}</div>
         <h1>{t.hero.h1Line1}<br />{t.hero.h1Line2}</h1>
-        <p>{t.hero.p}</p>
+        <ul className="hero-points">
+          {t.hero.points.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <section className="section" id="tools" style={{ paddingTop: 48 }}>

@@ -28,7 +28,13 @@ const translations = {
       eyebrow: "Buying in Miami-Dade",
       h1Line1: "Everything you need to",
       h1Line2: "buy smart in Miami.",
-      p: "Get your customized list of properties, a first-time homebuyer guide, mortgage and property tax calculators, real neighborhood guides if you're new to Miami, and the latest local news.",
+      points: [
+        "Your customized list of properties",
+        "A first-time homebuyer guide",
+        "Mortgage and property tax calculators",
+        "Real neighborhood guides if you're new to Miami",
+        "The latest local news",
+      ],
     },
     tools: {
       h2: "Your Miami Home Guide",
@@ -521,7 +527,13 @@ const translations = {
       eyebrow: "Comprando en Miami-Dade",
       h1Line1: "Todo lo que necesita para",
       h1Line2: "comprar bien en Miami.",
-      p: "Reciba su lista personalizada de propiedades, una guía para compradores primerizos, calculadoras de hipoteca e impuestos sobre la propiedad, guías reales de vecindarios si es nuevo en Miami, y las últimas noticias locales.",
+      points: [
+        "Su lista personalizada de propiedades",
+        "Una guía para compradores primerizos",
+        "Calculadoras de hipoteca e impuestos sobre la propiedad",
+        "Guías reales de vecindarios si es nuevo en Miami",
+        "Las últimas noticias locales",
+      ],
     },
     tools: {
       h2: "Su Miami Home Guide",
@@ -1014,7 +1026,13 @@ const translations = {
       eyebrow: "Acheter à Miami-Dade",
       h1Line1: "Tout ce qu'il vous faut pour",
       h1Line2: "bien acheter à Miami.",
-      p: "Recevez votre liste personnalisée de biens, un guide pour les primo-accédants, des calculateurs de prêt hypothécaire et de taxe foncière, de vrais guides de quartiers si vous êtes nouveau à Miami, et les dernières nouvelles locales.",
+      points: [
+        "Votre liste personnalisée de biens",
+        "Un guide pour les primo-accédants",
+        "Des calculateurs de prêt hypothécaire et de taxe foncière",
+        "De vrais guides de quartiers si vous êtes nouveau à Miami",
+        "Les dernières nouvelles locales",
+      ],
     },
     tools: {
       h2: "Votre guide immobilier de Miami",
@@ -1507,7 +1525,13 @@ const translations = {
       eyebrow: "Achte nan Miami-Dade",
       h1Line1: "Tout sa ou bezwen pou",
       h1Line2: "achte byen nan Miami.",
-      p: "Resevwa lis pwopriyete pèsonalize pa w la, yon gid pou moun k ap achte kay pou premye fwa, kalkilatè prè ipotekè ak taks sou pwopriyete, vrè gid katye si ou nouvo nan Miami, ak dènye nouvèl lokal yo.",
+      points: [
+        "Lis pwopriyete pèsonalize pa w la",
+        "Yon gid pou moun k ap achte kay pou premye fwa",
+        "Kalkilatè prè ipotekè ak taks sou pwopriyete",
+        "Vrè gid katye si ou nouvo nan Miami",
+        "Dènye nouvèl lokal yo",
+      ],
     },
     tools: {
       h2: "Gid Kay Miami Ou a",
@@ -2000,7 +2024,13 @@ const translations = {
       eyebrow: "Comprando em Miami-Dade",
       h1Line1: "Tudo o que você precisa para",
       h1Line2: "comprar bem em Miami.",
-      p: "Receba sua lista personalizada de imóveis, um guia para compradores de primeira viagem, calculadoras de financiamento e imposto predial, guias reais de bairros para quem é novo em Miami, e as últimas notícias locais.",
+      points: [
+        "Sua lista personalizada de imóveis",
+        "Um guia para compradores de primeira viagem",
+        "Calculadoras de financiamento e imposto predial",
+        "Guias reais de bairros para quem é novo em Miami",
+        "As últimas notícias locais",
+      ],
     },
     tools: {
       h2: "Seu Guia de Imóveis de Miami",
@@ -2493,7 +2523,13 @@ const translations = {
       eyebrow: "Comprare a Miami-Dade",
       h1Line1: "Tutto ciò che ti serve per",
       h1Line2: "comprare bene a Miami.",
-      p: "Ricevi il tuo elenco personalizzato di immobili, una guida per chi acquista casa per la prima volta, calcolatori del mutuo e delle tasse sulla proprietà, guide reali sui quartieri per chi è nuovo a Miami, e le ultime notizie locali.",
+      points: [
+        "Il tuo elenco personalizzato di immobili",
+        "Una guida per chi acquista casa per la prima volta",
+        "Calcolatori del mutuo e delle tasse sulla proprietà",
+        "Guide reali sui quartieri per chi è nuovo a Miami",
+        "Le ultime notizie locali",
+      ],
     },
     tools: {
       h2: "La Tua Guida Immobiliare di Miami",
@@ -2986,7 +3022,13 @@ const translations = {
       eyebrow: "Kaufen in Miami-Dade",
       h1Line1: "Alles, was Sie brauchen, um",
       h1Line2: "clever in Miami zu kaufen.",
-      p: "Erhalten Sie Ihre individuelle Immobilienliste, einen Leitfaden für Erstkäufer, Hypotheken- und Grundsteuerrechner, echte Stadtteil-Ratgeber, falls Sie neu in Miami sind, und die neuesten lokalen Nachrichten.",
+      points: [
+        "Ihre individuelle Immobilienliste",
+        "Ein Leitfaden für Erstkäufer",
+        "Hypotheken- und Grundsteuerrechner",
+        "Echte Stadtteil-Ratgeber, falls Sie neu in Miami sind",
+        "Die neuesten lokalen Nachrichten",
+      ],
     },
     tools: {
       h2: "Ihr Miami Home Guide",
@@ -3479,7 +3521,13 @@ const translations = {
       eyebrow: "Kopen in Miami-Dade",
       h1Line1: "Alles wat u nodig heeft om",
       h1Line2: "slim te kopen in Miami.",
-      p: "Ontvang uw persoonlijke woninglijst, een gids voor starters, hypotheek- en onroerendgoedbelasting calculators, echte wijkgidsen als u nieuw bent in Miami, en het laatste lokale nieuws.",
+      points: [
+        "Uw persoonlijke woninglijst",
+        "Een gids voor starters",
+        "Hypotheek- en onroerendgoedbelasting calculators",
+        "Echte wijkgidsen als u nieuw bent in Miami",
+        "Het laatste lokale nieuws",
+      ],
     },
     tools: {
       h2: "Uw Miami Home Guide",
@@ -3972,7 +4020,13 @@ const translations = {
       eyebrow: "Kupno nieruchomości w Miami-Dade",
       h1Line1: "Wszystko, czego potrzebujesz, aby",
       h1Line2: "mądrze kupić w Miami.",
-      p: "Otrzymaj spersonalizowaną listę nieruchomości, przewodnik dla kupujących po raz pierwszy, kalkulatory kredytu hipotecznego i podatku od nieruchomości, prawdziwe przewodniki po dzielnicach, jeśli jesteś nowy w Miami, oraz najnowsze lokalne wiadomości.",
+      points: [
+        "Spersonalizowana lista nieruchomości",
+        "Przewodnik dla kupujących po raz pierwszy",
+        "Kalkulatory kredytu hipotecznego i podatku od nieruchomości",
+        "Prawdziwe przewodniki po dzielnicach, jeśli jesteś nowy w Miami",
+        "Najnowsze lokalne wiadomości",
+      ],
     },
     tools: {
       h2: "Twój Miami Home Guide",
@@ -4465,7 +4519,13 @@ const translations = {
       eyebrow: "在迈阿密戴德县购房",
       h1Line1: "您需要的一切，",
       h1Line2: "助您在迈阿密精明购房。",
-      p: "获取专属于您的房源清单、首次购房者指南、房贷与房产税计算器、真正的社区指南（专为初到迈阿密的您准备），以及最新本地新闻。",
+      points: [
+        "专属于您的房源清单",
+        "首次购房者指南",
+        "房贷与房产税计算器",
+        "真正的社区指南（专为初到迈阿密的您准备）",
+        "最新本地新闻",
+      ],
     },
     tools: {
       h2: "您的迈阿密购房指南",
@@ -4958,7 +5018,13 @@ const translations = {
       eyebrow: "マイアミ・デイド郡での住宅購入",
       h1Line1: "マイアミで賢く購入するために",
       h1Line2: "必要なものすべて。",
-      p: "あなた専用の物件リスト、初めての住宅購入ガイド、住宅ローン・固定資産税計算機、マイアミ初心者向けの本格的な地域ガイド、そして最新のローカルニュース。",
+      points: [
+        "あなた専用の物件リスト",
+        "初めての住宅購入ガイド",
+        "住宅ローン・固定資産税計算機",
+        "マイアミ初心者向けの本格的な地域ガイド",
+        "最新のローカルニュース",
+      ],
     },
     tools: {
       h2: "あなたのマイアミ・ホームガイド",
@@ -5451,7 +5517,13 @@ const translations = {
       eyebrow: "Покупка недвижимости в Майами-Дейд",
       h1Line1: "Всё, что нужно, чтобы",
       h1Line2: "разумно купить жильё в Майами.",
-      p: "Персональная подборка объектов, руководство для покупателей впервые, ипотечный калькулятор и калькулятор налога на недвижимость, настоящие гиды по районам, если вы недавно в Майами, и последние местные новости.",
+      points: [
+        "Персональная подборка объектов",
+        "Руководство для покупателей впервые",
+        "Ипотечный калькулятор и калькулятор налога на недвижимость",
+        "Настоящие гиды по районам, если вы недавно в Майами",
+        "Последние местные новости",
+      ],
     },
     tools: {
       h2: "Ваш гид по недвижимости Майами",
